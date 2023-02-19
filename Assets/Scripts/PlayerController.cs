@@ -7,15 +7,20 @@ public class PlayerController : MonoBehaviour
 
     public float jumpForce;
     public float speed;
+    [SerializeField]
     public Rigidbody2D rigidBody;
     private Animator anim;
 
+    [SerializeField]
     public Transform groundPos;
     private bool isGrounded;
+    [SerializeField]
     public float checkRadius;
+    [SerializeField]
     public LayerMask whatIsGround;
 
     private float jumpTimeCounter;
+    [SerializeField]
     public float jumpTime;
     private bool isJumping;
     private bool doubleJump;

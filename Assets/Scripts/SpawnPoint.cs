@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour {
 
+    [SerializeField]
     public GameObject[] objectsToSpawn;
 
     private void Start()
