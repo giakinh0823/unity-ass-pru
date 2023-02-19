@@ -5,20 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class LevelGeneration : MonoBehaviour
 {
-
+    [SerializeField]
     public Transform[] startingPositions;
+    [SerializeField]
     public GameObject[] rooms; // index 0 --> closed, index 1 --> LR, index 2 --> LRB, index 3 --> LRT, index 4 --> LRBT
 
     private int direction;
     private bool stopGeneration;
     private int downCounter;
 
+    [SerializeField]
     public float moveIncrement;
     private float timeBtwSpawn;
+    [SerializeField]
     public float startTimeBtwSpawn;
 
+    [SerializeField]
     public LayerMask whatIsRoom;
-
+    [SerializeField]
     public PlayerController playerController;
 
 

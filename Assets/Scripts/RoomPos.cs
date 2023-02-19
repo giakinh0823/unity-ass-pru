@@ -8,6 +8,7 @@ public class RoomPos : MonoBehaviour {
     public LayerMask whatIsRoom;
     bool hasRoom;
 
+    [SerializeField]
     public GameObject closedRoom;
 
 	void Update () {
