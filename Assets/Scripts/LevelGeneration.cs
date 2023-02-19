@@ -20,7 +20,7 @@ public class LevelGeneration : MonoBehaviour
     public LayerMask whatIsRoom;
 
     public GameObject player;
-    private PlayerController playerController;
+    public PlayerController playerController;
 
 
     private void Start()
@@ -30,7 +30,7 @@ public class LevelGeneration : MonoBehaviour
         transform.position = startingPositions[randStartingPos].position;
         playerController = player.GetComponent<PlayerController>();
         Instantiate(playerController.gameObject, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
-        playerController.rb.gravityScale = 0.0f;
+        playerController.rigidBody.gravityScale = 0.0f;
         Instantiate(rooms[1], transform.position, Quaternion.identity);
         direction = Random.Range(1, 6);
     }
@@ -151,7 +151,7 @@ public class LevelGeneration : MonoBehaviour
             else
             {
                 stopGeneration = true;
-                playerController.rb.gravityScale = 8.0f;
+                playerController.rigidBody.gravityScale = 8.0f;
             }
 
         }

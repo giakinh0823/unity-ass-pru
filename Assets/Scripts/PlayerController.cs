@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 
     public float jumpForce;
     public float speed;
-    public Rigidbody2D rb;
+    public Rigidbody2D rigidBody;
     private Animator anim;
 
     public Transform groundPos;
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
 
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("takeOf");
             isJumping = true;
             jumpTimeCounter = jumpTime;
-            rb.velocity = Vector2.up * jumpForce;
+            rigidBody.velocity = Vector2.up * jumpForce;
         }
 
         if (isGrounded == true)
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         {
             if (jumpTimeCounter > 0)
             {
-                rb.velocity = Vector2.up * jumpForce;
+                rigidBody.velocity = Vector2.up * jumpForce;
                 jumpTimeCounter -= Time.deltaTime;
             }
             else
@@ -77,11 +77,11 @@ public class PlayerController : MonoBehaviour
             doubleJump = true;
             isJumping = true;
             jumpTimeCounter = jumpTime;
-            rb.velocity = Vector2.up * jumpForce;
+            rigidBody.velocity = Vector2.up * jumpForce;
         }
 
         float moveInput = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        rigidBody.velocity = new Vector2(moveInput * speed, rigidBody.velocity.y);
 
         if (moveInput != 0)
         {
