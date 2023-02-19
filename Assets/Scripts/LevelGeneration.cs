@@ -19,7 +19,6 @@ public class LevelGeneration : MonoBehaviour
 
     public LayerMask whatIsRoom;
 
-    public GameObject player;
     public PlayerController playerController;
 
 
@@ -28,7 +27,6 @@ public class LevelGeneration : MonoBehaviour
 
         int randStartingPos = Random.Range(0, startingPositions.Length);
         transform.position = startingPositions[randStartingPos].position;
-        playerController = player.GetComponent<PlayerController>();
         Instantiate(playerController.gameObject, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
         playerController.rigidBody.gravityScale = 0.0f;
         Instantiate(rooms[1], transform.position, Quaternion.identity);

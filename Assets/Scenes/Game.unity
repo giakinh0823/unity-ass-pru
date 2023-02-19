@@ -2212,7 +2212,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   player: {fileID: 1011407828037772, guid: edc797558e17b2b47bc1a0c52fd7bf21, type: 3}
-  playerController: {fileID: 0}
+  playerController: {fileID: -3017213790409573602, guid: edc797558e17b2b47bc1a0c52fd7bf21, type: 3}
 --- !u!1 &1957887381
 GameObject:
   m_ObjectHideFlags: 0
