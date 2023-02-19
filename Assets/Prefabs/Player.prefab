@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 25
   speed: 13
-  rb: {fileID: 50208215975462790}
+  rigidBody: {fileID: 50208215975462790}
   groundPos: {fileID: 4126305966449462}
   checkRadius: 0.2
   whatIsGround:
