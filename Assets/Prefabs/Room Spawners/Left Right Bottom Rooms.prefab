@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToSpawn:
   - {fileID: 1295459993966546, guid: 4fce8eb1e69f2e34287f0755bdef8a40, type: 3}
+  - {fileID: 1295459993966546, guid: 09cdbb218f06f2e4c93051ee42f58964, type: 3}
