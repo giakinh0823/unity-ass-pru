@@ -20,8 +20,7 @@ public class LevelGeneration : MonoBehaviour
     public LayerMask whatIsRoom;
 
     public GameObject player;
-    [SerializeField]
-    public PlayerController playerController;
+    private PlayerController playerController;
 
 
     private void Start()
