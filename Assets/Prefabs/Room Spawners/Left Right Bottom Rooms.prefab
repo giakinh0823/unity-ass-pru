@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -8139354050539848003}
   m_Layer: 0
   m_Name: Left Right Bottom Rooms
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,4 +46,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToSpawn:
   - {fileID: 1295459993966546, guid: 4fce8eb1e69f2e34287f0755bdef8a40, type: 3}
-  - {fileID: 1295459993966546, guid: 09cdbb218f06f2e4c93051ee42f58964, type: 3}
