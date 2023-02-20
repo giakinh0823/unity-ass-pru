@@ -2206,8 +2206,8 @@ MonoBehaviour:
   - {fileID: 1819742035316322, guid: 65616d915206aea43ac552b3934660a0, type: 3}
   - {fileID: 1318009043472772, guid: 3cb55f9ffba2e3e43b4a37cb1651bd40, type: 3}
   - {fileID: 1442202877403164, guid: 5018d52402426a74e971a94820e50791, type: 3}
-  - {fileID: 1711888464712350, guid: 197c3cb4d0cb5ae4bad4b38aac0a503b, type: 3}
   - {fileID: 1942163711769760, guid: c5e9886b80a6dab4e99a55eda0aff72d, type: 3}
+  - {fileID: 1711888464712350, guid: 197c3cb4d0cb5ae4bad4b38aac0a503b, type: 3}
   moveIncrement: 10
   startTimeBtwSpawn: 0.1
   whatIsRoom:
