@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -56,7 +56,7 @@ public class LevelGeneration : MonoBehaviour
     {
 
         if (direction == 1 || direction == 2)
-        { // Move right !
+        { // Đi sang phải !
 
             if (transform.position.x < 25)
             {
@@ -67,7 +67,7 @@ public class LevelGeneration : MonoBehaviour
                 int randRoom = Random.Range(1, 4);
                 Instantiate(rooms[randRoom], transform.position, Quaternion.identity);
 
-                // Makes sure the level generator doesn't move left !
+                // Đảm bảo trình tạo cấp độ không di chuyển sang trái!
                 direction = Random.Range(1, 6);
                 if (direction == 3)
                 {
@@ -84,7 +84,7 @@ public class LevelGeneration : MonoBehaviour
             }
         }
         else if (direction == 3 || direction == 4)
-        { // Move left !
+        { // Sang trái !
 
             if (transform.position.x > 0)
             {
@@ -104,18 +104,18 @@ public class LevelGeneration : MonoBehaviour
 
         }
         else if (direction == 5)
-        { // MoveDown
+        { // Đi xuống
             downCounter++;
             if (transform.position.y > -25)
             {
-                // Now I must replace the room BEFORE going down with a room that has a DOWN opening, so type 3 or 5
+                // Bây giờ tôi phải thay thế căn phòng TRƯỚC KHI đi xuống bằng căn phòng có lỗ XUỐNG, nên loại là  3 hoặc 5
                 Collider2D previousRoom = Physics2D.OverlapCircle(transform.position, 1, whatIsRoom);
                 Debug.Log(previousRoom);
                 if (previousRoom.GetComponent<Room>().roomType != 4 && previousRoom.GetComponent<Room>().roomType != 2)
                 {
 
-                    // My problem : if the level generation goes down TWICE in a row, there's a chance that the previous room is just 
-                    // a LRB, meaning there's no TOP opening for the other room ! 
+                    // Vấn đề của tôi: nếu việc tạo cấp độ giảm TWICE liên tiếp, có khả năng phòng trước đó chỉ
+                    // một LRB, nghĩa là không có TOP nào mở cho phòng khác !
 
                     if (downCounter >= 2)
                     {
@@ -140,7 +140,7 @@ public class LevelGeneration : MonoBehaviour
                 Vector2 pos = new Vector2(transform.position.x, transform.position.y - moveIncrement);
                 transform.position = pos;
 
-                // Makes sure the room we drop into has a TOP opening !
+                // Đảm bảo căn phòng chúng tôi ghé vào có cửa mở TOP !
                 int randRoom = Random.Range(3, 5);
                 Instantiate(rooms[randRoom], transform.position, Quaternion.identity);
 
