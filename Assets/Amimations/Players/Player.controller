@@ -261,7 +261,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 54d242a4e2b2a1741a2ea94c16da1e4f, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7eaf4675f6e29984295b3dd370ee4a1d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -288,7 +288,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 216defdb183737c4ea59d36340f4afff, type: 2}
+  m_Motion: {fileID: 7400000, guid: fe006c4553fe5ee4f9896666dda71150, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -316,7 +316,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: fffd830607156344d897e7ccf16fbe51, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7109759cfa872d9498b7dd9d0db24282, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -344,7 +344,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: a4e574a98ffdb83408a9dd2df9e73afa, type: 2}
+  m_Motion: {fileID: 7400000, guid: fc84fa3af5375cc4ea853086dd525faa, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -371,7 +371,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b43f3ceca07493e47ba4c5412ec481db, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7f1ea8c42232edb46a04980902042509, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -394,7 +394,7 @@ AnimatorStateMachine:
     m_Position: {x: 408, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102997963050085976}
-    m_Position: {x: 336, y: -156, z: 0}
+    m_Position: {x: 340, y: -160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102462886087940996}
     m_Position: {x: 144, y: -36, z: 0}
