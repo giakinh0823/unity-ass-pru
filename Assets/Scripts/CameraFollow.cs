@@ -19,6 +19,11 @@ public class CameraFollow : MonoBehaviour {
     [SerializeField]
     public float smoothTime;
 
+    private void Awake()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+    }
+
     private void LateUpdate()
     {
         Vector3 targetTransform = target.position + postionOffset;
