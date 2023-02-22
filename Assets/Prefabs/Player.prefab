@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 61396649260398664}
   - component: {fileID: 50208215975462790}
   - component: {fileID: -3017213790409573602}
+  - component: {fileID: 1761993708990598082}
+  - component: {fileID: 5742475561654597609}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -72,7 +74,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.012060225, y: -0.07186037}
+  m_Offset: {x: 0.01251933, y: -0.09635949}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -83,7 +85,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2572446, y: 0.67334485}
+  m_Size: {x: 0.37882215, y: 0.8693379}
   m_EdgeRadius: 0
 --- !u!50 &50208215975462790
 Rigidbody2D:
@@ -118,15 +120,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4160d4f420408488a32df295734510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 25
-  speed: 13
+--- !u!114 &1761993708990598082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011407828037772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ea7e2e00e3a1d41881a0ed8cedbc75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 15
   rigidBody: {fileID: 50208215975462790}
   groundPos: {fileID: 4126305966449462}
   checkRadius: 0.2
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1024
   jumpTime: 0.2
+--- !u!114 &5742475561654597609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011407828037772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37932de73cd01f43b24c7ac3bdfe649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  rigidBody: {fileID: 50208215975462790}
 --- !u!1 &1085547990983430
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +250,7 @@ GameObject:
   m_Layer: 0
   m_Name: Ground Pos
   m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -235,7 +262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237780248342096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.027, y: -0.843, z: 0}
+  m_LocalPosition: {x: 0.031, y: -0.467, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
