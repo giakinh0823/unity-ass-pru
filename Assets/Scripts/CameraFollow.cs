@@ -20,7 +20,7 @@ public class CameraFollow : MonoBehaviour {
     public float smoothTime;
 
     private void Awake()
-    {
+    {   
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
