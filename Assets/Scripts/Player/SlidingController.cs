@@ -59,6 +59,7 @@ public class SlidingController : MonoBehaviour
         if (isWallSliding)
         {
             isWallJumping = false;
+            anim.SetBool("isWallJumping", false);
             wallJumpingDirection = -transform.localScale.x;
             wallJumpingCounter = wallJumpingTime;
 
@@ -66,11 +67,12 @@ public class SlidingController : MonoBehaviour
         } else
         {
             wallJumpingCounter -= Time.deltaTime;
+            anim.SetBool("isWallJumping", true);
         }
 
         if(Input.GetKeyDown(KeyCode.Z) && wallJumpingCounter > 0f ) {
             isWallJumping = true;
-            anim.SetTrigger("takeOf");
+            anim.SetBool("isWallJumping", true);
             anim.SetBool("isWallSliding", false);
             rigidBody.velocity = new Vector2(wallJumpingDuration * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpingCounter = 0f;
@@ -87,6 +89,7 @@ public class SlidingController : MonoBehaviour
     private void StopWallJumping()
     {
         isWallJumping = false;
+        anim.SetBool("isWallJumping", false);
     }
 
     private void WallSlide()
