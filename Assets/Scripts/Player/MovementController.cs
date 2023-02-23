@@ -8,8 +8,11 @@ public class MovementController : MonoBehaviour
     public float speed;
     [SerializeField]
     public Rigidbody2D rigidBody;
+    [SerializeField]
     private Animator anim;
 
+    public float horizontal;
+    public bool isFaceRight = true;
 
     private void Start()
     {
@@ -21,10 +24,10 @@ public class MovementController : MonoBehaviour
     private void Update()
     {
 
-        float moveInput = Input.GetAxisRaw("Horizontal");
-        rigidBody.velocity = new Vector2(moveInput * speed, rigidBody.velocity.y);
+        horizontal = Input.GetAxisRaw("Horizontal");
+        rigidBody.velocity = new Vector2(horizontal * speed, rigidBody.velocity.y);
 
-        if (moveInput != 0)
+        if (horizontal != 0)
         {
             anim.SetBool("isRunning", true);
         }
@@ -33,13 +36,23 @@ public class MovementController : MonoBehaviour
             anim.SetBool("isRunning", false);
         }
 
-        if (moveInput < 0)
+        Flip();
+    }
+
+    public void Flip()
+    {
+        if (isFaceRight && horizontal < 0f  || !isFaceRight && horizontal> 0f)
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-        }
-        else if (moveInput > 0)
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            isFaceRight = !isFaceRight;
+            if (horizontal < 0)
+            {
+                isFaceRight = false;
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+            else if (horizontal > 0)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
         }
     }
 

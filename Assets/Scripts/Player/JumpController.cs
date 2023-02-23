@@ -30,11 +30,10 @@ public class JumpController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
-
     private void Update()
     {
 
-        isGrounded = Physics2D.OverlapCircle(groundPos.position, checkRadius, whatIsGround);
+        isGrounded = IsGrounded();
 
         if (isGrounded == true && Input.GetKeyDown(KeyCode.Z))
         {
@@ -83,6 +82,11 @@ public class JumpController : MonoBehaviour
             jumpTimeCounter = jumpTime;
             rigidBody.velocity = Vector2.up * jumpForce;
         }
+    }
+
+    public bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundPos.position, checkRadius, whatIsGround);
     }
 
 }
