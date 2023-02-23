@@ -157,7 +157,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   rigidBody: {fileID: 50208215975462790}
+  anim: {fileID: 0}
   horizontal: 0
+  isFaceRight: 1
 --- !u!70 &-4803595966166588438
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -326,7 +328,7 @@ MonoBehaviour:
   - {x: -0.16581354, y: 0.033363163, z: -0.000000010244548}
   m_ShapePathHash: 1639765140
   m_Mesh: {fileID: 0}
-  m_InstanceId: 75302
+  m_InstanceId: 82788
 --- !u!1 &1237780248342096
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +344,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4126305966449462
 Transform:
   m_ObjectHideFlags: 0
@@ -480,7 +482,7 @@ MonoBehaviour:
   - {x: -0.12976903, y: -0.18525726, z: -0.000000010244548}
   m_ShapePathHash: -1680198045
   m_Mesh: {fileID: 0}
-  m_InstanceId: 75300
+  m_InstanceId: 82786
 --- !u!1 &1412382395120440
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,7 +611,7 @@ MonoBehaviour:
   - {x: -0.044145733, y: 0.005266428, z: -0.000000010244548}
   m_ShapePathHash: -1272301859
   m_Mesh: {fileID: 0}
-  m_InstanceId: 75298
+  m_InstanceId: 82784
 --- !u!1 &1746004791257256
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,7 +733,7 @@ MonoBehaviour:
   - {x: -0.025051177, y: -0.24891531, z: -0.000000010244548}
   m_ShapePathHash: -675951043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 75292
+  m_InstanceId: 82778
 --- !u!1 &1930540462979778
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +855,7 @@ MonoBehaviour:
   - {x: -0.013189614, y: -0.21743912, z: -0.000000010244548}
   m_ShapePathHash: -460280787
   m_Mesh: {fileID: 0}
-  m_InstanceId: 75308
+  m_InstanceId: 82794
 --- !u!1 &1993595382086298
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,7 +978,7 @@ MonoBehaviour:
   - {x: 0.080355376, y: -0.19361633, z: -0.000000010244548}
   m_ShapePathHash: -1258716273
   m_Mesh: {fileID: 0}
-  m_InstanceId: 75290
+  m_InstanceId: 82776
 --- !u!1 &5769963805523465670
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,7 +994,7 @@ GameObject:
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8039179124996981337
 Transform:
   m_ObjectHideFlags: 0
