@@ -17,6 +17,8 @@ public class SlidingController : MonoBehaviour
     private Vector2 wallJumpingPower = new Vector2(8f, 16f);
 
     [SerializeField]
+    private Animator anim;
+    [SerializeField]
     private Transform wallCheck;
     [SerializeField]
     private LayerMask wallLayer;
@@ -27,7 +29,11 @@ public class SlidingController : MonoBehaviour
     [SerializeField]
     private MovementController movement;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     private void Update()
     {
         WallSlide();
@@ -64,6 +70,8 @@ public class SlidingController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Z) && wallJumpingCounter > 0f ) {
             isWallJumping = true;
+            anim.SetTrigger("takeOf");
+            anim.SetBool("IsWallSliding", false);
             rigidBody.velocity = new Vector2(wallJumpingDuration * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpingCounter = 0f;
 
@@ -86,10 +94,12 @@ public class SlidingController : MonoBehaviour
         if(IsWalled() && !jump.IsGrounded() && movement.horizontal != 0f)
         {
             isWallSliding= true;
+            anim.SetBool("IsWallSliding", true);
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -wallSlidingSpeed, float.MaxValue));
         } else
         {
             isWallSliding= false;
+            anim.SetBool("IsWallSliding", false);
         }
     }
 
