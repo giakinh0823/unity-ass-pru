@@ -12,7 +12,7 @@ public class JumpController : MonoBehaviour
 
     [SerializeField]
     public Transform groundPos;
-    private bool isGrounded;
+    public bool isGrounded;
     [SerializeField]
     public float checkRadius;
     [SerializeField]
@@ -50,7 +50,6 @@ public class JumpController : MonoBehaviour
         }
         else
         {
-
             anim.SetBool("isJumping", true);
         }
 
