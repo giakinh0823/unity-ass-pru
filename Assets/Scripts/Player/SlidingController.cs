@@ -42,6 +42,9 @@ public class SlidingController : MonoBehaviour
         if(!isWallJumping)
         {
             movement.Flip();
+        } else
+        {
+            anim.SetBool("isJumping", false);
         }
 
     }
@@ -51,6 +54,9 @@ public class SlidingController : MonoBehaviour
         if (!isWallJumping)
         {
             rigidBody.velocity = new Vector2(movement.horizontal * movement.speed, rigidBody.velocity.y);
+        } else
+        {
+            anim.SetBool("isJumping", false);
         }
     }
 
@@ -65,13 +71,14 @@ public class SlidingController : MonoBehaviour
             CancelInvoke(nameof(StopWallJumping));
         } else
         {
+            anim.SetBool("isJumping", true);
             wallJumpingCounter -= Time.deltaTime;
         }
 
         if(Input.GetKeyDown(KeyCode.Z) && wallJumpingCounter > 0f ) {
             isWallJumping = true;
             anim.SetTrigger("takeOf");
-            anim.SetBool("IsWallSliding", false);
+            anim.SetBool("isWallSliding", false);
             rigidBody.velocity = new Vector2(wallJumpingDuration * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpingCounter = 0f;
 
@@ -87,6 +94,7 @@ public class SlidingController : MonoBehaviour
     private void StopWallJumping()
     {
         isWallJumping = false;
+        anim.SetBool("isJumping", false);
     }
 
     private void WallSlide()
@@ -94,12 +102,12 @@ public class SlidingController : MonoBehaviour
         if(IsWalled() && !jump.IsGrounded() && movement.horizontal != 0f)
         {
             isWallSliding= true;
-            anim.SetBool("IsWallSliding", true);
+            anim.SetBool("isWallSliding", true);
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -wallSlidingSpeed, float.MaxValue));
         } else
         {
             isWallSliding= false;
-            anim.SetBool("IsWallSliding", false);
+            anim.SetBool("isWallSliding", false);
         }
     }
 
