@@ -10,10 +10,13 @@ public class HitController : MonoBehaviour
     [SerializeField]
     private SlidingController slidingController;
 
+    private Timer timer;
+
     private bool isHiting;
 
     void Start()
     {
+        timer = gameObject.AddComponent<Timer>();
         anim = GetComponent<Animator>();
         slidingController = gameObject.GetComponent<SlidingController>();
     }
@@ -24,9 +27,12 @@ public class HitController : MonoBehaviour
         {
             isHiting = true;
             anim.SetBool("isHit", true);
+            timer.Duration = 2;
+            timer.Run();
         }
 
-        if (slidingController.isWallSliding)
+
+        if (slidingController.isWallSliding || timer.Finished)
         {
             isHiting = false;
         }
