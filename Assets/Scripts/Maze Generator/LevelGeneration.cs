@@ -77,8 +77,7 @@ public class LevelGeneration : MonoBehaviour
                 transform.position = pos;
 
                 int randRoom = Random.Range(1, 4);
-                GameObject room = Instantiate(rooms[randRoom], transform.position, Quaternion.identity);
-                roomTrues.Add(room);
+                roomTrues.Add(Instantiate(rooms[randRoom], transform.position, Quaternion.identity));
 
                 // Đảm bảo trình tạo cấp độ không di chuyển sang trái!
                 direction = Random.Range(1, 6);
@@ -106,8 +105,7 @@ public class LevelGeneration : MonoBehaviour
                 transform.position = pos;
 
                 int randRoom = Random.Range(1, 4);
-                GameObject room = Instantiate(rooms[randRoom], transform.position, Quaternion.identity);
-                roomTrues.Add(room);
+                roomTrues.Add(Instantiate(rooms[randRoom], transform.position, Quaternion.identity));
 
                 direction = Random.Range(3, 6);
             }
@@ -134,8 +132,7 @@ public class LevelGeneration : MonoBehaviour
                     if (downCounter >= 2)
                     {
                         previousRoom.GetComponent<Room>().RoomDestruction();
-                        GameObject room = Instantiate(rooms[4], transform.position, Quaternion.identity);
-                        roomTrues.Add(room);
+                        roomTrues.Add(Instantiate(rooms[4], transform.position, Quaternion.identity));
                     }
                     else
                     {
@@ -145,8 +142,7 @@ public class LevelGeneration : MonoBehaviour
                         {
                             randRoomDownOpening = 2;
                         }
-                        GameObject room = Instantiate(rooms[randRoomDownOpening], transform.position, Quaternion.identity);
-                        roomTrues.Add(room);
+                        roomTrues.Add(Instantiate(rooms[randRoomDownOpening], transform.position, Quaternion.identity));
                     }
 
                 }
