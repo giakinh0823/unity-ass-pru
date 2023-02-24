@@ -35,7 +35,7 @@ public class HitController : MonoBehaviour
         if (slidingController.isWallSliding || timer.Finished)
         {
             isHiting = false;
-        }
+        }   
         
         if(!isHiting)
         {
