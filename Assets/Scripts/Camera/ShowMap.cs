@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ShowMap : MonoBehaviour
+public class ShowMap : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField]
-    private Button button;
-
     [SerializeField]
     private GameObject showMap;
 
@@ -16,10 +14,9 @@ public class ShowMap : MonoBehaviour
     void Start()
     {
         isShowMap = false;
-        button.onClick.AddListener(OnButtonClick);
     }
 
-    public void OnButtonClick()
+    public void OnPointerClick(PointerEventData eventData)
     {
         isShowMap = !isShowMap;
         showMap.SetActive(isShowMap);
