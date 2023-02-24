@@ -5,7 +5,7 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class SlidingController : MonoBehaviour
 {
-    private bool isWallSliding;
+    public bool isWallSliding;
     private float wallSlidingSpeed;
 
     private bool isWallJumping;
