@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Enemy
+  - Observation
+  - Timer
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -18,9 +22,9 @@ TagManager:
   - Room
   - Ground
   - Wall
-  - 
-  - 
-  - 
+  - Observation
+  - Timer
+  - Coin
   - 
   - 
   - 
