@@ -1103,7 +1103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 5.4, z: -10}
+  m_LocalPosition: {x: -8.85, y: 5.48, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1126,7 +1126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   postionOffset: {x: 0, y: 0, z: -1}
-  xLimit: {x: -7.67, y: 27.41}
+  xLimit: {x: -8.85, y: 28.62}
   yLimit: {x: -45.78, y: 5.25}
   smoothTime: 0.2
 --- !u!114 &519420034
