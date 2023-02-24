@@ -27,7 +27,7 @@ public class LevelGeneration : MonoBehaviour
     [SerializeField]
     private PlayerController playerController;
 
-    List<GameObject> roomTrues = new List<GameObject>();
+    List<GameObject> roomTrues;
 
     private Transform startPoint;
     private Transform endPoint;
@@ -35,6 +35,7 @@ public class LevelGeneration : MonoBehaviour
 
     private void Start()
     {
+        roomTrues = new List<GameObject>();
         int randStartingPos = Random.Range(0, startingPositions.Length);
         transform.position = startingPositions[randStartingPos].position;
         startPoint = startingPositions[randStartingPos];
