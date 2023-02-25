@@ -6,17 +6,15 @@ public class HitController : MonoBehaviour
 {
     [SerializeField]
     private Animator anim;
-
     [SerializeField]
     private SlidingController slidingController;
 
-    private Timer timer;
+    private int hit;
 
-    private bool isHiting;
 
     void Start()
     {
-        timer = gameObject.AddComponent<Timer>();
+        hit = 0;
         anim = GetComponent<Animator>();
         slidingController = gameObject.GetComponent<SlidingController>();
     }
@@ -25,21 +23,16 @@ public class HitController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            isHiting = true;
-            anim.SetBool("isHit", true);
-            timer.Duration = 1;
-            timer.Run();
-        }
-
-
-        if (slidingController.isWallSliding || timer.Finished)
-        {
-            isHiting = false;
-        }   
-        
-        if(!isHiting)
-        {
-            anim.SetBool("isHit", false);
+            if (hit >= 2 && !slidingController.isWallSliding)
+            {
+                anim.SetTrigger("isLongHit");
+                hit = 0;
+            }
+            else if(!slidingController.isWallSliding)
+            {
+                anim.SetTrigger("isShortHit");
+                hit++;
+            }
         }
     }
 }

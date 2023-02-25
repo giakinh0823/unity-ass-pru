@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4666833919399310504}
   - component: {fileID: 6730161891277474313}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 7899257738339215015}
   - component: {fileID: 7899257738339215013}
   - component: {fileID: 5846555682255583607}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Observation
   m_TagString: Observation
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7899257739208093977}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Spine
   m_TagString: Observation
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 7899257739911745329}
   - component: {fileID: 7899257739911745342}
   - component: {fileID: 8331927005877597841}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Observation (1)
   m_TagString: Observation
   m_Icon: {fileID: 0}

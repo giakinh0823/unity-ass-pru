@@ -35,6 +35,7 @@ public class LevelGeneration : MonoBehaviour
 
     private void Start()
     {
+        playerController = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerController>(); 
         roomTrues = new List<GameObject>();
         int randStartingPos = Random.Range(0, startingPositions.Length);
         transform.position = startingPositions[randStartingPos].position;
