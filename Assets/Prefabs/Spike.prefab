@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5649295030580886060}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Spike
   m_TagString: Observation
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5827520565899159887}
   - component: {fileID: 4065370732196973929}
   - component: {fileID: 7995146700604303201}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Observation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5243464003037497715}
   - component: {fileID: 6866764277116401139}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
