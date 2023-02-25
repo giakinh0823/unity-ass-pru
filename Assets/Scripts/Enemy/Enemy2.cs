@@ -16,20 +16,32 @@ public class Enemy2 : MonoBehaviour
 
     void Update()
     {
-
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            currentHealth-=10;
+            Quaternion rotation = collision.gameObject.transform.rotation;
+            gameObject.transform.rotation = rotation;
+            currentHealth -=10;
             Debug.Log(currentHealth);
             animator.SetInteger("Health", currentHealth);
-            if(currentHealth <= 0)
+            animator.SetBool("IsAttack", true);
+            if (currentHealth <= 0)
             {
                 Destroy(gameObject, 3f);
             }
+
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            animator.SetBool("IsAttack", false);
         }
     }
 
