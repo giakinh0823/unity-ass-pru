@@ -27,7 +27,7 @@ public class HitController : MonoBehaviour
         {
             isHiting = true;
             anim.SetBool("isHit", true);
-            timer.Duration = 2;
+            timer.Duration = 1;
             timer.Run();
         }
 
