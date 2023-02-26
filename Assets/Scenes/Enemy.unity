@@ -1203,14 +1203,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206691243}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.8248, y: -3.4252, z: 0}
+  m_LocalRotation: {x: -0.0037098676, y: 0.9852039, z: -0.11531598, w: 0.12673448}
+  m_LocalPosition: {x: 0.31, y: -3.43, z: 0.00000008560279}
   m_LocalScale: {x: 0.30221972, y: 0.33734113, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 13.078, y: 165.093, z: -2.15}
 --- !u!114 &1206691249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1223,7 +1223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0814bcc276662814ba3452a700551671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 6088793995693563712, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
+  healthBar: {fileID: 6088793995693563712, guid: dcabd348b8a34f24b8b702789644cb5f, type: 3}
+  rigidbody2D: {fileID: 0}
+  moveSpeed: 2
 --- !u!43 &1212334459
 Mesh:
   m_ObjectHideFlags: 0
