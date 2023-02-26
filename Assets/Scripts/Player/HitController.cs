@@ -5,14 +5,9 @@ using UnityEngine;
 public class HitController : MonoBehaviour
 {
     [SerializeField]
-    private Animator anim;
-    [SerializeField]
     private SlidingController slidingController;
-
     [SerializeField]
-    private GameObject knife;
-    [SerializeField]
-    private GameObject gun;
+    private PlayerController playerController;
 
     private int hit;
 
@@ -20,24 +15,22 @@ public class HitController : MonoBehaviour
     void Start()
     {
         hit = 0;
-        anim = GetComponent<Animator>();
         slidingController = gameObject.GetComponent<SlidingController>();
+        playerController = gameObject.GetComponent<PlayerController>();
     }
 
     void Update()
     {
-        anim.SetBool("isKnife", knife.gameObject.activeSelf);
-        anim.SetBool("isGun", gun.gameObject.activeSelf);
         if (Input.GetKeyDown(KeyCode.X))
         {
             if (hit >= 2 && !slidingController.isWallSliding)
             {
-                anim.SetTrigger("isLongHit");
+                playerController.anim.SetTrigger("isLongHit");
                 hit = 0;
             }
             else if(!slidingController.isWallSliding)
             {
-                anim.SetTrigger("isShortHit");
+                playerController.anim.SetTrigger("isShortHit");
                 hit++;
             }
         }
