@@ -27,7 +27,10 @@ public class GlobalSpriteRerender : MonoBehaviour
             SpriteRenderer[] renderers = gameObject.GetComponentsInChildren<SpriteRenderer>();
             foreach (SpriteRenderer renderer in renderers)
             {
-                renderer.sprite = sprite;
+                if(renderer.sprite != sprite)
+                {
+                    renderer.sprite = sprite;
+                }
             }
         }
     }
