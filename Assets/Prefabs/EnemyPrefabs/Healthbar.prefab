@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6088793995693563717}
   - component: {fileID: 6088793995693563718}
   m_Layer: 0
-  m_Name: Healthbar2
+  m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6088793995693563712}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0.73, z: 0}
-  m_LocalScale: {x: 1, y: -0.2583318, z: 1}
+  m_LocalPosition: {x: -0.01, y: 0.6693, z: 0}
+  m_LocalScale: {x: 1, y: -0.13694169, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,3 +97,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f3c7a394d5a7c340add0517bdc7cecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  localScale: {x: 0, y: 0, z: 0}
