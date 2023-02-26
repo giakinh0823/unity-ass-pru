@@ -11,6 +11,8 @@ public class HitController : MonoBehaviour
 
     [SerializeField]
     private GameObject knife;
+    [SerializeField]
+    private GameObject gun;
 
     private int hit;
 
@@ -25,6 +27,7 @@ public class HitController : MonoBehaviour
     void Update()
     {
         anim.SetBool("isKnife", knife.gameObject.activeSelf);
+        anim.SetBool("isGun", gun.gameObject.activeSelf);
         if (Input.GetKeyDown(KeyCode.X))
         {
             if (hit >= 2 && !slidingController.isWallSliding)
