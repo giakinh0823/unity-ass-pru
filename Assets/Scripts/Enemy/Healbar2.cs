@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Healbar : MonoBehaviour
+public class Healbar2 : MonoBehaviour
 {
     Vector3 localScale;
     // Start is called before the first frame update
