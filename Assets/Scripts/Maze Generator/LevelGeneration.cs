@@ -32,7 +32,6 @@ public class LevelGeneration : MonoBehaviour
     private Transform startPoint;
     private Transform endPoint;
 
-
     private void Start()
     {
         playerController = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerController>(); 
