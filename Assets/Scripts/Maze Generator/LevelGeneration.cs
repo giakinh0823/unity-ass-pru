@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,13 +24,25 @@ public class LevelGeneration : MonoBehaviour
     [SerializeField]
     public LayerMask whatIsRoom;
 
+    [SerializeField]
+    private PlayerController playerController;
+
+    List<GameObject> roomTrues;
+
+    private Transform startPoint;
+    private Transform endPoint;
+
 
     private void Start()
     {
-    
+        playerController = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerController>(); 
+        roomTrues = new List<GameObject>();
         int randStartingPos = Random.Range(0, startingPositions.Length);
         transform.position = startingPositions[randStartingPos].position;
+        startPoint = startingPositions[randStartingPos];
         Instantiate(rooms[1], transform.position, Quaternion.identity);
+        playerController.transform.position = new Vector3(startPoint.position.x, startPoint.position.y -2f, 0f);
+        playerController.gameObject.SetActive(false);
         direction = Random.Range(1, 6);
     }
 
@@ -65,7 +78,7 @@ public class LevelGeneration : MonoBehaviour
                 transform.position = pos;
 
                 int randRoom = Random.Range(1, 4);
-                Instantiate(rooms[randRoom], transform.position, Quaternion.identity);
+                roomTrues.Add(Instantiate(rooms[randRoom], transform.position, Quaternion.identity));
 
                 // Đảm bảo trình tạo cấp độ không di chuyển sang trái!
                 direction = Random.Range(1, 6);
@@ -93,7 +106,7 @@ public class LevelGeneration : MonoBehaviour
                 transform.position = pos;
 
                 int randRoom = Random.Range(1, 4);
-                Instantiate(rooms[randRoom], transform.position, Quaternion.identity);
+                roomTrues.Add(Instantiate(rooms[randRoom], transform.position, Quaternion.identity));
 
                 direction = Random.Range(3, 6);
             }
@@ -120,7 +133,7 @@ public class LevelGeneration : MonoBehaviour
                     if (downCounter >= 2)
                     {
                         previousRoom.GetComponent<Room>().RoomDestruction();
-                        Instantiate(rooms[4], transform.position, Quaternion.identity);
+                        roomTrues.Add(Instantiate(rooms[4], transform.position, Quaternion.identity));
                     }
                     else
                     {
@@ -130,7 +143,7 @@ public class LevelGeneration : MonoBehaviour
                         {
                             randRoomDownOpening = 2;
                         }
-                        Instantiate(rooms[randRoomDownOpening], transform.position, Quaternion.identity);
+                        roomTrues.Add(Instantiate(rooms[randRoomDownOpening], transform.position, Quaternion.identity));
                     }
 
                 }
@@ -142,15 +155,16 @@ public class LevelGeneration : MonoBehaviour
 
                 // Đảm bảo căn phòng chúng tôi ghé vào có cửa mở TOP !
                 int randRoom = Random.Range(3, 5);
-                Instantiate(rooms[randRoom], transform.position, Quaternion.identity);
+                roomTrues.Add(Instantiate(rooms[randRoom], transform.position, Quaternion.identity));
 
                 direction = Random.Range(1, 6);
             }
             else
             {
                 stopGeneration = true;
+                playerController.gameObject.SetActive(true);
+                endPoint = roomTrues[roomTrues.Count - 1].transform;
             }
-
         }
     }
 }
