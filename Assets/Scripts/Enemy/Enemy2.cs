@@ -5,13 +5,14 @@ using UnityEngine;
 public class Enemy2 : MonoBehaviour
 {
     private Animator animator;
-    public static float currentHealth;
+    private float damage = 0.05f;
+    public static float currentHealth = 1f;
     public GameObject healthBar;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        currentHealth = animator.GetFloat("Health");
+        animator.SetFloat("Health", currentHealth);
     }
 
     void Update()
@@ -22,15 +23,16 @@ public class Enemy2 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Instantiate(healthBar, new Vector2(transform.position.x, transform.position.y + 0.7f), Quaternion.identity);
+            healthBar = Instantiate(healthBar, new Vector2(transform.position.x, transform.position.y + 0.7f), Quaternion.identity);
             Quaternion rotation = collision.gameObject.transform.rotation;
             gameObject.transform.rotation = rotation;
-            currentHealth -=0.05f;
+            currentHealth -= damage;
             Debug.Log(currentHealth);
             animator.SetFloat("Health", currentHealth);
             animator.SetBool("IsAttack", true);
             if (currentHealth <= 0)
             {
+                Destroy(healthBar);
                 Destroy(gameObject, 3f);
             }
         }

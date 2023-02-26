@@ -120,8 +120,8 @@ TextureImporter:
       name: bichet_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 12
+        x: 80
+        y: 44
         width: 111
         height: 114
       alignment: 0
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2573244d7d09687429a48aebc2fef3eb
-      internalID: 1598072291
+      spriteID: 1ad6a49a9305eb347b008f76eac9ef4f
+      internalID: -79753543
       vertices: []
       indices: 
       edges: []
@@ -141,10 +141,10 @@ TextureImporter:
       name: bichet_1
       rect:
         serializedVersion: 2
-        x: 154
-        y: 24
+        x: 230
+        y: 56
         width: 116
-        height: 113
+        height: 117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03d019263145f574b9fcb994eec939dd
-      internalID: -1750575486
+      spriteID: fe1b9eeee96870d40adbe152c54ab516
+      internalID: 1586440761
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
       name: bichet_2
       rect:
         serializedVersion: 2
-        x: 306
-        y: 2
+        x: 382
+        y: 34
         width: 104
         height: 113
       alignment: 0
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a00831578672a9a4f9cb3e5e58eb7144
-      internalID: 77007196
+      spriteID: 5b7dba94fefa51047aa7ed6cee81baf4
+      internalID: -437421693
       vertices: []
       indices: 
       edges: []
@@ -183,8 +183,8 @@ TextureImporter:
       name: bichet_3
       rect:
         serializedVersion: 2
-        x: 458
-        y: 2
+        x: 534
+        y: 34
         width: 110
         height: 116
       alignment: 0
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdd286c22c6fe084e8f3067dd1bb590f
-      internalID: -1145208155
+      spriteID: 4a7cc3b6cffb9454ba640b6072241595
+      internalID: -1310779296
       vertices: []
       indices: 
       edges: []
@@ -204,8 +204,8 @@ TextureImporter:
       name: bichet_4
       rect:
         serializedVersion: 2
-        x: 651
-        y: 37
+        x: 727
+        y: 69
         width: 6
         height: 6
       alignment: 0
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0929c6c37740fa74da87d88a66ade2b2
-      internalID: 1649729208
+      spriteID: ff3310efee6dea64381454e6c5975a3d
+      internalID: -62564114
       vertices: []
       indices: 
       edges: []
@@ -225,8 +225,8 @@ TextureImporter:
       name: bichet_5
       rect:
         serializedVersion: 2
-        x: 660
-        y: 2
+        x: 736
+        y: 34
         width: 134
         height: 77
       alignment: 0
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55ed181fc2ce97343afedb4134725611
-      internalID: -1869809935
+      spriteID: 88f7d30d4d7882c4995b32f843698ad2
+      internalID: 112695077
       vertices: []
       indices: 
       edges: []
@@ -246,8 +246,8 @@ TextureImporter:
       name: bichet_6
       rect:
         serializedVersion: 2
-        x: 639
-        y: 29
+        x: 715
+        y: 61
         width: 15
         height: 6
       alignment: 0
@@ -257,8 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a09b61d7325503d41a89cde815ab9620
-      internalID: -78937395
+      spriteID: bdc7d8130cb5ae246b180fb92512d525
+      internalID: 790073459
       vertices: []
       indices: 
       edges: []
@@ -267,8 +267,8 @@ TextureImporter:
       name: bichet_7
       rect:
         serializedVersion: 2
-        x: 643
-        y: 14
+        x: 719
+        y: 46
         width: 13
         height: 13
       alignment: 0
@@ -278,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35488d52a2a446341923fc19899f36c4
-      internalID: 724479824
+      spriteID: 509f072088526a843926d605f4b355ff
+      internalID: 976162337
       vertices: []
       indices: 
       edges: []
@@ -295,14 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bichet_7: 724479824
-      bichet_2: 77007196
-      bichet_1: -1750575486
-      bichet_3: -1145208155
-      bichet_4: 1649729208
-      bichet_6: -78937395
-      bichet_5: -1869809935
-      bichet_0: 1598072291
+      bichet_7: 976162337
+      bichet_2: -437421693
+      bichet_1: 1586440761
+      bichet_3: -1310779296
+      bichet_4: -62564114
+      bichet_6: 790073459
+      bichet_5: 112695077
+      bichet_0: -79753543
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

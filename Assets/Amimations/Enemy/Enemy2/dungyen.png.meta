@@ -120,8 +120,8 @@ TextureImporter:
       name: dungyen_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 11
+        x: 51
+        y: 32
         width: 111
         height: 114
       alignment: 0
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed5affa4d41fab04bac18e3579e3f8fa
-      internalID: -450797117
+      spriteID: 2621eee472d0e6a4bb00b1db824b6804
+      internalID: 1437563186
       vertices: []
       indices: 
       edges: []
@@ -141,10 +141,10 @@ TextureImporter:
       name: dungyen_1
       rect:
         serializedVersion: 2
-        x: 154
-        y: 23
+        x: 201
+        y: 44
         width: 116
-        height: 113
+        height: 117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55c201312e50bfe48a0650b5b85c42c0
-      internalID: -1574170440
+      spriteID: bc489b4140d296f48ac65c47054a9cc6
+      internalID: 176434411
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
       name: dungyen_2
       rect:
         serializedVersion: 2
-        x: 306
-        y: 1
+        x: 353
+        y: 22
         width: 104
         height: 113
       alignment: 0
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5394ecf33d7de744b1239a1d1823c04
-      internalID: -1117800602
+      spriteID: 61d1d17f19b120c488c0eaf12fb49d18
+      internalID: 1940904637
       vertices: []
       indices: 
       edges: []
@@ -183,8 +183,8 @@ TextureImporter:
       name: dungyen_3
       rect:
         serializedVersion: 2
-        x: 458
-        y: 1
+        x: 505
+        y: 22
         width: 110
         height: 116
       alignment: 0
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1203cc0be0fb7fe4b986f65e9b316a91
-      internalID: 2006156437
+      spriteID: c885c631976fac549ad5474b0cb8a466
+      internalID: -196491864
       vertices: []
       indices: 
       edges: []
@@ -211,10 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dungyen_2: -1117800602
-      dungyen_0: -450797117
-      dungyen_1: -1574170440
-      dungyen_3: 2006156437
+      dungyen_2: 1940904637
+      dungyen_0: 1437563186
+      dungyen_1: 176434411
+      dungyen_3: -196491864
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
