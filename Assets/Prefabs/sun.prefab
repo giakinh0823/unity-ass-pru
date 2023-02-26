@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2044312533871572930}
   m_Layer: 13
-  m_Name: Sun
+  m_Name: sun
   m_TagString: Observation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 48eb78b2ded78ff4d9fa3b330000e603, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 642dbe0ff5b6f544aacbddc6fd00722f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,7 +134,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 5.12, y: 5.12}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
