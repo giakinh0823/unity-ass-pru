@@ -180,9 +180,9 @@ BoxCollider2D:
   m_GameObject: {fileID: 5560369465959164206}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 78c123b18857e9d4faf8d645cbcc5d87, type: 2}
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.021547139, y: -0.0012630522}
   m_SpriteTilingProperty:
