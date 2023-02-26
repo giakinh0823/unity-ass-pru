@@ -6,9 +6,11 @@ public class EnemyMushroom : MonoBehaviour
 {
     private Animator animator;
     private float damage = 0.05f;
-    public static float currentHealth = 1f;
+    private float currentHealth = 1f;
+    [SerializeField]
+    private BoxCollider2D boxCollider2D;
     public GameObject healthBar;
-    public Healbar healbar;
+    private Healbar healbar;
 
     // Start is called before the first frame update
     void Start()
