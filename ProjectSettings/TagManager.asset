@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Enemy
+  - Observation
+  - Timer
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -12,14 +16,14 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Minimap
+  - Showmap
+  - Player
   - Room
   - Ground
   - Wall
-  - 
-  - 
+  - Observation
+  - Item
   - 
   - 
   - 
@@ -39,6 +43,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Player
+    uniqueID: 1828877013
+    locked: 0
+  - name: Item
+    uniqueID: 2489793975
+    locked: 0
+  - name: Observation
+    uniqueID: 212391479
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 4237683977
+    locked: 0
+  - name: Wall
+    uniqueID: 4247222889
     locked: 0

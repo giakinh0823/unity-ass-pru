@@ -13,6 +13,7 @@ public class MovementController : MonoBehaviour
 
     public float horizontal;
     public bool isFaceRight = true;
+    public bool isRuning;
 
     private void Start()
     {
@@ -30,10 +31,12 @@ public class MovementController : MonoBehaviour
         if (horizontal != 0)
         {
             anim.SetBool("isRunning", true);
+            isRuning = true;
         }
         else
         {
             anim.SetBool("isRunning", false);
+            isRuning = false;
         }
 
         Flip();
