@@ -8,7 +8,6 @@ public class EnemyMushroom : MonoBehaviour
     private float damage = 0.05f;
     private float currentHealth = 1f;
     [SerializeField]
-    private BoxCollider2D boxCollider2D;
     public GameObject healthBar;
     private Healbar healbar;
 
