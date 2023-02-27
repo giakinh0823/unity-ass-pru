@@ -21,7 +21,7 @@ public class GlobalSpriteRerender : MonoBehaviour
 
     public void UpdateSpriteGround()
     {
-        /**GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(prefab.tag);
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(prefab.tag);
         foreach (GameObject gameObject in gameObjects)
         {
             SpriteRenderer[] renderers = gameObject.GetComponentsInChildren<SpriteRenderer>();
@@ -33,6 +33,5 @@ public class GlobalSpriteRerender : MonoBehaviour
                 }
             }
         }
-        **/
     }
 }
