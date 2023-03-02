@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 4cb48f2f33cc6474ca6f18f4f3817b8e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7799243433175822995
+    second: dungyen_0
+  - first:
+      213: -3218457204817609021
+    second: dungyen_1
+  - first:
+      213: -3909986691766428843
+    second: dungyen_2
+  - first:
+      213: -307593784032429280
+    second: dungyen_3
+  - first:
+      213: 3164614044553451969
+    second: dungyen_4
+  - first:
+      213: -7480848934050426408
+    second: dungyen_5
+  - first:
+      213: 4369674338651643174
+    second: dungyen_6
+  - first:
+      213: 6341253845629143614
+    second: dungyen_7
+  - first:
+      213: -2753622528356017653
+    second: dungyen_8
+  - first:
+      213: 4443432826388788195
+    second: dungyen_9
+  - first:
+      213: 4108122059018169155
+    second: dungyen_10
+  - first:
+      213: -654184861219788890
+    second: dungyen_11
+  - first:
+      213: 8996427242372308478
+    second: dungyen_12
+  - first:
+      213: 7139294503058431261
+    second: dungyen_13
+  - first:
+      213: -1262065320986126300
+    second: dungyen_14
+  - first:
+      213: -2815240451896403393
+    second: dungyen_15
+  - first:
+      213: -568616506722042810
+    second: dungyen_16
+  - first:
+      213: -2939969370292891248
+    second: dungyen_17
+  - first:
+      213: -6806391514963253534
+    second: dungyen_18
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dungyen_0
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 79
+        width: 183
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b30708eaaaee2354eac615601878f3a7
+      internalID: -131669518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_1
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 79
+        width: 182
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc82a975561ffed47ab5f0a528992f18
+      internalID: -1661333181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_2
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 172
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f22f2e81f7b8144938d0df52cca62b
+      internalID: -2119519616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_3
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 193
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d11a1ee33232f140b876ab22c28d4a7
+      internalID: -339251092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_4
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 79
+        width: 182
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dfd176f9faf6944aba6153f519f96e1
+      internalID: 1908827224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_5
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 0
+        width: 266
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cfa7f20338dc114f9990508ebc0388e
+      internalID: 642550526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_6
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 71
+        width: 208
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c227cd8b7cb398843b2b8fadb13e13ed
+      internalID: -1893995001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_7
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 161
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50005510206fccf4cb9bef50876c73c0
+      internalID: -1721058329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_8
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 176
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8d2c51226cd6544591688c80da0961f
+      internalID: 732051388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_9
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 165
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d1b55f57db2cc4c95800a5533e3008
+      internalID: 1454201343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_10
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 146
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0935a41d776b6f47b558e07a64f88cc
+      internalID: 2112931064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_11
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 9
+        width: 265
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c24f0e12f76036c489ed56eaf34fc434
+      internalID: -592298036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_12
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 6
+        width: 266
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a32adf65d9330d42b7330079f740026
+      internalID: 595265627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_13
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 9
+        width: 266
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6fc496dd29480f4aaa7cfc4a2a293f2
+      internalID: -1694363295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_14
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 23
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcf86ce05ddf5234480eb4a448379baa
+      internalID: -108615658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_15
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 27
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42374e300cf73164a9a17a4f578a98bc
+      internalID: -509039757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_16
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 22
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3405aeff0a62c24fbb0d0a889a821c5
+      internalID: 938742491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_17
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 26
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31010c8d267577a4c96b596e7a5d093c
+      internalID: 616906126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_18
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 27
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fcdd5a4bba752f4ab51086a9f6beab5
+      internalID: 1034639073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_19
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 26
+        width: 215
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43d006cd0e5c65418f2c3cea35398ec
+      internalID: -570667477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_20
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 16
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22b0668790bcc2d4eb3b5d52898f416b
+      internalID: -1189556979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_21
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 0
+        width: 5
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6952d8c721b2c894083ae09c28fbe97c
+      internalID: -1597956498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_22
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 12
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ddca854c69e3494d9a23d1877f18cf0
+      internalID: -698914567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_23
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 4
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc930ec371763b40bda1558dd4235a2
+      internalID: -1941000865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_24
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 0
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc071d8c3dceb4438fd13ce282d85df
+      internalID: -880900783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungyen_25
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 0
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d797132ad4e2ac543bad88ef5c649f94
+      internalID: -850290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ed2cc10946b28c3499ff458cd7b75dde
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      dungyen_6: -1893995001
+      dungyen_17: 616906126
+      dungyen_19: -570667477
+      dungyen_21: -1597956498
+      dungyen_23: -1941000865
+      dungyen_18: 1034639073
+      dungyen_1: -1661333181
+      dungyen_5: 642550526
+      dungyen_2: -2119519616
+      dungyen_8: 732051388
+      dungyen_25: -850290
+      dungyen_0: -131669518
+      dungyen_11: -592298036
+      dungyen_15: -509039757
+      dungyen_9: 1454201343
+      dungyen_10: 2112931064
+      dungyen_20: -1189556979
+      dungyen_12: 595265627
+      dungyen_14: -108615658
+      dungyen_24: -880900783
+      dungyen_7: -1721058329
+      dungyen_4: 1908827224
+      dungyen_13: -1694363295
+      dungyen_16: 938742491
+      dungyen_22: -698914567
+      dungyen_3: -339251092
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

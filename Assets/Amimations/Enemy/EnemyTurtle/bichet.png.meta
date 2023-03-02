@@ -1,0 +1,600 @@
+fileFormatVersion: 2
+guid: 1673ffb8cd40b604d803e2774a22e397
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1675875281718561432
+    second: bichet_0
+  - first:
+      213: -5061785406394363919
+    second: bichet_1
+  - first:
+      213: -4596493682963274378
+    second: bichet_2
+  - first:
+      213: -5040831092405686025
+    second: bichet_3
+  - first:
+      213: 3524712375036118754
+    second: bichet_4
+  - first:
+      213: -1701818081563907095
+    second: bichet_5
+  - first:
+      213: -5738024351196501605
+    second: bichet_6
+  - first:
+      213: -2567816754534129707
+    second: bichet_7
+  - first:
+      213: -7045039090187155829
+    second: bichet_8
+  - first:
+      213: -6375567557468672926
+    second: bichet_9
+  - first:
+      213: 3372023362446357885
+    second: bichet_10
+  - first:
+      213: -7426301425524138259
+    second: bichet_11
+  - first:
+      213: -2374945987392371762
+    second: bichet_12
+  - first:
+      213: 6241876310948370601
+    second: bichet_13
+  - first:
+      213: 3164067195891845954
+    second: bichet_14
+  - first:
+      213: -4130011993716868400
+    second: bichet_15
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bichet_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 56
+        width: 182
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b1a71c759c97c4c9c3e3e2054efc06
+      internalID: -1408612644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_1
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 149
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342608e2697a7a643a6e8d2ae85cc416
+      internalID: 1752748424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_2
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 161
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10e4c196bfaedc14fb9b7e3dc7ee58f3
+      internalID: 856059057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_3
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 170
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde5eeadbd61e56458997d7ffe4f28b9
+      internalID: 482759250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_4
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 56
+        width: 182
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84bd6704d040cfc44a070c60a4cacc7a
+      internalID: 547914827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_5
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 0
+        width: 266
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f849d4f24d9ba7e4295489a59e2e76b4
+      internalID: -2136081268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_6
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 48
+        width: 208
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b4e736440b3c594580d653cdf47b719
+      internalID: -325121176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_7
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 138
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c2652be09e0ef4499e4a33eab33fc3c
+      internalID: -1467878615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_8
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 153
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fab018003a800846827b24667ca451d
+      internalID: -606509485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_9
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 142
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a252c4959b50e5747b8188102b3c2c55
+      internalID: -2041643654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_10
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 123
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58ad5aa971b13f49bbc1b0a26b9f9ad
+      internalID: -1401221536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_11
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 266
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1017c576c5ab744d92a0f666ee5dee1
+      internalID: 1892771486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_12
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 0
+        width: 266
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b53d0b2bd5752e478680f28617c55ee
+      internalID: -1957137550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_13
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 0
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c6d4983ba400d40ba293c1ef53ed4f
+      internalID: 1202228751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_14
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 4
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f6eee3601c948340af7aaa7964c4047
+      internalID: 189788865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_15
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 0
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1126337649b1f504d8a3e9f4eea41a7b
+      internalID: 1189141558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_16
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 3
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241ac305407ecbb4fb776cd78efb4c35
+      internalID: -416748979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_17
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 4
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6385854f541a6e4aa936101b198b05a
+      internalID: -842157048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_18
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 3
+        width: 215
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e69a6616e3c55b4d8607c05f06f85c0
+      internalID: -611965342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bichet_19
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 0
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7772aa8c8187d944b957e086445c7734
+      internalID: -2016671944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5f1e82c3aeba0bd4988b6cbc70604c30
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      bichet_17: -842157048
+      bichet_7: -1467878615
+      bichet_13: 1202228751
+      bichet_0: -1408612644
+      bichet_5: -2136081268
+      bichet_14: 189788865
+      bichet_1: 1752748424
+      bichet_11: 1892771486
+      bichet_15: 1189141558
+      bichet_12: -1957137550
+      bichet_3: 482759250
+      bichet_19: -2016671944
+      bichet_2: 856059057
+      bichet_4: 547914827
+      bichet_18: -611965342
+      bichet_6: -325121176
+      bichet_16: -416748979
+      bichet_9: -2041643654
+      bichet_10: -1401221536
+      bichet_8: -606509485
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
