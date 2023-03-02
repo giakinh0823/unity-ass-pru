@@ -39,6 +39,7 @@ public class EnemyMushroom : MonoBehaviour
             
             if (currentHealth <= 0)
             {
+                currentHealth = 0;
                 Destroy(gameObject, 2f);
             }
         }

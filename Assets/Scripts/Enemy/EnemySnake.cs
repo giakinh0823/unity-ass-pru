@@ -32,6 +32,7 @@ public class EnemySnake : MonoBehaviour
             healthBar.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
             gameObject.transform.rotation = rotation;
+            Debug.Log(currentHealth);
             currentHealth -= damage;
 
 
@@ -40,6 +41,7 @@ public class EnemySnake : MonoBehaviour
 
             if (currentHealth <= 0)
             {
+                currentHealth = 0;
                 Destroy(gameObject, 2f);
             }
         }
