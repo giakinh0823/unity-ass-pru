@@ -17,6 +17,11 @@ public class JumpController : MonoBehaviour
     public float checkRadius;
     [SerializeField]
     public LayerMask whatIsGround;
+    [SerializeField]
+    public AudioSource soundRun;
+
+    [SerializeField]
+    public AudioSource soundJumpDown;
 
     private float jumpTimeCounter;
     [SerializeField]
@@ -51,6 +56,7 @@ public class JumpController : MonoBehaviour
         else
         {
             anim.SetBool("isJumping", true);
+            soundRun.Stop();
         }
 
 
@@ -65,6 +71,7 @@ public class JumpController : MonoBehaviour
             {
                 isJumping = false;
             }
+
         }
 
         if (Input.GetKeyUp(KeyCode.Z))
@@ -88,4 +95,8 @@ public class JumpController : MonoBehaviour
         return Physics2D.OverlapCircle(groundPos.position, checkRadius, whatIsGround);
     }
 
+    public void playSoundJumpDown()
+    {
+        soundJumpDown.Play();
+    }
 }

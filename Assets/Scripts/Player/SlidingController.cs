@@ -28,6 +28,8 @@ public class SlidingController : MonoBehaviour
     private JumpController jump;
     [SerializeField]
     private MovementController movement;
+    [SerializeField]
+    private AudioSource wallSlidingSound;
 
     private void Start()
     {
@@ -109,5 +111,10 @@ public class SlidingController : MonoBehaviour
     private bool IsWalled()
     {
         return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
+    }
+
+    public void playSoundWallSliding()
+    {
+        wallSlidingSound.Play();
     }
 }
