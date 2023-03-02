@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5560369465959164195}
   - component: {fileID: 5560369465959164196}
   - component: {fileID: 3443686485420060704}
+  - component: {fileID: 1861420281966986940}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: Untagged
@@ -125,7 +126,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 78c123b18857e9d4faf8d645cbcc5d87, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -195,6 +196,52 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 2.1335325, y: 1.0781548}
+  m_EdgeRadius: 0
+--- !u!61 &1861420281966986940
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5560369465959164206}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 32503
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 32503
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 32503
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 32503
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.018576443, y: 0.018013388}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.78, y: 1.43}
+    newSize: {x: 1.78, y: 1.43}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.1484085, y: 1.2066326}
   m_EdgeRadius: 0
 --- !u!1001 &8967016667421500349
 PrefabInstance:
