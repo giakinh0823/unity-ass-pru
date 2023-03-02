@@ -15,6 +15,9 @@ public class MovementController : MonoBehaviour
     public bool isFaceRight = true;
     public bool isRuning;
 
+    [SerializeField]
+    public Joystick joystick;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -26,7 +29,13 @@ public class MovementController : MonoBehaviour
     {
 
         horizontal = Input.GetAxisRaw("Horizontal");
+        if(horizontal == 0)
+        {
+            horizontal = Mathf.Round(joystick.Horizontal);
+        }
+
         rigidBody.velocity = new Vector2(horizontal * speed, rigidBody.velocity.y);
+        Debug.Log(horizontal);
 
         if (horizontal != 0)
         {
