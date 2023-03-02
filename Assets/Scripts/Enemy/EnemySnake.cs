@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMushroom : MonoBehaviour
+public class EnemySnake : MonoBehaviour
 {
+    // Start is called before the first frame update
     private Animator animator;
     private float damage = 0.05f;
-    private float currentHealth = 1f;
+    private float currentHealth = 1.5f;
     [SerializeField]
     public GameObject healthBar;
     private Healbar healbar;
@@ -31,12 +32,13 @@ public class EnemyMushroom : MonoBehaviour
             healthBar.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
             gameObject.transform.rotation = rotation;
+            Debug.Log(currentHealth);
             currentHealth -= damage;
-           
+
 
             animator.SetFloat("Health", currentHealth);
             animator.SetBool("IsAttack", true);
-            
+
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
@@ -53,7 +55,4 @@ public class EnemyMushroom : MonoBehaviour
             animator.SetBool("IsAttack", false);
         }
     }
-
-
-
 }
