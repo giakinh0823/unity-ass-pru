@@ -10,6 +10,8 @@ public class MovementController : MonoBehaviour
     public Rigidbody2D rigidBody;
     [SerializeField]
     private Animator anim;
+    [SerializeField]
+    public AudioSource soundRun;
 
     public float horizontal;
     public bool isFaceRight = true;
@@ -41,11 +43,17 @@ public class MovementController : MonoBehaviour
         {
             anim.SetBool("isRunning", true);
             isRuning = true;
+            if (!soundRun.isPlaying)
+            {
+                soundRun.pitch = 1.5f;
+                soundRun.Play();
+            }
         }
         else
         {
             anim.SetBool("isRunning", false);
             isRuning = false;
+            soundRun.Stop();
         }
 
         Flip();
