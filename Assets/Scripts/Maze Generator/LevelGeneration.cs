@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Net;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -34,13 +32,13 @@ public class LevelGeneration : MonoBehaviour
 
     private void Start()
     {
-        playerController = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerController>(); 
+        playerController = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerController>();
         roomTrues = new List<GameObject>();
         int randStartingPos = Random.Range(0, startingPositions.Length);
         transform.position = startingPositions[randStartingPos].position;
         startPoint = startingPositions[randStartingPos];
         Instantiate(rooms[1], transform.position, Quaternion.identity);
-        playerController.transform.position = new Vector3(startPoint.position.x, startPoint.position.y -2f, 0f);
+        playerController.transform.position = new Vector3(startPoint.position.x, startPoint.position.y - 2f, 0f);
         playerController.gameObject.SetActive(false);
         direction = Random.Range(1, 6);
     }

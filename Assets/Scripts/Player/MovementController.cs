@@ -37,8 +37,6 @@ public class MovementController : MonoBehaviour
         }
 
         rigidBody.velocity = new Vector2(horizontal * speed, rigidBody.velocity.y);
-        Debug.Log(horizontal);
-
         if (horizontal != 0)
         {
             anim.SetBool("isRunning", true);
@@ -47,6 +45,7 @@ public class MovementController : MonoBehaviour
             {
                 soundRun.pitch = 1.5f;
                 soundRun.Play();
+                Debug.Log("Running sound play");
             }
         }
         else
@@ -54,6 +53,7 @@ public class MovementController : MonoBehaviour
             anim.SetBool("isRunning", false);
             isRuning = false;
             soundRun.Stop();
+            Debug.Log("Running sound stop");
         }
 
         Flip();
