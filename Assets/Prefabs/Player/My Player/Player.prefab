@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slidingController: {fileID: 1510014118724974964}
-  playerController: {fileID: 0}
+  playerController: {fileID: -3017213790409573602}
 --- !u!114 &3763689777161444118
 MonoBehaviour:
   m_ObjectHideFlags: 0
