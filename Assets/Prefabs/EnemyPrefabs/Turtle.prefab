@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eee8359ca3bd3e41a2383653f3217d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 4862156797749469221}
+  healbar: {fileID: 5709425623127342006}
 --- !u!61 &-1443024240825277154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -325,8 +325,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6088793995693563719, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
   m_PrefabInstance: {fileID: 1659123712261308261}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4862156797749469221 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6088793995693563712, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
+--- !u!114 &5709425623127342006 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6358397005567853779, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
   m_PrefabInstance: {fileID: 1659123712261308261}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3c7a394d5a7c340add0517bdc7cecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

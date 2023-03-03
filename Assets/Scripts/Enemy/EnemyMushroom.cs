@@ -8,7 +8,6 @@ public class EnemyMushroom : MonoBehaviour
     private float damage = 0.05f;
     private float currentHealth = 1f;
     [SerializeField]
-    public GameObject healthBar;
     private Healbar healbar;
 
     // Start is called before the first frame update
@@ -16,7 +15,6 @@ public class EnemyMushroom : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         animator.SetFloat("Health", currentHealth);
-        healbar = healthBar.gameObject.GetComponent<Healbar>();
     }
 
     private void Update()
@@ -28,7 +26,7 @@ public class EnemyMushroom : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            healthBar.SetActive(true);
+            healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
             gameObject.transform.rotation = rotation;
             currentHealth -= damage;

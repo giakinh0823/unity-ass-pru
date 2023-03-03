@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -7480580546116977849}
   m_Layer: 0
   m_Name: Snake
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04dbab7553562d4a9b50e04b13099d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 6921569702689272707}
+  healbar: {fileID: 7803743622460434448}
 --- !u!61 &7985206079722690806
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -312,13 +312,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
---- !u!1 &6921569702689272707 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6088793995693563712, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
-  m_PrefabInstance: {fileID: 3779055660914633923}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6921569702689272708 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6088793995693563719, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
   m_PrefabInstance: {fileID: 3779055660914633923}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7803743622460434448 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6358397005567853779, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
+  m_PrefabInstance: {fileID: 3779055660914633923}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3c7a394d5a7c340add0517bdc7cecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
