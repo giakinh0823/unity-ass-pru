@@ -9,7 +9,6 @@ public class EnemyTurtle : MonoBehaviour
     private float damage = 0.05f;
     private float currentHealth = 0.5f;
     [SerializeField]
-    public GameObject healthBar;
     private Healbar healbar;
 
     // Start is called before the first frame update
@@ -17,7 +16,6 @@ public class EnemyTurtle : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         animator.SetFloat("Health", currentHealth);
-        healbar = healthBar.gameObject.GetComponent<Healbar>();
     }
 
     private void Update()
@@ -29,7 +27,7 @@ public class EnemyTurtle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            healthBar.SetActive(true);
+            healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
             gameObject.transform.rotation = rotation;
             currentHealth -= damage;

@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   rigidBody: {fileID: 50208215975462790}
-  anim: {fileID: 0}
+  anim: {fileID: 95318426618180248}
   soundRun: {fileID: -5364380715064108303}
   horizontal: 0
   isFaceRight: 1
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isWallSliding: 0
-  anim: {fileID: 0}
+  anim: {fileID: 95318426618180248}
   wallCheck: {fileID: 8039179124996981337}
   wallLayer:
     serializedVersion: 2

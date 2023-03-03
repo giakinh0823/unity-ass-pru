@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1861420281966986940}
   m_Layer: 0
   m_Name: Mushroom
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5264c105979503a49988a97d341eaa51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 2886389303044406525}
+  healbar: {fileID: 2615657096002004846}
 --- !u!61 &3443686485420060704
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -312,13 +312,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
+--- !u!114 &2615657096002004846 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6358397005567853779, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
+  m_PrefabInstance: {fileID: 8967016667421500349}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3c7a394d5a7c340add0517bdc7cecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2886389303044406522 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6088793995693563719, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
-  m_PrefabInstance: {fileID: 8967016667421500349}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2886389303044406525 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6088793995693563712, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
   m_PrefabInstance: {fileID: 8967016667421500349}
   m_PrefabAsset: {fileID: 0}
