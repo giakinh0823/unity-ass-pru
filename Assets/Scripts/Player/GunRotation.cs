@@ -8,13 +8,20 @@ public class GunRotation : MonoBehaviour
     public float rotationSpeed = 50f;
     [SerializeField]
     public PlayerController playerController;
+    [SerializeField]
+    private Animator animator;
+    [SerializeField]
+    public GameObject gun;
 
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
         Joystick joystick = playerController.joystick;
-        angle = Mathf.Atan2(joystick.Direction.y, joystick.Direction.x) * Mathf.Rad2Deg;
-        var lookRotation = Quaternion.Euler(angle * Vector3.forward);
-        transform.rotation = lookRotation;
+        animator.SetFloat("JoystickVertical", joystick.Vertical);
+        Debug.Log(joystick.Vertical);
     }
 }

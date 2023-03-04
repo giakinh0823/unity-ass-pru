@@ -297,7 +297,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: gunRotation
+  - m_Name: JoystickVertical
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -745,7 +745,7 @@ AnimatorStateMachine:
     m_Position: {x: -740, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2599617020855040814}
-    m_Position: {x: -1010, y: -90, z: 0}
+    m_Position: {x: -1040, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7760293633879627925}
     m_Position: {x: -900, y: -680, z: 0}

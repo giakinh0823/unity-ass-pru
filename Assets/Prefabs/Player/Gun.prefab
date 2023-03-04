@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2227022953822860786}
   - component: {fileID: 5669480002118302713}
-  - component: {fileID: 521432211624693513}
   - component: {fileID: 8429940581240473800}
   m_Layer: 13
   m_Name: Gun
@@ -50,21 +49,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5938071125659884990, guid: b56aebc2daf16a14da697615da66bb4a, type: 3}
   shootPoint: {fileID: 5408694865522241856}
   bulletSpeed: 1200
---- !u!114 &521432211624693513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2227022953822860748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53e688d736121c7408d9d10e5fd67a6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  angle: 0
-  rotationSpeed: 50
-  playerController: {fileID: 0}
 --- !u!212 &8429940581240473800
 SpriteRenderer:
   m_ObjectHideFlags: 0
