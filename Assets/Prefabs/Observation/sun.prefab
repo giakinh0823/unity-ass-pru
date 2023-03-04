@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2044312533871572930}
   m_Layer: 13
-  m_Name: sun
+  m_Name: Sun
   m_TagString: Observation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
