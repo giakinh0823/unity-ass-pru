@@ -12,16 +12,25 @@ public class MovementController : MonoBehaviour
     private Animator anim;
     [SerializeField]
     public AudioSource soundRun;
+    [SerializeField]
+    public JumpController jumpController;
 
     public float horizontal;
     public bool isFaceRight = true;
     public bool isRuning;
 
     [SerializeField]
-    public Joystick joystick;
+    public PlayerController playerController;
+
+    private Joystick joystick;
 
     private void Start()
     {
+        if(playerController == null)
+        {
+            playerController = gameObject.GetComponent<PlayerController>();
+        }
+        joystick = playerController.joystick;
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
     }
@@ -41,7 +50,7 @@ public class MovementController : MonoBehaviour
         {
             anim.SetBool("isRunning", true);
             isRuning = true;
-            if (!soundRun.isPlaying)
+            if (!soundRun.isPlaying && isRuning && jumpController.isGrounded)
             {
                 soundRun.pitch = 1.5f;
                 soundRun.Play();
