@@ -72,7 +72,7 @@ public class SlidingController : MonoBehaviour
             anim.SetBool("isWallJumping", true);
         }
 
-        if(Input.GetKeyDown(KeyCode.Z) && wallJumpingCounter > 0f ) {
+        if(Input.GetKeyDown(KeyCode.Z) && wallJumpingCounter > 0f) {
             isWallJumping = true;
             anim.SetBool("isWallJumping", true);
             anim.SetBool("isWallSliding", false);
@@ -85,6 +85,10 @@ public class SlidingController : MonoBehaviour
             }
 
             Invoke(nameof(StopWallJumping), wallJumpingDuration);
+        } 
+        else
+        {
+            anim.SetBool("isWallJumping", false);
         }
     }
 
