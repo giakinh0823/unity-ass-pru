@@ -20,6 +20,11 @@ public class EnemySlime : MonoBehaviour
     private Rigidbody2D rb;
     private GameObject enemyObject;
 
+    bool isWallTouch = false;
+    public LayerMask wallerLayerMask;
+    [SerializeField]
+    private Transform wallCheckPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,45 +39,16 @@ public class EnemySlime : MonoBehaviour
 
     void Update()
     {
-        healbar.localScale.x = currentHealth;
-        enemyObject = GameObject.FindGameObjectWithTag("Player");
-        float distanceToEnemy = Vector2.Distance(transform.position, enemyObject.transform.position);
+        
 
-        if (distanceToEnemy <= 3)
+        isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector2(0.03f, 0.5f), 0, wallerLayerMask);
+        if (isWallTouch)
         {
-            Vector2 targetPosition = new Vector2(enemyObject.transform.position.x, transform.position.y);
-            rb.MovePosition(Vector2.MoveTowards(transform.position, targetPosition, speed * Time.fixedDeltaTime));
-
-        }
-        else
-        {
-            float distanceMoved = Mathf.Abs(transform.position.x - startPos.x);
-            if (distanceMoved >= distance)
-            {
-                dirX *= -1f;
-                localScale.x *= -1;
-                transform.localScale = localScale;
-                startPos = transform.position;
-            }
-
-            rb.velocity = new Vector2(dirX * speed, rb.velocity.y);
-            CheckWhereToFace();
+            Flip();
         }
 
     }
 
-    void CheckWhereToFace()
-    {
-        if (dirX > 0)
-            facingRight = true;
-        else if (dirX < 0)
-            facingRight = false;
-
-        if (((facingRight) && (localScale.x < 0)) || ((!facingRight) && (localScale.x > 0)))
-            localScale.x *= -1;
-
-        transform.localScale = localScale;
-    }
 
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -96,5 +72,8 @@ public class EnemySlime : MonoBehaviour
     }
 
 
-
+    public void Flip()
+    {
+        transform.Rotate(0, 180, 0);
+    }
 }
