@@ -6,6 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     public Animator anim;
+
+    [SerializeField]
+    public Joystick joystick;
+
     [SerializeField]
     public GameObject knife;
     [SerializeField]

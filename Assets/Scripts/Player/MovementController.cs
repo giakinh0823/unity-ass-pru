@@ -18,10 +18,17 @@ public class MovementController : MonoBehaviour
     public bool isRuning;
 
     [SerializeField]
-    public Joystick joystick;
+    public PlayerController playerController;
+
+    private Joystick joystick;
 
     private void Start()
     {
+        if(playerController == null)
+        {
+            playerController = gameObject.GetComponent<PlayerController>();
+        }
+        joystick = playerController.joystick;
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
     }
