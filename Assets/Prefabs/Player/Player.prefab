@@ -102,7 +102,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.017003193, y: -0.09910846}
+  m_Offset: {x: 0.017003193, y: -0.1053122}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -113,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3120456, y: 0.79490006}
+  m_Size: {x: 0.3120456, y: 0.80730754}
   m_EdgeRadius: 0
 --- !u!50 &50208215975462790
 Rigidbody2D:
@@ -235,8 +235,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.07842663}
-  m_Size: {x: 0.5, y: 0.9103696}
+  m_Offset: {x: 0, y: -0.066019505}
+  m_Size: {x: 0.5, y: 0.8855553}
   m_Direction: 0
 --- !u!114 &1510014118724974964
 MonoBehaviour:
@@ -725,7 +725,7 @@ MonoBehaviour:
   - {x: -0.16581354, y: 0.033363163, z: -0.000000010244548}
   m_ShapePathHash: 1639765140
   m_Mesh: {fileID: 0}
-  m_InstanceId: 54128
+  m_InstanceId: 33120
 --- !u!1 &1237780248342096
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,7 +738,7 @@ GameObject:
   m_Layer: 8
   m_Name: Ground Check
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -750,7 +750,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237780248342096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.003, y: -0.457, z: 0}
+  m_LocalPosition: {x: 0.011, y: -0.482, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -879,7 +879,7 @@ MonoBehaviour:
   - {x: -0.12976903, y: -0.18525726, z: -0.000000010244548}
   m_ShapePathHash: -1680198045
   m_Mesh: {fileID: 0}
-  m_InstanceId: 54122
+  m_InstanceId: 33114
 --- !u!1 &1412382395120440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   - {x: -0.044145733, y: 0.005266428, z: -0.000000010244548}
   m_ShapePathHash: -1272301859
   m_Mesh: {fileID: 0}
-  m_InstanceId: 54120
+  m_InstanceId: 33112
 --- !u!1 &1746004791257256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1131,7 @@ MonoBehaviour:
   - {x: -0.025051177, y: -0.24891531, z: -0.000000010244548}
   m_ShapePathHash: -675951043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 54112
+  m_InstanceId: 33104
 --- !u!1 &1930540462979778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,7 +1253,7 @@ MonoBehaviour:
   - {x: -0.013189614, y: -0.21743912, z: -0.000000010244548}
   m_ShapePathHash: -460280787
   m_Mesh: {fileID: 0}
-  m_InstanceId: 54142
+  m_InstanceId: 33134
 --- !u!1 &1993595382086298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,7 +1377,7 @@ MonoBehaviour:
   - {x: 0.080355376, y: -0.19361633, z: -0.000000010244548}
   m_ShapePathHash: -1258716273
   m_Mesh: {fileID: 0}
-  m_InstanceId: 54110
+  m_InstanceId: 33102
 --- !u!1 &5769963805523465670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,7 +1402,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5769963805523465670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.319, y: -0.116, z: 0}
+  m_LocalPosition: {x: 0.336, y: -0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
