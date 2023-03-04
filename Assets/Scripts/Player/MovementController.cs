@@ -12,6 +12,8 @@ public class MovementController : MonoBehaviour
     private Animator anim;
     [SerializeField]
     public AudioSource soundRun;
+    [SerializeField]
+    public JumpController jumpController;
 
     public float horizontal;
     public bool isFaceRight = true;
@@ -48,7 +50,7 @@ public class MovementController : MonoBehaviour
         {
             anim.SetBool("isRunning", true);
             isRuning = true;
-            if (!soundRun.isPlaying)
+            if (!soundRun.isPlaying && isRuning && jumpController.isGrounded)
             {
                 soundRun.pitch = 1.5f;
                 soundRun.Play();
