@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GunRotation gunRotation;
 
+    public int maxHealth = 100;
+    public int currentHealth;
+
+    public HealthBarPlayer healthBarPlayer;
     private int stateWeapon = 1;
 
     private void Start()
@@ -25,11 +29,23 @@ public class PlayerController : MonoBehaviour
         {
             anim = GetComponent<Animator>();
         }
+        currentHealth = maxHealth;
+        healthBarPlayer.SetMaxHealth(maxHealth);
     }
 
     private void Update()
     {
         updateWeapon();
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            TakeDamage(20);
+        }
+    }
+
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBarPlayer.SetHealth(currentHealth);
     }
     
 
