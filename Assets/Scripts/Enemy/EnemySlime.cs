@@ -10,15 +10,8 @@ public class EnemySlime : MonoBehaviour
     [SerializeField]
     private Healbar healbar;
 
-    public float speed = 2.0f;
-    public float distance = 5.0f;
-
-    private Vector3 startPos;
-    private Vector3 localScale;
-    private float dirX = -1f;
-    private bool facingRight = false;
-    private Rigidbody2D rb;
-    private GameObject enemyObject;
+    public float speed = 2.0f; 
+    public Vector2 direction = Vector2.right;
 
     bool isWallTouch = false;
     public LayerMask wallerLayerMask;
@@ -31,20 +24,20 @@ public class EnemySlime : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetFloat("Health", currentHealth);
 
-        startPos = transform.position;
-        localScale = transform.localScale;
-        rb = GetComponent<Rigidbody2D>();
 
     }
 
     void Update()
     {
+        transform.position += (Vector3)(direction * speed * Time.deltaTime);
         
-
         isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector2(0.03f, 0.5f), 0, wallerLayerMask);
         if (isWallTouch)
         {
+            Debug.Log("va cham vs wall");
             Flip();
+            direction = Vector2.left;
+
         }
 
     }
