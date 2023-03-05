@@ -161,7 +161,7 @@ MonoBehaviour:
   knife: {fileID: 4240065931079579583}
   gun: {fileID: 5494919778298546448}
   gunRotation: {fileID: 9138879865722871807}
-  maxHealth: 100
+  maxHealth: 1000
   currentHealth: 0
   healthBarPlayer: {fileID: 5952586676288442398}
 --- !u!114 &1761993708990598082
@@ -743,7 +743,7 @@ MonoBehaviour:
   - {x: -0.16581354, y: 0.033363163, z: -0.000000010244548}
   m_ShapePathHash: 1639765140
   m_Mesh: {fileID: 0}
-  m_InstanceId: 32352
+  m_InstanceId: 33780
 --- !u!1 &1237780248342096
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +897,7 @@ MonoBehaviour:
   - {x: -0.12976903, y: -0.18525726, z: -0.000000010244548}
   m_ShapePathHash: -1680198045
   m_Mesh: {fileID: 0}
-  m_InstanceId: 32342
+  m_InstanceId: 33770
 --- !u!1 &1412382395120440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,7 +1027,7 @@ MonoBehaviour:
   - {x: -0.044145733, y: 0.005266428, z: -0.000000010244548}
   m_ShapePathHash: -1272301859
   m_Mesh: {fileID: 0}
-  m_InstanceId: 32334
+  m_InstanceId: 33762
 --- !u!1 &1746004791257256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,7 +1149,7 @@ MonoBehaviour:
   - {x: -0.025051177, y: -0.24891531, z: -0.000000010244548}
   m_ShapePathHash: -675951043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 32322
+  m_InstanceId: 33750
 --- !u!1 &1930540462979778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,7 +1271,7 @@ MonoBehaviour:
   - {x: -0.013189614, y: -0.21743912, z: -0.000000010244548}
   m_ShapePathHash: -460280787
   m_Mesh: {fileID: 0}
-  m_InstanceId: 32380
+  m_InstanceId: 33808
 --- !u!1 &1993595382086298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,7 +1395,7 @@ MonoBehaviour:
   - {x: 0.080355376, y: -0.19361633, z: -0.000000010244548}
   m_ShapePathHash: -1258716273
   m_Mesh: {fileID: 0}
-  m_InstanceId: 32316
+  m_InstanceId: 33744
 --- !u!1 &362485445866478980
 GameObject:
   m_ObjectHideFlags: 0
