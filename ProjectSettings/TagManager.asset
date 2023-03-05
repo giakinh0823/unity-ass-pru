@@ -10,6 +10,7 @@ TagManager:
   - Timer
   - Coin
   - Weapon
+  - Explosion
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Observation
   - Item
   - Background
-  - 
+  - Explosion
   - 
   - 
   - 
@@ -46,6 +47,9 @@ TagManager:
   m_SortingLayers:
   - name: Player
     uniqueID: 1828877013
+    locked: 0
+  - name: Explosion
+    uniqueID: 1204368583
     locked: 0
   - name: Item
     uniqueID: 2489793975
