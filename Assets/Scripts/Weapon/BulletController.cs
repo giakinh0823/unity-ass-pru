@@ -6,6 +6,8 @@ public class BulletController : MonoBehaviour
 {
     [SerializeField]
     public ExplosionBulletGround explosionBulletGround;
+    [SerializeField]
+    public ExplosionBulletEnemy explosionBulletEnemy;
 
     void OnBecameInvisible()
     {
@@ -27,7 +29,7 @@ public class BulletController : MonoBehaviour
         }
         if (collision.CompareTag("Enemy"))
         {
-            Instantiate(explosionBulletGround, transform.position, Quaternion.identity);
+            Instantiate(explosionBulletEnemy, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
