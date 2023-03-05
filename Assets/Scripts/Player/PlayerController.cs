@@ -36,14 +36,11 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         updateWeapon();
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            TakeDamage(20);
-        }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
+        Debug.Log("current Health"+ currentHealth);
         currentHealth -= damage;
         healthBarPlayer.SetHealth(currentHealth);
     }
