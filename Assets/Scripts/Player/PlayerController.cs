@@ -17,8 +17,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GunRotation gunRotation;
 
-    public int maxHealth = 100;
-    public int currentHealth;
+    private int maxHealth = 1000;
+    private int currentHealth;
 
     public HealthBarPlayer healthBarPlayer;
     private int stateWeapon = 1;

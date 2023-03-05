@@ -7,7 +7,7 @@ public class ObservationTouch : MonoBehaviour
     [SerializeField]
     private PlayerController playerController;
 
-    private int damage = 10;
+    private int damage = 100;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
