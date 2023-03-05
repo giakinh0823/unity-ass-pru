@@ -725,7 +725,7 @@ MonoBehaviour:
   - {x: -0.16581354, y: 0.033363163, z: -0.000000010244548}
   m_ShapePathHash: 1639765140
   m_Mesh: {fileID: 0}
-  m_InstanceId: 36006
+  m_InstanceId: 30786
 --- !u!1 &1237780248342096
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +879,7 @@ MonoBehaviour:
   - {x: -0.12976903, y: -0.18525726, z: -0.000000010244548}
   m_ShapePathHash: -1680198045
   m_Mesh: {fileID: 0}
-  m_InstanceId: 36000
+  m_InstanceId: 30780
 --- !u!1 &1412382395120440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   - {x: -0.044145733, y: 0.005266428, z: -0.000000010244548}
   m_ShapePathHash: -1272301859
   m_Mesh: {fileID: 0}
-  m_InstanceId: 35998
+  m_InstanceId: 30778
 --- !u!1 &1746004791257256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1131,7 @@ MonoBehaviour:
   - {x: -0.025051177, y: -0.24891531, z: -0.000000010244548}
   m_ShapePathHash: -675951043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 35990
+  m_InstanceId: 30770
 --- !u!1 &1930540462979778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,7 +1253,7 @@ MonoBehaviour:
   - {x: -0.013189614, y: -0.21743912, z: -0.000000010244548}
   m_ShapePathHash: -460280787
   m_Mesh: {fileID: 0}
-  m_InstanceId: 36020
+  m_InstanceId: 30800
 --- !u!1 &1993595382086298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,7 +1377,7 @@ MonoBehaviour:
   - {x: 0.080355376, y: -0.19361633, z: -0.000000010244548}
   m_ShapePathHash: -1258716273
   m_Mesh: {fileID: 0}
-  m_InstanceId: 35988
+  m_InstanceId: 30768
 --- !u!1 &5769963805523465670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,6 +1535,10 @@ PrefabInstance:
     - target: {fileID: 7637276437162030065, guid: 828557874100dac4996f3b5f3c1b5e54, type: 3}
       propertyPath: m_Name
       value: Knife White
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637276437162030065, guid: 828557874100dac4996f3b5f3c1b5e54, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
