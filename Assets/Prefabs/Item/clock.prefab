@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7562818979915447901}
   - component: {fileID: 2643318153272588978}
   m_Layer: 13
-  m_Name: clock
+  m_Name: Clock
   m_TagString: Timer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
