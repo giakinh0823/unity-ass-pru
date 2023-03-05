@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MovementController : MonoBehaviour
 {
@@ -21,16 +22,15 @@ public class MovementController : MonoBehaviour
 
     [SerializeField]
     public PlayerController playerController;
+    private JoystickController joystickController;
 
-    private Joystick joystick;
-
-    private void Start()
+    void Start()
     {
-        if(playerController == null)
+        joystickController = GetComponent<JoystickController>();
+        if (playerController == null)
         {
             playerController = gameObject.GetComponent<PlayerController>();
         }
-        joystick = playerController.joystick;
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
     }
@@ -38,12 +38,7 @@ public class MovementController : MonoBehaviour
 
     private void Update()
     {
-
-        horizontal = Input.GetAxisRaw("Horizontal");
-        if(horizontal == 0)
-        {
-            horizontal = Mathf.Round(joystick.Horizontal);
-        }
+        horizontal = joystickController.GetHorizontalValue();
 
         rigidBody.velocity = new Vector2(horizontal * speed, rigidBody.velocity.y);
         if (horizontal != 0)
@@ -84,5 +79,4 @@ public class MovementController : MonoBehaviour
             }
         }
     }
-
 }

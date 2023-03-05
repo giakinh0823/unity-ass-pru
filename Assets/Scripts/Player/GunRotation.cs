@@ -19,19 +19,22 @@ public class GunRotation : MonoBehaviour
     public float angle;
     public float rotationSpeed = 50f;
 
+    private JoystickController joystickController;
+
     void Start()
     {
+        joystickController = GetComponent<JoystickController>();
         gunSprite = Instantiate(gunSprite, gun.transform.position, gun.transform.rotation);
         gunSprite.SetActive(false);
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        Joystick joystick = playerController.joystick;
-        Debug.Log(joystick.SnapX + " "+ joystick.SnapY + " "+ joystick.DeadZone);
-        horizontal = joystick.Horizontal;
-        angle = Mathf.Atan2(joystick.Direction.y, joystick.Direction.x) * Mathf.Rad2Deg;
-        Quaternion lookRotation = Quaternion.Euler(0f, 0f, angle);
+        horizontal = joystickController.GetHorizontalValue();
+        Vector2 joystickValue = joystickController.joystickValue;
+        float angle = Mathf.Atan2(joystickValue.y, joystickValue.x) * Mathf.Rad2Deg;
+        Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle);
+        Quaternion lookRotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         gun.transform.rotation = lookRotation;
 
 
