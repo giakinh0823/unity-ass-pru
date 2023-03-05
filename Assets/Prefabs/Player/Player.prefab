@@ -162,7 +162,7 @@ MonoBehaviour:
   knife: {fileID: 4240065931079579583}
   gun: {fileID: 5494919778298546448}
   gunRotation: {fileID: 9138879865722871807}
-  maxHealth: 100
+  maxHealth: 1000
   currentHealth: 0
   healthBarPlayer: {fileID: 5952586676288442398}
 --- !u!114 &1761993708990598082
