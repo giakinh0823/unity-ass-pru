@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 8339738052655149268}
   - component: {fileID: 6695489465949510469}
   - component: {fileID: 8169328919027275200}
+  - component: {fileID: 878271078819943380}
   m_Layer: 0
   m_Name: Knife White
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6791952720208224407
 Transform:
   m_ObjectHideFlags: 0
@@ -158,3 +159,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &878271078819943380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637276437162030065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1769675de4dd5a5479f2cda66d0fb81f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
