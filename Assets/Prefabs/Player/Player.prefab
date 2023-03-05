@@ -725,7 +725,7 @@ MonoBehaviour:
   - {x: -0.16581354, y: 0.033363163, z: -0.000000010244548}
   m_ShapePathHash: 1639765140
   m_Mesh: {fileID: 0}
-  m_InstanceId: 35586
+  m_InstanceId: 36006
 --- !u!1 &1237780248342096
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +879,7 @@ MonoBehaviour:
   - {x: -0.12976903, y: -0.18525726, z: -0.000000010244548}
   m_ShapePathHash: -1680198045
   m_Mesh: {fileID: 0}
-  m_InstanceId: 35580
+  m_InstanceId: 36000
 --- !u!1 &1412382395120440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   - {x: -0.044145733, y: 0.005266428, z: -0.000000010244548}
   m_ShapePathHash: -1272301859
   m_Mesh: {fileID: 0}
-  m_InstanceId: 35578
+  m_InstanceId: 35998
 --- !u!1 &1746004791257256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1131,7 @@ MonoBehaviour:
   - {x: -0.025051177, y: -0.24891531, z: -0.000000010244548}
   m_ShapePathHash: -675951043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 35570
+  m_InstanceId: 35990
 --- !u!1 &1930540462979778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,7 +1253,7 @@ MonoBehaviour:
   - {x: -0.013189614, y: -0.21743912, z: -0.000000010244548}
   m_ShapePathHash: -460280787
   m_Mesh: {fileID: 0}
-  m_InstanceId: 35600
+  m_InstanceId: 36020
 --- !u!1 &1993595382086298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,7 +1377,7 @@ MonoBehaviour:
   - {x: 0.080355376, y: -0.19361633, z: -0.000000010244548}
   m_ShapePathHash: -1258716273
   m_Mesh: {fileID: 0}
-  m_InstanceId: 35568
+  m_InstanceId: 35988
 --- !u!1 &5769963805523465670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,29 +1417,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4490485249707518}
     m_Modifications:
-    - target: {fileID: 521432211624693513, guid: 4c2383620c5a6bf4aadc68731931c8a0, type: 3}
-      propertyPath: gun
-      value: 
-      objectReference: {fileID: 5494919778298546448}
-    - target: {fileID: 521432211624693513, guid: 4c2383620c5a6bf4aadc68731931c8a0, type: 3}
-      propertyPath: playerController
-      value: 
-      objectReference: {fileID: -3017213790409573602}
-    - target: {fileID: 1578517527577700948, guid: 4c2383620c5a6bf4aadc68731931c8a0, type: 3}
-      propertyPath: playerController
-      value: 
-      objectReference: {fileID: -3017213790409573602}
-    - target: {fileID: 2227022953822860748, guid: 4c2383620c5a6bf4aadc68731931c8a0, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 2227022953822860748, guid: 4c2383620c5a6bf4aadc68731931c8a0, type: 3}
       propertyPath: m_Name
       value: GunPoint
-      objectReference: {fileID: 0}
-    - target: {fileID: 2227022953822860748, guid: 4c2383620c5a6bf4aadc68731931c8a0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2227022953822860786, guid: 4c2383620c5a6bf4aadc68731931c8a0, type: 3}
       propertyPath: m_RootOrder
@@ -1485,11 +1465,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 821706069816948805, guid: 4c2383620c5a6bf4aadc68731931c8a0, type: 3}
-    - {fileID: 7561682076885730758, guid: 4c2383620c5a6bf4aadc68731931c8a0, type: 3}
-    - {fileID: 5968920197863557948, guid: 4c2383620c5a6bf4aadc68731931c8a0, type: 3}
-    - {fileID: 1578517527577700948, guid: 4c2383620c5a6bf4aadc68731931c8a0, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1559,14 +1535,6 @@ PrefabInstance:
     - target: {fileID: 7637276437162030065, guid: 828557874100dac4996f3b5f3c1b5e54, type: 3}
       propertyPath: m_Name
       value: Knife White
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637276437162030065, guid: 828557874100dac4996f3b5f3c1b5e54, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637276437162030065, guid: 828557874100dac4996f3b5f3c1b5e54, type: 3}
-      propertyPath: m_TagString
-      value: Weapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

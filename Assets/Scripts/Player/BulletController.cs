@@ -12,16 +12,23 @@ public class BulletController : MonoBehaviour
         Destroy(gameObject);
     }
 
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Ground"))
         {
+            Instantiate(explosionBulletGround, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-    }
-
-    private void OnDestroy()
-    {
-        Instantiate(explosionBulletGround, transform.position, Quaternion.identity);
+        if (collision.CompareTag("Enemy"))
+        {
+            Instantiate(explosionBulletGround, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }

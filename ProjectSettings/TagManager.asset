@@ -11,6 +11,8 @@ TagManager:
   - Coin
   - Weapon
   - Explosion
+  - Bullet
+  - Knife
   layers:
   - Default
   - TransparentFX
