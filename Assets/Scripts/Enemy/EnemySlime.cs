@@ -11,7 +11,7 @@ public class EnemySlime : MonoBehaviour
     private Healbar healbar;
 
     public float speed = 2.0f; 
-    public Vector2 direction = Vector2.right;
+    public Vector2 direction;
 
     bool isWallTouch = false;
     public LayerMask wallerLayerMask;
@@ -23,10 +23,8 @@ public class EnemySlime : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         animator.SetFloat("Health", currentHealth);
-
-
+        direction = Vector2.right;
     }
-
     void Update()
     {
         transform.position += (Vector3)(direction * speed * Time.deltaTime);
@@ -34,14 +32,23 @@ public class EnemySlime : MonoBehaviour
         isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector2(0.03f, 0.5f), 0, wallerLayerMask);
         if (isWallTouch)
         {
-            Debug.Log("va cham vs wall");
+            if (direction == Vector2.right)
+            {
+                direction = Vector2.left;
+            }
+            else
+            {
+                direction = Vector2.right;
+            }
             Flip();
-            direction = Vector2.left;
-
+            isWallTouch = false;
         }
 
     }
-
+    public void Flip()
+    {
+        transform.Rotate(0, 180, 0);
+    }
 
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -65,8 +72,5 @@ public class EnemySlime : MonoBehaviour
     }
 
 
-    public void Flip()
-    {
-        transform.Rotate(0, 180, 0);
-    }
+    
 }
