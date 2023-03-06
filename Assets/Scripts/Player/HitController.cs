@@ -14,7 +14,7 @@ public class HitController : MonoBehaviour
     private int hit;
 
     private MyPlayerActions playerInput;
-    private InputAction attack;
+    private InputAction attackInput;
 
     private void Awake()
     {
@@ -31,7 +31,7 @@ public class HitController : MonoBehaviour
 
     void Update()
     {
-        if (attack.triggered)
+        if (attackInput.triggered)
         {
             if (hit >= 2 && !slidingController.isWallSliding)
             {
@@ -48,13 +48,13 @@ public class HitController : MonoBehaviour
 
     private void OnEnable()
     {
-        attack = playerInput.Player.Attack;
-        attack.Enable();
+        attackInput = playerInput.Player.Attack;
+        attackInput.Enable();
     }
 
     private void OnDisable()
     {
-        attack = playerInput.Player.Attack;
-        attack.Disable();
+        attackInput = playerInput.Player.Attack;
+        attackInput.Disable();
     }
 }
