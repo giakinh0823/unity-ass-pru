@@ -31,7 +31,7 @@ public class JumpController : MonoBehaviour
     private bool doubleJump;
 
     private MyPlayerActions playerInput;
-    private InputAction jump;
+    private InputAction jumpInput;
 
     private void Awake()
     {
@@ -49,7 +49,7 @@ public class JumpController : MonoBehaviour
 
         isGrounded = IsGrounded();
 
-        if (isGrounded == true && jump.triggered)
+        if (isGrounded == true && jumpInput.triggered)
         {
             anim.SetTrigger("takeOf");
             isJumping = true;
@@ -69,7 +69,7 @@ public class JumpController : MonoBehaviour
         }
 
 
-        if (jump.triggered && isJumping == true)
+        if (jumpInput.triggered && isJumping == true)
         {
             if (jumpTimeCounter > 0)
             {
@@ -83,13 +83,13 @@ public class JumpController : MonoBehaviour
 
         }
 
-        if (jump.triggered)
+        if (jumpInput.triggered)
         {
             isJumping = false;
 
         }
 
-        if (isGrounded == false && doubleJump == false && jump.triggered)
+        if (isGrounded == false && doubleJump == false && jumpInput.triggered)
         {
             isJumping = true;
             doubleJump = true;
@@ -111,14 +111,14 @@ public class JumpController : MonoBehaviour
 
     private void OnEnable()
     {
-        jump = playerInput.Player.Jump;
-        jump.Enable();
+        jumpInput = playerInput.Player.Jump;
+        jumpInput.Enable();
     }
 
     private void OnDisable()
     {
-        jump = playerInput.Player.Jump;
-        jump.Disable();
+        jumpInput = playerInput.Player.Jump;
+        jumpInput.Disable();
     }
 
 }

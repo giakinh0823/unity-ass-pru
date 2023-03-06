@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,6 +23,15 @@ public class PlayerController : MonoBehaviour
 
     public HealthBarPlayer healthBarPlayer;
     private int stateWeapon = 1;
+
+    private MyPlayerActions playerInput;
+    private InputAction weaponInput;
+
+    private void Awake()
+    {
+        playerInput = new MyPlayerActions();
+    }
+
 
     private void Start()
     {
@@ -48,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
     private void updateWeapon()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (weaponInput.triggered)
         {
             switch (stateWeapon)
             {
@@ -80,5 +90,17 @@ public class PlayerController : MonoBehaviour
         }
         anim.SetBool("isKnife", knife.gameObject.activeSelf);
         anim.SetBool("isGun", gun.gameObject.activeSelf);
+    }
+
+    private void OnEnable()
+    {
+        weaponInput = playerInput.Player.Weapon;
+        weaponInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        weaponInput = playerInput.Player.Weapon;
+        weaponInput.Disable();
     }
 }
