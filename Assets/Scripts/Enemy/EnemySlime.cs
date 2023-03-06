@@ -10,7 +10,7 @@ public class EnemySlime : MonoBehaviour
     [SerializeField]
     private Healbar healbar;
 
-    public float speed = 2.0f; 
+    public float speed = 2.0f;
     public Vector2 direction;
 
     bool isWallTouch = false;
@@ -29,11 +29,13 @@ public class EnemySlime : MonoBehaviour
 
     void Update()
     {
-        if (!isChasing) { 
-            // No player detected, continue moving in previous direction
-            transform.position += (Vector3)(direction * speed * Time.deltaTime);
+        healbar.localScale.x = currentHealth;
 
-            isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector2(0.03f, 0.5f), 0, wallerLayerMask);
+        if (!isChasing) { 
+        // No player detected, continue moving in previous direction
+        transform.position += (Vector3)(direction * speed * Time.deltaTime);
+
+        isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector2(0.03f, 0.5f), 0, wallerLayerMask);
             if (isWallTouch)
             {
                 if (direction == Vector2.right)
@@ -81,5 +83,5 @@ public class EnemySlime : MonoBehaviour
     }
 
 
-    
+
 }
