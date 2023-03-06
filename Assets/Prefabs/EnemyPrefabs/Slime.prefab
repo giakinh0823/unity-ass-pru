@@ -51,16 +51,16 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1024
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1024
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1024
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1024
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -201,11 +201,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healbar: {fileID: 4438561689950605709}
-  moveSpeed: 5
+  speed: 2
+  direction: {x: 0, y: 0}
   wallerLayerMask:
     serializedVersion: 2
     m_Bits: 3072
   wallCheckPoint: {fileID: 1628185766962159142}
+  playerTransfrom: {fileID: 0}
+  isChasing: 0
+  chaseDistance: 2
 --- !u!61 &7647728333955357680
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -213,7 +217,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4018931307076601648}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -270,16 +274,16 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 130807
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 130807
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 130807
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 130807
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

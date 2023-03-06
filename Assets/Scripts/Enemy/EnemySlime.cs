@@ -87,7 +87,6 @@ public class EnemySlime : MonoBehaviour
         {
             healbar.gameObject.SetActive(true);
 
-
             Quaternion rotation = collision.gameObject.transform.rotation;
             gameObject.transform.rotation = rotation;
             currentHealth -= damage;
@@ -99,6 +98,7 @@ public class EnemySlime : MonoBehaviour
                 Destroy(gameObject, 3f);
             }
         }
+        
 
     }
 
