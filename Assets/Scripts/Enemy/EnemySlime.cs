@@ -17,6 +17,7 @@ public class EnemySlime : MonoBehaviour
     public LayerMask wallerLayerMask;
     [SerializeField]
     private Transform wallCheckPoint;
+    bool isChasing = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,25 +26,28 @@ public class EnemySlime : MonoBehaviour
         animator.SetFloat("Health", currentHealth);
         direction = Vector2.right;
     }
+
     void Update()
     {
-        transform.position += (Vector3)(direction * speed * Time.deltaTime);
-        
-        isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector2(0.03f, 0.5f), 0, wallerLayerMask);
-        if (isWallTouch)
-        {
-            if (direction == Vector2.right)
-            {
-                direction = Vector2.left;
-            }
-            else
-            {
-                direction = Vector2.right;
-            }
-            Flip();
-            isWallTouch = false;
-        }
+        if (!isChasing) { 
+            // No player detected, continue moving in previous direction
+            transform.position += (Vector3)(direction * speed * Time.deltaTime);
 
+            isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector2(0.03f, 0.5f), 0, wallerLayerMask);
+            if (isWallTouch)
+            {
+                if (direction == Vector2.right)
+                {
+                    direction = Vector2.left;
+                }
+                else
+                {
+                    direction = Vector2.right;
+                }
+                Flip();
+                isWallTouch = false;
+            }
+        }
     }
     public void Flip()
     {
@@ -66,6 +70,11 @@ public class EnemySlime : MonoBehaviour
             {
                 currentHealth = 0;
                 Destroy(gameObject, 3f);
+            }
+            else
+            {
+                isChasing = true;
+                direction = (collision.gameObject.transform.position - transform.position).normalized;
             }
         }
 
