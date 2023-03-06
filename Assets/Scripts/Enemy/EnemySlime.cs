@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemySlime : MonoBehaviour
@@ -17,7 +18,11 @@ public class EnemySlime : MonoBehaviour
     public LayerMask wallerLayerMask;
     [SerializeField]
     private Transform wallCheckPoint;
-    bool isChasing = false;
+
+    public Transform playerTransfrom;
+    public bool isChasing;
+    public float chaseDistance;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,26 +35,45 @@ public class EnemySlime : MonoBehaviour
     void Update()
     {
         healbar.localScale.x = currentHealth;
+        if(isChasing)
+        {
+            if(transform.position.x > playerTransfrom.position.x)
+            {
+                transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
+                transform.position += Vector3.left * speed * Time.deltaTime;
+            }
+            if (transform.position.x < playerTransfrom.position.x)
+            {
+                transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
+                transform.position += Vector3.right * speed * Time.deltaTime;
+            }
+        }
+        else
+        {
+            if(Vector2.Distance(transform.position, playerTransfrom.position) < chaseDistance)
+            {
+                isChasing = true;
+            }
+            transform.position += (Vector3)(direction * speed * Time.deltaTime);
 
-        if (!isChasing) { 
-        // No player detected, continue moving in previous direction
-        transform.position += (Vector3)(direction * speed * Time.deltaTime);
-
-        isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector2(0.03f, 0.5f), 0, wallerLayerMask);
+            isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector2(0.03f, 0.5f), 0, wallerLayerMask);
             if (isWallTouch)
             {
                 if (direction == Vector2.right)
                 {
+                    transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
                     direction = Vector2.left;
                 }
                 else
                 {
+                    transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
                     direction = Vector2.right;
                 }
-                Flip();
                 isWallTouch = false;
             }
         }
+        
+        
     }
     public void Flip()
     {
@@ -63,6 +87,7 @@ public class EnemySlime : MonoBehaviour
         {
             healbar.gameObject.SetActive(true);
 
+
             Quaternion rotation = collision.gameObject.transform.rotation;
             gameObject.transform.rotation = rotation;
             currentHealth -= damage;
@@ -73,14 +98,11 @@ public class EnemySlime : MonoBehaviour
                 currentHealth = 0;
                 Destroy(gameObject, 3f);
             }
-            else
-            {
-                isChasing = true;
-                direction = (collision.gameObject.transform.position - transform.position).normalized;
-            }
         }
 
     }
+
+    
 
 
 
