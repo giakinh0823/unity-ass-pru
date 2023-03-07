@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class JumpController : MonoBehaviour
 {
@@ -29,6 +30,14 @@ public class JumpController : MonoBehaviour
     private bool isJumping;
     private bool doubleJump;
 
+    private MyPlayerActions playerInput;
+    private InputAction jumpInput;
+
+    private void Awake()
+    {
+        playerInput = new MyPlayerActions();
+    }
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -40,7 +49,7 @@ public class JumpController : MonoBehaviour
 
         isGrounded = IsGrounded();
 
-        if (isGrounded == true && Input.GetKeyDown(KeyCode.Z))
+        if (isGrounded == true && jumpInput.triggered)
         {
             anim.SetTrigger("takeOf");
             isJumping = true;
@@ -60,7 +69,7 @@ public class JumpController : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.Z) && isJumping == true)
+        if (jumpInput.triggered && isJumping == true)
         {
             if (jumpTimeCounter > 0)
             {
@@ -74,13 +83,13 @@ public class JumpController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyUp(KeyCode.Z))
+        if (jumpInput.triggered)
         {
             isJumping = false;
 
         }
 
-        if (isGrounded == false && doubleJump == false && Input.GetKeyDown(KeyCode.Z))
+        if (isGrounded == false && doubleJump == false && jumpInput.triggered)
         {
             isJumping = true;
             doubleJump = true;
@@ -99,4 +108,17 @@ public class JumpController : MonoBehaviour
     {
         soundJumpDown.Play();
     }
+
+    private void OnEnable()
+    {
+        jumpInput = playerInput.Player.Jump;
+        jumpInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        jumpInput = playerInput.Player.Jump;
+        jumpInput.Disable();
+    }
+
 }

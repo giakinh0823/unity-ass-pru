@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,7 +18,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GunRotation gunRotation;
 
+    private int maxHealth = 1000;
+    private int currentHealth;
+
+    public HealthBarPlayer healthBarPlayer;
     private int stateWeapon = 1;
+
+    private MyPlayerActions playerInput;
+    private InputAction weaponInput;
+
+    private void Awake()
+    {
+        playerInput = new MyPlayerActions();
+    }
+
 
     private void Start()
     {
@@ -25,17 +39,26 @@ public class PlayerController : MonoBehaviour
         {
             anim = GetComponent<Animator>();
         }
+        currentHealth = maxHealth;
+        healthBarPlayer.SetMaxHealth(maxHealth);
     }
 
     private void Update()
     {
         updateWeapon();
     }
+
+    public void TakeDamage(int damage)
+    {
+        Debug.Log("current Health"+ currentHealth);
+        currentHealth -= damage;
+        healthBarPlayer.SetHealth(currentHealth);
+    }
     
 
     private void updateWeapon()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (weaponInput.triggered)
         {
             switch (stateWeapon)
             {
@@ -67,5 +90,17 @@ public class PlayerController : MonoBehaviour
         }
         anim.SetBool("isKnife", knife.gameObject.activeSelf);
         anim.SetBool("isGun", gun.gameObject.activeSelf);
+    }
+
+    private void OnEnable()
+    {
+        weaponInput = playerInput.Player.Weapon;
+        weaponInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        weaponInput = playerInput.Player.Weapon;
+        weaponInput.Disable();
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class HitController : MonoBehaviour
 {
@@ -9,7 +10,16 @@ public class HitController : MonoBehaviour
     [SerializeField]
     private PlayerController playerController;
 
+
     private int hit;
+
+    private MyPlayerActions playerInput;
+    private InputAction attackInput;
+
+    private void Awake()
+    {
+        playerInput = new MyPlayerActions();
+    }
 
 
     void Start()
@@ -21,7 +31,7 @@ public class HitController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (attackInput.triggered)
         {
             if (hit >= 2 && !slidingController.isWallSliding)
             {
@@ -34,5 +44,17 @@ public class HitController : MonoBehaviour
                 hit++;
             }
         }
+    }
+
+    private void OnEnable()
+    {
+        attackInput = playerInput.Player.Attack;
+        attackInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        attackInput = playerInput.Player.Attack;
+        attackInput.Disable();
     }
 }
