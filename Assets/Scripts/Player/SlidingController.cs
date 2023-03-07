@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SlidingController : MonoBehaviour
 {
@@ -29,6 +30,14 @@ public class SlidingController : MonoBehaviour
     private MovementController movement;
     [SerializeField]
     private AudioSource wallSlidingSound;
+
+    private MyPlayerActions playerInput;
+    private InputAction jumpInput;
+
+    private void Awake()
+    {
+        playerInput = new MyPlayerActions();
+    }
 
     private void Start()
     {
@@ -71,7 +80,7 @@ public class SlidingController : MonoBehaviour
             anim.SetBool("isWallJumping", true);
         }
 
-        if(Input.GetKeyDown(KeyCode.Z) && wallJumpingCounter > 0f) {
+        if(jumpInput.triggered && wallJumpingCounter > 0f) {
             isWallJumping = true;
             anim.SetBool("isWallJumping", true);
             anim.SetBool("isWallSliding", false);
@@ -119,5 +128,17 @@ public class SlidingController : MonoBehaviour
     public void playSoundWallSliding()
     {
         wallSlidingSound.Play();
+    }
+
+    private void OnEnable()
+    {
+        jumpInput = playerInput.Player.Jump;
+        jumpInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        jumpInput = playerInput.Player.Jump;
+        jumpInput.Disable();
     }
 }
