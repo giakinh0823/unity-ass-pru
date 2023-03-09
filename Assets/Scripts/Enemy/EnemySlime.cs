@@ -12,7 +12,7 @@ public class EnemySlime : MonoBehaviour
     private Healbar healbar;
 
     public float speed = 2.0f;
-    public Vector2 direction;
+    public Vector3 direction;
 
     bool isWallTouch = false;
     public LayerMask wallerLayerMask;
@@ -29,7 +29,7 @@ public class EnemySlime : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         animator.SetFloat("Health", currentHealth);
-        direction = Vector2.right;
+        direction = Vector3.right;
     }
 
     void Update()
@@ -50,24 +50,24 @@ public class EnemySlime : MonoBehaviour
         }
         else
         {
-            if(Vector2.Distance(transform.position, playerTransfrom.position) < chaseDistance)
+            if(Vector3.Distance(transform.position, playerTransfrom.position) < chaseDistance)
             {
                 isChasing = true;
             }
             transform.position += (Vector3)(direction * speed * Time.deltaTime);
 
-            isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector2(0.03f, 0.5f), 0, wallerLayerMask);
+            isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector3(0.03f, 0.5f), 0, wallerLayerMask);
             if (isWallTouch)
             {
-                if (direction == Vector2.right)
+                if (direction == Vector3.right)
                 {
                     transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
-                    direction = Vector2.left;
+                    direction = Vector3.left;
                 }
                 else
                 {
                     transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
-                    direction = Vector2.right;
+                    direction = Vector3.right;
                 }
                 isWallTouch = false;
             }
@@ -75,11 +75,6 @@ public class EnemySlime : MonoBehaviour
         
         
     }
-    public void Flip()
-    {
-        transform.Rotate(0, 180, 0);
-    }
-
 
     void OnTriggerEnter2D(Collider2D collision)
     {
