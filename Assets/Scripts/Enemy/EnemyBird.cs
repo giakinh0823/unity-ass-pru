@@ -7,12 +7,12 @@ public class EnemyBird : MonoBehaviour
 
     private Animator animator;
     private float damage = 0.05f;
-    private float currentHealth = 1f;
+    private float currentHealth = 1.5f;
     [SerializeField]
     private Healbar healbar;
 
     public float speed = 2.0f;
-    public Vector2 direction;
+    public Vector3 direction;
 
     bool isWallTouch = false;
     public LayerMask wallerLayerMask;
@@ -29,7 +29,7 @@ public class EnemyBird : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         animator.SetFloat("Health", currentHealth);
-        direction = Vector2.right;
+        direction = Vector3.right;
     }
 
     void Update()
@@ -50,27 +50,31 @@ public class EnemyBird : MonoBehaviour
         }
         else
         {
-            if (Vector2.Distance(transform.position, playerTransfrom.position) < chaseDistance)
+            if (Vector3.Distance(transform.position, playerTransfrom.position) < chaseDistance)
             {
                 isChasing = true;
             }
-            transform.position += (Vector3)(direction * speed * Time.deltaTime);
-
-            isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector2(0.03f, 0.5f), 0, wallerLayerMask);
-            if (isWallTouch)
+            else
             {
-                if (direction == Vector2.right)
+                transform.position += (Vector3)(direction * speed * Time.deltaTime);
+
+                isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector3(0.03f, 0.5f), 0, wallerLayerMask);
+                if (isWallTouch)
                 {
-                    transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
-                    direction = Vector2.left;
+                    if (direction == Vector3.right)
+                    {
+                        transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
+                        direction = Vector3.left;
+                    }
+                    else
+                    {
+                        transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
+                        direction = Vector3.right;
+                    }
+                    isWallTouch = false;
                 }
-                else
-                {
-                    transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
-                    direction = Vector2.right;
-                }
-                isWallTouch = false;
             }
+            
         }
 
 
@@ -88,7 +92,7 @@ public class EnemyBird : MonoBehaviour
             healbar.gameObject.SetActive(true);
 
             Quaternion rotation = collision.gameObject.transform.rotation;
-            gameObject.transform.rotation = rotation;
+            //gameObject.transform.rotation = rotation;
             currentHealth -= damage;
             Debug.Log(currentHealth);
             animator.SetFloat("Health", currentHealth);
