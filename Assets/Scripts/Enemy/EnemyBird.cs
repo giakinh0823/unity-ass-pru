@@ -23,6 +23,11 @@ public class EnemyBird : MonoBehaviour
     public bool isChasing;
     public float chaseDistance;
 
+    public GameObject bulletPrefab;
+    private float bulletSpeed = 15f;
+    Vector3 closestWalkerDirection = Vector3.zero;
+    timer timers;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +35,10 @@ public class EnemyBird : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetFloat("Health", currentHealth);
         direction = Vector3.right;
+
+        timers = GetComponent<timer>();
+        timers.alarmTime = 1;
+        timers.StartTime();
     }
 
     void Update()
@@ -37,6 +46,14 @@ public class EnemyBird : MonoBehaviour
         healbar.localScale.x = currentHealth;
         if (isChasing)
         {
+            if (timers.isFinish)
+            {
+                closestWalkerDirection = (playerTransfrom.position - transform.position).normalized;
+                GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+                bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
+                timers.alarmTime = 5;
+                timers.StartTime();
+            }
             if (transform.position.x > playerTransfrom.position.x)
             {
                 transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
@@ -53,6 +70,7 @@ public class EnemyBird : MonoBehaviour
             if (Vector3.Distance(transform.position, playerTransfrom.position) < chaseDistance)
             {
                 isChasing = true;
+                
             }
             else
             {

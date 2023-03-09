@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3452136594140666658}
   - component: {fileID: 2569939106727781927}
   - component: {fileID: -8619965012357508472}
+  - component: {fileID: 4682317584636258531}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Enemy
@@ -125,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healbar: {fileID: 8969796906700965820}
   speed: 2
-  direction: {x: 0, y: 0}
+  direction: {x: 0, y: 0, z: 0}
   wallerLayerMask:
     serializedVersion: 2
     m_Bits: 3072
@@ -133,6 +134,7 @@ MonoBehaviour:
   playerTransfrom: {fileID: 0}
   isChasing: 0
   chaseDistance: 2
+  bulletPrefab: {fileID: 6024477093397777429, guid: b9b05574595f97548b4390fa72439dbd, type: 3}
 --- !u!61 &3452136594140666658
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -250,6 +252,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4682317584636258531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418877448508959347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0748318194eda48a4627b1b13f2c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRunning: 0
+  isFinish: 1
+  elapseTime: 0
+  alarmTime: 5
 --- !u!1 &2477684602313386268
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,476 @@
+fileFormatVersion: 2
+guid: 093d7c57e73cadc418fac95e23b7a5bb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_0
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 91
+        width: 127
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 174e92a4247d6cc44a3717952709b164
+      internalID: -2015521383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_1
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 168
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff16ae907e6a8fb4a83654cf1f75b269
+      internalID: 1952672327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_2
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 85
+        width: 129
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b65eaba702ecc41a82a7c49398497a
+      internalID: -212746837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_3
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 155
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea9b8839010292542833a83b55f36411
+      internalID: 499765321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_4
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 80
+        width: 82
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 377742569fadc2b458ef1c890d4d17df
+      internalID: 1494903399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 103
+        width: 103
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed500dca33662054bac38ade6d65fc72
+      internalID: -187858748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 160
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03c255f998b0aa45b6ea0c9838000b1
+      internalID: 835338297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_7
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 129
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9962d73a493c9974796b08b8bcc49fe6
+      internalID: 1950635209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_8
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 98
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed0b85ceff8b3f4caf3be046db29498
+      internalID: -88673301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_9
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 90
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36f54657bfa8a3d439150bc33d4f6c8e
+      internalID: -1243449344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_10
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 101
+        width: 39
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a271c7f74a660c84f848f1a4b02b1db6
+      internalID: -1750890554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_11
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 89
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf90d0bf7e120624e9c9fd978e841fa7
+      internalID: -1838499051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_12
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 82
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdedd74ad6466a0429f69e448705a4f8
+      internalID: 1901888220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_13
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 77
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115557025119eea4f898693192d10742
+      internalID: -185378478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_14
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 79
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8114400d1cae8c4694a10df632815e1
+      internalID: -1566449325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_15
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 69
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d5fd2c672b439841b42ad02447412a9
+      internalID: 1680027510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 88897f987d39acd4980068085d2989e2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_4: 1494903399
+      gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_5: -187858748
+      gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_8: -88673301
+      gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_10: -1750890554
+      gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_7: 1950635209
+      gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_14: -1566449325
+      gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_15: 1680027510
+      gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_2: -212746837
+      gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_11: -1838499051
+      gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_12: 1901888220
+      gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_1: 1952672327
+      gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_6: 835338297
+      gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_13: -185378478
+      gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_3: 499765321
+      gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_0: -2015521383
+      gun-flashes-gunshot-animation-fire-explosion-effect-during-shot-with-gun-cartoon-flash-effect-bullet-start-shotgun-fire-muzzle-flash-explode_93083-1243_9: -1243449344
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
