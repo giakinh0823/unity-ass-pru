@@ -28,7 +28,6 @@ public class EnemyBird : MonoBehaviour
     Vector3 closestWalkerDirection = Vector3.zero;
     timer timers;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +50,8 @@ public class EnemyBird : MonoBehaviour
                 closestWalkerDirection = (playerTransfrom.position - transform.position).normalized;
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
                 bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
+                bullet.GetComponent<AudioSource>().Play();
+                Destroy(bullet, 4f);
                 timers.alarmTime = 5;
                 timers.StartTime();
             }
@@ -107,6 +108,7 @@ public class EnemyBird : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            PlaySound();
             healbar.gameObject.SetActive(true);
 
             Quaternion rotation = collision.gameObject.transform.rotation;
@@ -123,4 +125,10 @@ public class EnemyBird : MonoBehaviour
 
 
     }
+
+    void PlaySound()
+    {
+        gameObject.GetComponent<AudioSource>().Play();
+    }
+
 }

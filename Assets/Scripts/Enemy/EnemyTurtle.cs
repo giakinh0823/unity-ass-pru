@@ -27,6 +27,7 @@ public class EnemyTurtle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            PlaySound();
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
             gameObject.transform.rotation = rotation;
@@ -51,6 +52,11 @@ public class EnemyTurtle : MonoBehaviour
         {
             animator.SetBool("IsAttack", false);
         }
+    }
+
+    void PlaySound()
+    {
+        gameObject.GetComponent<AudioSource>().Play();
     }
 
 }
