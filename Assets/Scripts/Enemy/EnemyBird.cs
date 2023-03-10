@@ -107,6 +107,7 @@ public class EnemyBird : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            PlaySound();
             healbar.gameObject.SetActive(true);
 
             Quaternion rotation = collision.gameObject.transform.rotation;
@@ -122,5 +123,10 @@ public class EnemyBird : MonoBehaviour
         }
 
 
+    }
+
+    void PlaySound()
+    {
+        gameObject.GetComponent<AudioSource>().Play();
     }
 }
