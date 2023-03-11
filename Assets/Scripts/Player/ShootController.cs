@@ -18,16 +18,7 @@ public class ShootController : MonoBehaviour
         playerInput = new MyPlayerActions();
     }
 
-
-    void Update()
-    {
-        if (attack.triggered && gameObject.activeSelf)
-        {
-            Shoot();
-        }
-    }
-
-    private void Shoot()
+    public void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.right * bulletSpeed);
