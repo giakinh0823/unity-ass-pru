@@ -80,6 +80,7 @@ public class EnemySlime : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            PlaySound();
             healbar.gameObject.SetActive(true);
 
             Quaternion rotation = collision.gameObject.transform.rotation;
@@ -97,7 +98,12 @@ public class EnemySlime : MonoBehaviour
 
     }
 
-    
+    void PlaySound()
+    {
+        gameObject.GetComponent<AudioSource>().Play();
+    }
+
+
 
 
 
