@@ -9,6 +9,9 @@ public class HitController : MonoBehaviour
     private SlidingController slidingController;
     [SerializeField]
     private PlayerController playerController;
+    [SerializeField]
+    private ShootController shootController;
+    public AudioSource soundShoots;
 
 
     private int hit;
@@ -38,7 +41,7 @@ public class HitController : MonoBehaviour
                 playerController.anim.SetTrigger("isLongHit");
                 hit = 0;
             }
-            else if(!slidingController.isWallSliding)
+            else if (!slidingController.isWallSliding)
             {
                 playerController.anim.SetTrigger("isShortHit");
                 hit++;
@@ -56,5 +59,15 @@ public class HitController : MonoBehaviour
     {
         attackInput = playerInput.Player.Attack;
         attackInput.Disable();
+    }
+
+    private void SoundHitGun()
+    {
+        soundShoots.Play();
+    }
+
+    private void ShootHitGun()
+    {
+        shootController.Shoot();
     }
 }
