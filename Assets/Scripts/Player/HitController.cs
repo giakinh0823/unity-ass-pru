@@ -12,6 +12,7 @@ public class HitController : MonoBehaviour
     [SerializeField]
     private ShootController shootController;
     public AudioSource soundShoots;
+    public AudioSource soundSlashing;
 
 
     private int hit;
@@ -64,6 +65,10 @@ public class HitController : MonoBehaviour
     private void SoundHitGun()
     {
         soundShoots.Play();
+    }
+    private void SoundHitSlashing()
+    {
+        soundSlashing.Play();
     }
 
     private void ShootHitGun()
