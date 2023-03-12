@@ -26,7 +26,7 @@ public class EnemyBird : MonoBehaviour
     public GameObject bulletPrefab;
     private float bulletSpeed = 15f;
     Vector3 closestWalkerDirection = Vector3.zero;
-    timer timers;
+    TimerEnemy timers;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,7 @@ public class EnemyBird : MonoBehaviour
         animator.SetFloat("Health", currentHealth);
         direction = Vector3.right;
 
-        timers = GetComponent<timer>();
+        timers = GetComponent<TimerEnemy>();
         timers.alarmTime = 1;
         timers.StartTime();
     }
