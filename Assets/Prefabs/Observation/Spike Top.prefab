@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5649295030580886060}
+  - component: {fileID: 692807037633615123}
   m_Layer: 12
   m_Name: Spike Top
   m_TagString: Observation
@@ -33,6 +34,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &692807037633615123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000251140837096014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: d572026dc734c947b73d679437d6a80c0000000009ed95fc697a27fd
+  m_ShapePath:
+  - {x: -0.0046640635, y: -0.31072527, z: 0}
+  - {x: -0.435566, y: 0.50805426, z: 0}
+  - {x: 0.43959317, y: 0.5040271, z: 0}
+  - {x: 0.00063693523, y: -0.3147524, z: 0}
+  m_ShapePathHash: 2057483730
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -758686
 --- !u!1 &3140049583679131014
 GameObject:
   m_ObjectHideFlags: 0
