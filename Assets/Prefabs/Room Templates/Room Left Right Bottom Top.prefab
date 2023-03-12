@@ -605,6 +605,9 @@ MonoBehaviour:
   - {fileID: 1285196271909724, guid: 28b1ca243c93025468974dcd089ce57a, type: 3}
   - {fileID: 1265759502714698, guid: 7a7b03cf2c1022f42983af05941f5589, type: 3}
   - {fileID: 1956603526010584, guid: c880a8d123f36f54cb3996fc9306d5bd, type: 3}
+  - {fileID: 5851987858125069655, guid: cb9af3e78e139ed4181cba79d88d8e62, type: 3}
+  - {fileID: 1956603526010584, guid: 8dda27b4f214c2b428e0ac74116aa064, type: 3}
+  - {fileID: 1285196271909724, guid: 25611cf363f5a904bb9e64adbb6c00fb, type: 3}
 --- !u!1 &1609760231641682
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +864,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
