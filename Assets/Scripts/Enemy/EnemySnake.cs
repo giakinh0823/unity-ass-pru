@@ -27,7 +27,6 @@ public class EnemySnake : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlaySound();
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
             gameObject.transform.rotation = rotation;
