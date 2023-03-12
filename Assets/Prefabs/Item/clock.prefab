@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7562818979915447900}
   - component: {fileID: 7562818979915447901}
   - component: {fileID: 2643318153272588978}
+  - component: {fileID: 4883310998075806944}
   m_Layer: 13
-  m_Name: Clock
+  m_Name: clock
   m_TagString: Timer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,6 +96,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -111,3 +131,46 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4883310998075806944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7562818979915447874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: d572026dc734c947b73d679437d6a80c0000000009ed95fc697a27fd
+  m_ShapePath:
+  - {x: -0.37515917, y: -0.35905078, z: 0}
+  - {x: -0.46311894, y: -0.23760018, z: 0}
+  - {x: -0.50741726, y: -0.06846106, z: 0}
+  - {x: -0.4913088, y: 0.116786525, z: 0}
+  - {x: -0.4275118, y: 0.28656253, z: 0}
+  - {x: -0.2859256, y: 0.42284775, z: 0}
+  - {x: -0.104705155, y: 0.5033902, z: 0}
+  - {x: 0.104705155, y: 0.5033902, z: 0}
+  - {x: 0.25773576, y: 0.44701046, z: 0}
+  - {x: 0.35502362, y: 0.38321343, z: 0}
+  - {x: 0.43492907, y: 0.28592563, z: 0}
+  - {x: 0.4913088, y: 0.16511197, z: 0}
+  - {x: 0.5194987, y: -0.0080542425, z: 0}
+  - {x: 0.4872817, y: -0.14900349, z: 0}
+  - {x: 0.4107664, y: -0.3181426, z: 0}
+  - {x: 0.3187796, y: -0.4073762, z: 0}
+  - {x: 0.20135607, y: -0.4711732, z: 0}
+  - {x: 0.03221697, y: -0.51144445, z: 0}
+  - {x: -0.13692212, y: -0.49936306, z: 0}
+  - {x: -0.28995273, y: -0.430902, z: 0}
+  m_ShapePathHash: -1166325633
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -741330

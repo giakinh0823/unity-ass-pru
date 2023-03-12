@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 4964011167582498505}
   - component: {fileID: 1553888329075043200}
   - component: {fileID: 7172511948767910272}
+  - component: {fileID: 7630029122847522179}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
@@ -424,6 +425,62 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7630029122847522179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4018931307076601648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: d572026dc734c947b73d679437d6a80c0000000009ed95fc697a27fd
+  m_ShapePath:
+  - {x: -1.2400817, y: -0.80317515, z: 0}
+  - {x: -1.4003553, y: -0.6795842, z: 0}
+  - {x: -1.3179815, y: -0.5045397, z: 0}
+  - {x: -1.1635306, y: -0.5148365, z: 0}
+  - {x: -1.2150142, y: -0.38097897, z: 0}
+  - {x: -1.1223437, y: -0.31919864, z: 0}
+  - {x: -1.0090796, y: -0.16474767, z: 0}
+  - {x: -0.8855188, y: -0.25741825, z: 0}
+  - {x: -0.8855188, y: 0.03089019, z: 0}
+  - {x: -0.7870255, y: 0.39130604, z: 0}
+  - {x: -0.67958426, y: 0.5251332, z: 0}
+  - {x: -0.47364962, y: 0.7001776, z: 0}
+  - {x: -0.10296731, y: 0.78255147, z: 0}
+  - {x: 0.21623135, y: 0.74136454, z: 0}
+  - {x: 0.4163432, y: 0.57664716, z: 0}
+  - {x: 0.53542995, y: 0.33979207, z: 0}
+  - {x: 0.5045398, y: 0.19563787, z: 0}
+  - {x: 0.5045398, y: -0.020593459, z: 0}
+  - {x: 0.5766169, y: -0.13385749, z: 0}
+  - {x: 0.73106784, y: -0.13385749, z: 0}
+  - {x: 0.9061123, y: -0.03089019, z: 0}
+  - {x: 1.0811567, y: -0.25741825, z: 0}
+  - {x: 0.9884862, y: -0.36038554, z: 0}
+  - {x: 0.94729924, y: -0.4839463, z: 0}
+  - {x: 0.96207, y: -0.6899111, z: 0}
+  - {x: 0.8340352, y: -0.75166124, z: 0}
+  - {x: 0.5972104, y: -0.75166124, z: 0}
+  - {x: 0.36038557, y: -0.75166124, z: 0}
+  - {x: 0.18534115, y: -0.84433186, z: 0}
+  - {x: -0.12356077, y: -0.9575959, z: 0}
+  - {x: -0.41186923, y: -0.83403516, z: 0}
+  - {x: -0.73106784, y: -0.78255147, z: 0}
+  - {x: -0.9884862, y: -0.8237384, z: 0}
+  m_ShapePathHash: 1788290805
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -649878
 --- !u!1001 &7324366146565461342
 PrefabInstance:
   m_ObjectHideFlags: 0
