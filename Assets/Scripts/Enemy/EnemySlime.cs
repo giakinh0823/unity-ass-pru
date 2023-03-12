@@ -34,8 +34,14 @@ public class EnemySlime : MonoBehaviour
 
     void Update()
     {
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerTransfrom = player.transform;
+        }
         healbar.localScale.x = currentHealth;
-        if(isChasing)
+        if(isChasing && playerTransfrom !=null)
         {
             if(transform.position.x > playerTransfrom.position.x)
             {
@@ -50,7 +56,7 @@ public class EnemySlime : MonoBehaviour
         }
         else
         {
-            if(Vector3.Distance(transform.position, playerTransfrom.position) < chaseDistance)
+            if(playerTransfrom != null && Vector3.Distance(transform.position, playerTransfrom.position) < chaseDistance)
             {
                 isChasing = true;
             }
