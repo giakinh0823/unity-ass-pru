@@ -46,7 +46,7 @@ public class EnemyBird : MonoBehaviour
             playerTransfrom = player.transform;
         }
         healbar.localScale.x = currentHealth;
-        if (isChasing && playerTransfrom != null)
+        if (playerTransfrom != null && Vector3.Distance(transform.position, playerTransfrom.position) <= chaseDistance)
         {
             if (timers.isFinish)
             {
@@ -58,45 +58,55 @@ public class EnemyBird : MonoBehaviour
                 timers.alarmTime = 5;
                 timers.StartTime();
             }
-            if (transform.position.x > playerTransfrom.position.x)
-            {
-                transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
-                transform.position += Vector3.left * speed * Time.deltaTime;
-            }
-            if (transform.position.x < playerTransfrom.position.x)
+            if (gameObject.transform.position.x > playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x > 0)
             {
                 transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
+                transform.position += Vector3.left * speed * Time.deltaTime;
+            }
+            if (gameObject.transform.position.x < playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x > 0)
+            {
+                transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
                 transform.position += Vector3.right * speed * Time.deltaTime;
+            }
+            if (gameObject.transform.position.x < playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x < 0)
+            {
+                transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
+                transform.position += Vector3.right * speed * Time.deltaTime;
+            }
+            if (gameObject.transform.position.x > playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x < 0)
+            {
+                transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
+                transform.position += Vector3.left * speed * Time.deltaTime;
             }
         }
         else
         {
-            if (playerTransfrom != null && Vector3.Distance(transform.position, playerTransfrom.position) < chaseDistance)
+            if (direction.x > 0)
             {
-                isChasing = true;
-                
+                transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
             }
             else
             {
-                transform.position += (Vector3)(direction * speed * Time.deltaTime);
-
-                isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector3(0.03f, 0.5f), 0, wallerLayerMask);
-                if (isWallTouch)
-                {
-                    if (direction == Vector3.right)
-                    {
-                        transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
-                        direction = Vector3.left;
-                    }
-                    else
-                    {
-                        transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
-                        direction = Vector3.right;
-                    }
-                    isWallTouch = false;
-                }
+                transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
             }
-            
+            transform.position += (Vector3)(direction * speed * Time.deltaTime);
+
+            isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector3(0.03f, 0.5f), 0, wallerLayerMask);
+            if (isWallTouch)
+            {
+                if (direction == Vector3.right)
+                {
+                    transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
+                    direction = Vector3.left;
+                }
+                else
+                {
+                    transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
+                    direction = Vector3.right;
+                }
+                isWallTouch = false;
+            }
+
         }
 
 
@@ -114,7 +124,7 @@ public class EnemyBird : MonoBehaviour
             PlaySound();
             healbar.gameObject.SetActive(true);
 
-            Quaternion rotation = collision.gameObject.transform.rotation;
+            //Quaternion rotation = collision.gameObject.transform.rotation;
             //gameObject.transform.rotation = rotation;
             currentHealth -= damage;
             Debug.Log(currentHealth);
