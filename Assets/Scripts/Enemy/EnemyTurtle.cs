@@ -27,10 +27,47 @@ public class EnemyTurtle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Animator animator = GetComponent<Animator>();
+            animator.Play("Enemy1AnimaTancong"); 
+        }
+        else if (collision.gameObject.CompareTag("ArmLeft") || collision.gameObject.CompareTag("ArmLeft"))
+        {
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
             gameObject.transform.rotation = rotation;
             currentHealth -= damage;
+
+
+            animator.SetFloat("Health", currentHealth);
+            animator.SetBool("IsAttack", true);
+
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                Destroy(gameObject, 2f);
+            }
+        }else if (collision.gameObject.CompareTag("Knife"))
+        {
+            healbar.gameObject.SetActive(true);
+            Quaternion rotation = collision.gameObject.transform.rotation;
+            gameObject.transform.rotation = rotation;
+            currentHealth -= 0.07f;
+
+
+            animator.SetFloat("Health", currentHealth);
+            animator.SetBool("IsAttack", true);
+
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                Destroy(gameObject, 2f);
+            }
+        }else if (collision.gameObject.CompareTag("Bullet"))
+        {
+            healbar.gameObject.SetActive(true);
+            Quaternion rotation = collision.gameObject.transform.rotation;
+            gameObject.transform.rotation = rotation;
+            currentHealth -= 0.06f;
 
 
             animator.SetFloat("Health", currentHealth);
@@ -51,6 +88,7 @@ public class EnemyTurtle : MonoBehaviour
         {
             animator.SetBool("IsAttack", false);
         }
+
     }
 
     void PlaySound()

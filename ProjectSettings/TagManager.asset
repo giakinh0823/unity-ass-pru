@@ -13,6 +13,8 @@ TagManager:
   - Explosion
   - Bullet
   - Knife
+  - ArmLeft
+  - ArmRight
   layers:
   - Default
   - TransparentFX
