@@ -49,7 +49,6 @@ public class MovementController : MonoBehaviour
             {
                 soundRun.pitch = 1.5f;
                 soundRun.Play();
-                Debug.Log("Running sound play");
             }
         }
         else
@@ -57,7 +56,6 @@ public class MovementController : MonoBehaviour
             anim.SetBool("isRunning", false);
             isRuning = false;
             soundRun.Stop();
-            Debug.Log("Running sound stop");
         }
 
         Flip();
