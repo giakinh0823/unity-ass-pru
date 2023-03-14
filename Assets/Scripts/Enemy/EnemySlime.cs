@@ -22,6 +22,9 @@ public class EnemySlime : MonoBehaviour
     public Transform playerTransfrom;
     public bool isChasing;
     public float chaseDistance;
+    public float distanceLimit = 3f; 
+    private float distanceMoved = 0f; 
+
 
 
     // Start is called before the first frame update
@@ -66,17 +69,26 @@ public class EnemySlime : MonoBehaviour
         }
         else
         {
-            if(direction.x > 0)
+            transform.position += (Vector3)(direction * speed * Time.deltaTime);
+
+            if (direction.x > 0)
             {
-                transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
+                transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
+
             }
             else
             {
-                transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
+                transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
             }
-            transform.position += (Vector3)(direction * speed * Time.deltaTime);
-            
-            isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector3(0.03f, 0.5f), 0, wallerLayerMask);
+            distanceMoved += speed * Time.deltaTime;
+            if (distanceMoved >= distanceLimit)
+            {
+                distanceMoved = 0f; 
+                direction = -direction; 
+            }
+
+            /*isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector3(0.03f, 0.5f), 0, wallerLayerMask);
+            Debug.Log(isWallTouch);
             if (isWallTouch)
             {
                 if (direction == Vector3.right)
@@ -90,12 +102,30 @@ public class EnemySlime : MonoBehaviour
                     direction = Vector3.right;
                 }
                 isWallTouch = false;
-            }
+            }*/
 
         }
 
 
     }
+
+    /*void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            if (direction == Vector3.right)
+            {
+                transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
+                direction = Vector3.left;
+            }
+            else
+            {
+                transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
+                direction = Vector3.right;
+            }
+            isWallTouch = false;
+        }
+    }*/
 
     void OnTriggerEnter2D(Collider2D collision)
     {
