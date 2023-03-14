@@ -506,6 +506,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToSpawn:
   - {fileID: 5851987858125069655, guid: cb9af3e78e139ed4181cba79d88d8e62, type: 3}
+  - {fileID: 7899257739208093976, guid: 4420e8c81c5d39743a6cf0b26cd86ce6, type: 3}
+  - {fileID: 2000251140837096014, guid: b4de55bc5b511764092440ffae07a850, type: 3}
 --- !u!1 &1199310708842666
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,6 +922,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToSpawn:
   - {fileID: 5851987858125069655, guid: cb9af3e78e139ed4181cba79d88d8e62, type: 3}
+  - {fileID: 7899257739208093976, guid: 4420e8c81c5d39743a6cf0b26cd86ce6, type: 3}
+  - {fileID: 2000251140837096014, guid: b4de55bc5b511764092440ffae07a850, type: 3}
 --- !u!1 &1498086815166288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,6 +1886,8 @@ MonoBehaviour:
   objectsToSpawn:
   - {fileID: 1265759502714698, guid: 7a7b03cf2c1022f42983af05941f5589, type: 3}
   - {fileID: 4018931307076601648, guid: e83224f02405a8747bf20a1a01dd8b22, type: 3}
+  - {fileID: 1793527874712998217, guid: 0edb6e69fca9a0a4f9cbd5a38d1f538c, type: 3}
+  - {fileID: 5560369465959164206, guid: 861d1bce47bede74a9a005d0c9b656b2, type: 3}
 --- !u!1 &7914121699511798380
 GameObject:
   m_ObjectHideFlags: 0
