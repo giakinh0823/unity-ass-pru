@@ -15,6 +15,7 @@ TagManager:
   - Knife
   - ArmLeft
   - ArmRight
+  - Wall
   layers:
   - Default
   - TransparentFX

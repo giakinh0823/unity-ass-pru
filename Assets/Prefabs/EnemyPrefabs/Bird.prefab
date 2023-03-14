@@ -136,6 +136,7 @@ MonoBehaviour:
   isChasing: 0
   chaseDistance: 2
   bulletPrefab: {fileID: 6024477093397777429, guid: b9b05574595f97548b4390fa72439dbd, type: 3}
+  distanceLimit: 3
 --- !u!61 &3452136594140666658
 BoxCollider2D:
   m_ObjectHideFlags: 0

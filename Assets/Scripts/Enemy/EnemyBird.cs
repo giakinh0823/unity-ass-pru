@@ -25,6 +25,8 @@ public class EnemyBird : MonoBehaviour
     private float bulletSpeed = 15f;
     Vector3 closestWalkerDirection = Vector3.zero;
     TimerEnemy timers;
+    public float distanceLimit = 3f;
+    private float distanceMoved = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -81,17 +83,25 @@ public class EnemyBird : MonoBehaviour
         }
         else
         {
+            transform.position += (Vector3)(direction * speed * Time.deltaTime);
+
             if (direction.x > 0)
             {
-                transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
+                transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
+
             }
             else
             {
-                transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
+                transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
             }
-            transform.position += (Vector3)(direction * speed * Time.deltaTime);
+            distanceMoved += speed * Time.deltaTime;
+            if (distanceMoved >= distanceLimit)
+            {
+                distanceMoved = 0f;
+                direction = -direction;
+            }
 
-            isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector3(0.03f, 0.5f), 0, wallerLayerMask);
+            /*isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector3(0.03f, 0.5f), 0, wallerLayerMask);
             if (isWallTouch)
             {
                 if (direction == Vector3.right)
@@ -105,7 +115,7 @@ public class EnemyBird : MonoBehaviour
                     direction = Vector3.right;
                 }
                 isWallTouch = false;
-            }
+            }*/
 
         }
 
@@ -116,6 +126,7 @@ public class EnemyBird : MonoBehaviour
         transform.Rotate(0, 180, 0);
     }
 
+    
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -143,5 +154,5 @@ public class EnemyBird : MonoBehaviour
     {
         gameObject.GetComponent<AudioSource>().Play();
     }
-
+        
 }

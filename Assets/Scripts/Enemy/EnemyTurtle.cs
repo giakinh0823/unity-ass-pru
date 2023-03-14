@@ -28,7 +28,7 @@ public class EnemyTurtle : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Animator animator = GetComponent<Animator>();
-            animator.Play("Enemy1AnimaTancong"); 
+            animator.Play("tancong"); 
         }
         else if (collision.gameObject.CompareTag("ArmLeft") || collision.gameObject.CompareTag("ArmLeft"))
         {
@@ -81,7 +81,6 @@ public class EnemyTurtle : MonoBehaviour
         }
 
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
