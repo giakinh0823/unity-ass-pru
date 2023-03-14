@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7985206079722690806}
   - component: {fileID: -7480580546116977849}
   - component: {fileID: 7999477750952892026}
+  - component: {fileID: 5008022931814468446}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Enemy
@@ -337,6 +338,59 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5008022931814468446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4788364542702073346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: d572026dc734c947b73d679437d6a80c0000000009ed95fc697a27fd
+  m_ShapePath:
+  - {x: -0.18051405, y: -0.5758141, z: 0}
+  - {x: -0.23698567, y: -0.4601212, z: 0}
+  - {x: -0.23698567, y: -0.25256366, z: 0}
+  - {x: -0.17990834, y: -0.07268029, z: 0}
+  - {x: -0.1299653, y: 0.11412154, z: 0}
+  - {x: -0.22271648, y: 0.14179604, z: 0}
+  - {x: -0.42962292, y: 0.17638901, z: 0}
+  - {x: -0.4367578, y: 0.32859787, z: 0}
+  - {x: -0.529509, y: 0.28708643, z: 0}
+  - {x: -0.6079904, y: 0.36319086, z: 0}
+  - {x: -0.62226015, y: 0.529237, z: 0}
+  - {x: -0.5223741, y: 0.6053414, z: 0}
+  - {x: -0.40821883, y: 0.5499927, z: 0}
+  - {x: -0.33034196, y: 0.59657025, z: 0}
+  - {x: -0.19417752, y: 0.64685285, z: 0}
+  - {x: 0.016415112, y: 0.6104072, z: 0}
+  - {x: 0.076941125, y: 0.5499927, z: 0}
+  - {x: 0.12688416, y: 0.42545804, z: 0}
+  - {x: 0.09121031, y: 0.28016764, z: 0}
+  - {x: 0.09121031, y: 0.1002843, z: 0}
+  - {x: 0.019863801, y: -0.024250355, z: 0}
+  - {x: 0.16255742, y: 0.01034262, z: 0}
+  - {x: 0.34805977, y: -0.031168835, z: 0}
+  - {x: 0.490754, y: -0.14186624, z: 0}
+  - {x: 0.5335621, y: -0.28023815, z: 0}
+  - {x: 0.5050238, y: -0.41860974, z: 0}
+  - {x: 0.4088239, y: -0.52738416, z: 0}
+  - {x: 0.4122726, y: -0.6330861, z: 0}
+  - {x: 0.24817431, y: -0.6815163, z: 0}
+  - {x: 0.055537056, y: -0.6815163, z: 0}
+  m_ShapePathHash: -911249211
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -671422
 --- !u!1001 &3779055660914633923
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -34,28 +34,48 @@ public class EnemySlime : MonoBehaviour
 
     void Update()
     {
-        healbar.localScale.x = currentHealth;
-        if(isChasing)
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
         {
-            if(transform.position.x > playerTransfrom.position.x)
-            {
-                transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
-                transform.position += Vector3.left * speed * Time.deltaTime;
-            }
-            if (transform.position.x < playerTransfrom.position.x)
+            playerTransfrom = player.transform;
+        }
+        healbar.localScale.x = currentHealth;
+        if (playerTransfrom != null && Vector3.Distance(transform.position, playerTransfrom.position) <= chaseDistance)
+        {
+            if (gameObject.transform.position.x > playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x > 0)
             {
                 transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
+                transform.position += Vector3.left * speed * Time.deltaTime;
+            }
+            if (gameObject.transform.position.x < playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x > 0)
+            {
+                transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
                 transform.position += Vector3.right * speed * Time.deltaTime;
+            }
+            if (gameObject.transform.position.x < playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x < 0)
+            {
+                transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
+                transform.position += Vector3.right * speed * Time.deltaTime;
+            }
+            if (gameObject.transform.position.x > playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x < 0)
+            {
+                transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
+                transform.position += Vector3.left * speed * Time.deltaTime;
             }
         }
         else
         {
-            if(Vector3.Distance(transform.position, playerTransfrom.position) < chaseDistance)
+            if(direction.x > 0)
             {
-                isChasing = true;
+                transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
             }
             transform.position += (Vector3)(direction * speed * Time.deltaTime);
-
+            
             isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector3(0.03f, 0.5f), 0, wallerLayerMask);
             if (isWallTouch)
             {
@@ -71,9 +91,10 @@ public class EnemySlime : MonoBehaviour
                 }
                 isWallTouch = false;
             }
+
         }
-        
-        
+
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -83,8 +104,8 @@ public class EnemySlime : MonoBehaviour
             PlaySound();
             healbar.gameObject.SetActive(true);
 
-            Quaternion rotation = collision.gameObject.transform.rotation;
-            gameObject.transform.rotation = rotation;
+            //Quaternion rotation = collision.gameObject.transform.rotation;
+            //gameObject.transform.rotation = rotation;
             currentHealth -= damage;
             Debug.Log(currentHealth);
             animator.SetFloat("Health", currentHealth);
@@ -94,7 +115,7 @@ public class EnemySlime : MonoBehaviour
                 Destroy(gameObject, 3f);
             }
         }
-        
+
 
     }
 
