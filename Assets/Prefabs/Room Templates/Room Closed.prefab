@@ -1994,6 +1994,8 @@ MonoBehaviour:
   objectsToSpawn:
   - {fileID: 1265759502714698, guid: 7a7b03cf2c1022f42983af05941f5589, type: 3}
   - {fileID: 4018931307076601648, guid: e83224f02405a8747bf20a1a01dd8b22, type: 3}
+  - {fileID: 5560369465959164206, guid: 861d1bce47bede74a9a005d0c9b656b2, type: 3}
+  - {fileID: 1793527874712998217, guid: 0edb6e69fca9a0a4f9cbd5a38d1f538c, type: 3}
 --- !u!1 &7243443427619951332
 GameObject:
   m_ObjectHideFlags: 0
