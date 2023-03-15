@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class EnemySlime : MonoBehaviour
+public class EnemySlime : BaseEnemy
 {
     private Animator animator;
     private float damage = 0.05f;
@@ -25,9 +25,7 @@ public class EnemySlime : MonoBehaviour
     public float chaseDistance;
     public float distanceLimit = 3f; 
     private float distanceMoved = 0f;
-    private float dameArm = 0.2f;
-    private float dameKnife = 0.5f;
-    private float dameGun = 0.25f;
+    
     TimerEnemy timers;
 
 
@@ -139,7 +137,7 @@ public class EnemySlime : MonoBehaviour
             {
                 gameObject.transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
             }
-            currentHealth -= dameArm;
+            currentHealth -= GetDameArm();
 
 
         }
@@ -155,7 +153,7 @@ public class EnemySlime : MonoBehaviour
             {
                 gameObject.transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
             }
-            currentHealth -= dameKnife;
+            currentHealth -= GetDameKnife();
 
 
 
@@ -172,7 +170,7 @@ public class EnemySlime : MonoBehaviour
             {
                 gameObject.transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
             }
-            currentHealth -= dameGun;
+            currentHealth -= GetDameGun();
 
 
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySnake : MonoBehaviour
+public class EnemySnake : BaseEnemy
 {
     // Start is called before the first frame update
     private Animator animator;
@@ -10,9 +10,7 @@ public class EnemySnake : MonoBehaviour
     private float currentHealth = 1.5f;
     [SerializeField]
     private Healbar healbar;
-    private float dameArm = 0.2f;
-    private float dameKnife = 0.5f;
-    private float dameGun = 0.25f;
+
     TimerEnemy timers;
     // Start is called before the first frame update
     void Start()
@@ -72,7 +70,7 @@ public class EnemySnake : MonoBehaviour
             {
                 gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
             }
-            currentHealth -= dameArm;
+            currentHealth -= GetDameArm();
 
 
         }
@@ -88,7 +86,7 @@ public class EnemySnake : MonoBehaviour
             {
                 gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
             }
-            currentHealth -= dameKnife;
+            currentHealth -= GetDameKnife();
 
 
 
@@ -105,7 +103,7 @@ public class EnemySnake : MonoBehaviour
             {
                 gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
             }
-            currentHealth -= dameGun;
+            currentHealth -= GetDameGun();
 
 
 

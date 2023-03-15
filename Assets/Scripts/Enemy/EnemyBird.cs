@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyBird : MonoBehaviour
+public class EnemyBird : BaseEnemy
 {
 
     private Animator animator;
@@ -29,10 +29,6 @@ public class EnemyBird : MonoBehaviour
     TimerEnemy timers2;
     public float distanceLimit = 3f;
     private float distanceMoved = 0f;
-
-    private float dameArm = 0.2f;
-    private float dameKnife = 0.5f;
-    private float dameGun = 0.25f;
 
     // Start is called before the first frame update
     void Start()
@@ -162,7 +158,7 @@ public class EnemyBird : MonoBehaviour
             {
                 gameObject.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
             }
-            currentHealth -= dameArm;
+            currentHealth -= GetDameArm();
 
 
         }
@@ -178,7 +174,7 @@ public class EnemyBird : MonoBehaviour
             {
                 gameObject.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
             }
-            currentHealth -= dameKnife;
+            currentHealth -= GetDameKnife();
 
 
 
@@ -195,7 +191,7 @@ public class EnemyBird : MonoBehaviour
             {
                 gameObject.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
             }
-            currentHealth -= dameGun;
+            currentHealth -= GetDameGun();
 
 
 
