@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnemySlime : MonoBehaviour
 {
     private Animator animator;
-    private float damage = 0.05f;
     private float currentHealth = 1f;
     [SerializeField]
     private Healbar healbar;
@@ -23,8 +22,11 @@ public class EnemySlime : MonoBehaviour
     public bool isChasing;
     public float chaseDistance;
     public float distanceLimit = 3f; 
-    private float distanceMoved = 0f; 
+    private float distanceMoved = 0f;
 
+    private float dameArm = 0.2f;
+    private float dameKnife = 0.5f;
+    private float dameGun = 0.25f;
 
 
     // Start is called before the first frame update
@@ -86,63 +88,72 @@ public class EnemySlime : MonoBehaviour
                 distanceMoved = 0f; 
                 direction = -direction; 
             }
-
-            /*isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector3(0.03f, 0.5f), 0, wallerLayerMask);
-            Debug.Log(isWallTouch);
-            if (isWallTouch)
-            {
-                if (direction == Vector3.right)
-                {
-                    transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
-                    direction = Vector3.left;
-                }
-                else
-                {
-                    transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
-                    direction = Vector3.right;
-                }
-                isWallTouch = false;
-            }*/
-
         }
 
 
     }
 
-    /*void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            if (direction == Vector3.right)
-            {
-                transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
-                direction = Vector3.left;
-            }
-            else
-            {
-                transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
-                direction = Vector3.right;
-            }
-            isWallTouch = false;
-        }
-    }*/
-
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ArmLeft")
+            || collision.gameObject.CompareTag("ArmRight"))
         {
+            Debug.Log("Player");
+
             PlaySound();
             healbar.gameObject.SetActive(true);
+            
+            currentHealth -= dameArm;
 
-            //Quaternion rotation = collision.gameObject.transform.rotation;
-            //gameObject.transform.rotation = rotation;
-            currentHealth -= damage;
-            Debug.Log(currentHealth);
+
             animator.SetFloat("Health", currentHealth);
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
-                Destroy(gameObject, 3f);
+                Destroy(gameObject, 2f);
+            }
+        }
+        else if (collision.gameObject.CompareTag("Knife"))
+        {
+            Debug.Log("Knife");
+            PlaySound();
+            healbar.gameObject.SetActive(true);
+            
+            currentHealth -= dameKnife;
+
+
+            animator.SetFloat("Health", currentHealth);
+
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                Destroy(gameObject, 2f);
+            }
+        }
+        else if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Debug.Log("Gun");
+
+            PlaySound();
+            healbar.gameObject.SetActive(true);
+            Quaternion rotation = collision.gameObject.transform.rotation;
+            if (rotation.x * Vector3.right.x > 0)
+            {
+                gameObject.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
+            }
+            else
+            {
+                gameObject.transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
+            }
+            currentHealth -= dameGun;
+
+
+            animator.SetFloat("Health", currentHealth);
+
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                Destroy(gameObject, 2f);
             }
         }
 

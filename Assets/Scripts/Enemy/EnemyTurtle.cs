@@ -9,6 +9,9 @@ public class EnemyTurtle : MonoBehaviour
     private float currentHealth = 1f;
     [SerializeField]
     private Healbar healbar;
+    private float dameArm = 0.2f;
+    private float dameKnife = 0.5f;
+    private float dameGun = 0.25f;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +58,7 @@ public class EnemyTurtle : MonoBehaviour
             {
                 gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
             }
-            currentHealth -= 0.1f;
+            currentHealth -= dameArm;
 
 
             animator.SetFloat("Health", currentHealth);
@@ -78,7 +81,7 @@ public class EnemyTurtle : MonoBehaviour
             {
                 gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
             }
-            currentHealth -= 0.2f;
+            currentHealth -= dameKnife;
 
 
             animator.SetFloat("Health", currentHealth);
@@ -101,7 +104,7 @@ public class EnemyTurtle : MonoBehaviour
             {
                 gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
             }
-            currentHealth -= 0.125f;
+            currentHealth -= dameGun;
 
 
             animator.SetFloat("Health", currentHealth);

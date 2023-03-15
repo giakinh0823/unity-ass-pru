@@ -4,15 +4,13 @@ public class EnemyBird : MonoBehaviour
 {
 
     private Animator animator;
-    private float damage = 0.05f;
-    private float currentHealth = 1.5f;
+    private float currentHealth = 1f;
     [SerializeField]
     private Healbar healbar;
 
     public float speed = 2.0f;
     public Vector3 direction;
 
-    bool isWallTouch = false;
     public LayerMask wallerLayerMask;
     [SerializeField]
     private Transform wallCheckPoint;
@@ -27,6 +25,10 @@ public class EnemyBird : MonoBehaviour
     TimerEnemy timers;
     public float distanceLimit = 3f;
     private float distanceMoved = 0f;
+
+    private float dameArm = 0.2f;
+    private float dameKnife = 0.5f;
+    private float dameGun = 0.25f;
 
     // Start is called before the first frame update
     void Start()
@@ -101,21 +103,7 @@ public class EnemyBird : MonoBehaviour
                 direction = -direction;
             }
 
-            /*isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector3(0.03f, 0.5f), 0, wallerLayerMask);
-            if (isWallTouch)
-            {
-                if (direction == Vector3.right)
-                {
-                    transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
-                    direction = Vector3.left;
-                }
-                else
-                {
-                    transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
-                    direction = Vector3.right;
-                }
-                isWallTouch = false;
-            }*/
+            
 
         }
 
@@ -130,20 +118,65 @@ public class EnemyBird : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ArmLeft")
+            || collision.gameObject.CompareTag("ArmRight"))
         {
+            Debug.Log("Player");
+
             PlaySound();
             healbar.gameObject.SetActive(true);
 
-            //Quaternion rotation = collision.gameObject.transform.rotation;
-            //gameObject.transform.rotation = rotation;
-            currentHealth -= damage;
-            Debug.Log(currentHealth);
+            currentHealth -= dameArm;
+
+
             animator.SetFloat("Health", currentHealth);
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
-                Destroy(gameObject, 3f);
+                Destroy(gameObject, 2f);
+            }
+        }
+        else if (collision.gameObject.CompareTag("Knife"))
+        {
+            Debug.Log("Knife");
+            PlaySound();
+            healbar.gameObject.SetActive(true);
+
+            currentHealth -= dameKnife;
+
+
+            animator.SetFloat("Health", currentHealth);
+
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                Destroy(gameObject, 2f);
+            }
+        }
+        else if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Debug.Log("Gun");
+
+            PlaySound();
+            healbar.gameObject.SetActive(true);
+            Quaternion rotation = collision.gameObject.transform.rotation;
+            if (rotation.x * Vector3.right.x > 0)
+            {
+                gameObject.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
+            }
+            else
+            {
+                gameObject.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
+            }
+            currentHealth -= dameGun;
+
+
+            animator.SetFloat("Health", currentHealth);
+
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                Destroy(gameObject, 2f);
             }
         }
 
