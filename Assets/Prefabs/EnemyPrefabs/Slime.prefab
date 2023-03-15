@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 4018931307076601648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2511116, y: 0.3103755, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3592427561108818457}
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healbar: {fileID: 4438561689950605709}
+  currentHealth: 1
   speed: 2
   direction: {x: 0, y: 0, z: 0}
   wallerLayerMask:
