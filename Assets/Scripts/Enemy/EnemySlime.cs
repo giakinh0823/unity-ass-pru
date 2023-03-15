@@ -8,6 +8,7 @@ public class EnemySlime : MonoBehaviour
     private Animator animator;
     private float damage = 0.05f;
     private float currentHealth = 1f;
+    private float maxHealth = 1f;
     [SerializeField]
     private Healbar healbar;
 
@@ -23,8 +24,11 @@ public class EnemySlime : MonoBehaviour
     public bool isChasing;
     public float chaseDistance;
     public float distanceLimit = 3f; 
-    private float distanceMoved = 0f; 
-
+    private float distanceMoved = 0f;
+    private float dameArm = 0.2f;
+    private float dameKnife = 0.5f;
+    private float dameGun = 0.25f;
+    TimerEnemy timers;
 
 
     // Start is called before the first frame update
@@ -33,6 +37,9 @@ public class EnemySlime : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetFloat("Health", currentHealth);
         direction = Vector3.right;
+        timers = GetComponent<TimerEnemy>();
+        timers.alarmTime = 1;
+        timers.StartTime();
     }
 
     void Update()
@@ -87,63 +94,88 @@ public class EnemySlime : MonoBehaviour
                 direction = -direction; 
             }
 
-            /*isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector3(0.03f, 0.5f), 0, wallerLayerMask);
-            Debug.Log(isWallTouch);
-            if (isWallTouch)
-            {
-                if (direction == Vector3.right)
-                {
-                    transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
-                    direction = Vector3.left;
-                }
-                else
-                {
-                    transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
-                    direction = Vector3.right;
-                }
-                isWallTouch = false;
-            }*/
 
         }
+        animator.SetFloat("Health", currentHealth);
+        if (timers.isFinish)
+        {
+            if (currentHealth < maxHealth)
+            {
+                currentHealth += currentHealth * 5 / 100;
+                timers.alarmTime = 1;
+                timers.StartTime();
+            }
+            else
+            {
+                healbar.gameObject.SetActive(false);
+                return;
+            }
+        }
+
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Destroy(gameObject, 2f);
+        }
+        healbar.localScale.x = currentHealth;
 
 
     }
 
-    /*void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            if (direction == Vector3.right)
-            {
-                transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
-                direction = Vector3.left;
-            }
-            else
-            {
-                transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
-                direction = Vector3.right;
-            }
-            isWallTouch = false;
-        }
-    }*/
+    
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ArmLeft")
+           || collision.gameObject.CompareTag("ArmRight"))
         {
-            PlaySound();
             healbar.gameObject.SetActive(true);
-
-            //Quaternion rotation = collision.gameObject.transform.rotation;
-            //gameObject.transform.rotation = rotation;
-            currentHealth -= damage;
-            Debug.Log(currentHealth);
-            animator.SetFloat("Health", currentHealth);
-            if (currentHealth <= 0)
+            Quaternion rotation = collision.gameObject.transform.rotation;
+            if (rotation.x * Vector3.right.x > 0)
             {
-                currentHealth = 0;
-                Destroy(gameObject, 3f);
+                gameObject.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
             }
+            else
+            {
+                gameObject.transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
+            }
+            currentHealth -= dameArm;
+
+
+        }
+        else if (collision.gameObject.CompareTag("Knife"))
+        {
+            healbar.gameObject.SetActive(true);
+            Quaternion rotation = collision.gameObject.transform.rotation;
+            if (rotation.x * Vector3.right.x > 0)
+            {
+                gameObject.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
+            }
+            else
+            {
+                gameObject.transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
+            }
+            currentHealth -= dameKnife;
+
+
+
+        }
+        else if (collision.gameObject.CompareTag("Bullet"))
+        {
+            healbar.gameObject.SetActive(true);
+            Quaternion rotation = collision.gameObject.transform.rotation;
+            if (rotation.x * Vector3.right.x > 0)
+            {
+                gameObject.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
+            }
+            else
+            {
+                gameObject.transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
+            }
+            currentHealth -= dameGun;
+
+
+
         }
 
 

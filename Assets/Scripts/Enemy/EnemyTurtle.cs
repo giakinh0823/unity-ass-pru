@@ -6,38 +6,52 @@ public class EnemyTurtle : MonoBehaviour
 {
 
     private Animator animator;
-    private float currentHealth = 1f;
+    private float maxHealth = 0.5f;
+    private float currentHealth = 0.5f;
     [SerializeField]
     private Healbar healbar;
+    private float dameArm = 0.2f;
+    private float dameKnife = 0.5f;
+    private float dameGun = 0.25f;
+    TimerEnemy timers;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         animator.SetFloat("Health", currentHealth);
+        timers = GetComponent<TimerEnemy>();
+        timers.alarmTime = 1;
+        timers.StartTime();
     }
 
     private void Update()
     {
+        animator.SetFloat("Health", currentHealth);
+        animator.SetBool("IsAttack", true);
+        if (timers.isFinish)
+        {
+            if (currentHealth < maxHealth)
+            {
+                currentHealth += currentHealth * 5 / 100;
+                timers.alarmTime = 1;
+                timers.StartTime();
+            }
+            else
+            {
+                healbar.gameObject.SetActive(false);
+                animator.SetBool("IsAttack", false);
+                return;
+            }
+        }
+
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Destroy(gameObject, 2f);
+        }
         healbar.localScale.x = currentHealth;
 
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (!collision.gameObject.CompareTag("Player") &&
-            !collision.gameObject.CompareTag("ArmLeft") &&
-            !collision.gameObject.CompareTag("ArmRight") &&
-            !collision.gameObject.CompareTag("Knife") &&
-            !collision.gameObject.CompareTag("Bullet"))
-        {
-            animator.SetBool("IsAttack", false);
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        animator.SetBool("IsAttack", false);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -55,17 +69,9 @@ public class EnemyTurtle : MonoBehaviour
             {
                 gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
             }
-            currentHealth -= 0.1f;
+            currentHealth -= dameArm;
 
 
-            animator.SetFloat("Health", currentHealth);
-            animator.SetBool("IsAttack", true);
-
-            if (currentHealth <= 0)
-            {
-                currentHealth = 0;
-                Destroy(gameObject, 2f);
-            }
         }else if (collision.gameObject.CompareTag("Knife"))
         {
             healbar.gameObject.SetActive(true);
@@ -78,17 +84,9 @@ public class EnemyTurtle : MonoBehaviour
             {
                 gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
             }
-            currentHealth -= 0.2f;
+            currentHealth -= dameKnife;
 
 
-            animator.SetFloat("Health", currentHealth);
-            animator.SetBool("IsAttack", true);
-
-            if (currentHealth <= 0)
-            {
-                currentHealth = 0;
-                Destroy(gameObject, 2f);
-            }
         }else if (collision.gameObject.CompareTag("Bullet"))
         {
             healbar.gameObject.SetActive(true);
@@ -101,17 +99,9 @@ public class EnemyTurtle : MonoBehaviour
             {
                 gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
             }
-            currentHealth -= 0.125f;
+            currentHealth -= dameGun;
 
 
-            animator.SetFloat("Health", currentHealth);
-            animator.SetBool("IsAttack", true);
-
-            if (currentHealth <= 0)
-            {
-                currentHealth = 0;
-                Destroy(gameObject, 2f);
-            }
         }
     }
     

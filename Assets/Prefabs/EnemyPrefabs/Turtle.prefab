@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5031918685380420393}
   - component: {fileID: -5126591842229256628}
   - component: {fileID: 4786602007811770777}
+  - component: {fileID: 4923644455428471093}
   m_Layer: 0
   m_Name: Turtle
   m_TagString: Enemy
@@ -89,7 +90,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &8489912573336925641
@@ -380,6 +381,22 @@ MonoBehaviour:
   m_ShapePathHash: 1058873463
   m_Mesh: {fileID: 0}
   m_InstanceId: -635780
+--- !u!114 &4923644455428471093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793527874712998217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0748318194eda48a4627b1b13f2c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRunning: 0
+  isFinish: 1
+  elapseTime: 0
+  alarmTime: 1
 --- !u!1001 &1659123712261308261
 PrefabInstance:
   m_ObjectHideFlags: 0

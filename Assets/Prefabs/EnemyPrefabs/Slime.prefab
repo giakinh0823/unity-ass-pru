@@ -64,7 +64,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00941211, y: 0.12880689}
+  m_Offset: {x: 0.00941211, y: -0.016696103}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -75,7 +75,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.044668257, y: 0.45125306}
+  m_Size: {x: 0.044668257, y: 0.5193608}
   m_EdgeRadius: 0
 --- !u!1 &4018931307076601648
 GameObject:
@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 4964011167582498505}
   - component: {fileID: 1553888329075043200}
   - component: {fileID: 7172511948767910272}
+  - component: {fileID: -2995973090111271240}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
@@ -244,7 +245,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06207341, y: -0.0057199}
+  m_Offset: {x: -0.06511289, y: 0.103587046}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -255,7 +256,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1025361, y: 0.47074056}
+  m_Size: {x: 1.7286867, y: 0.8747736}
   m_EdgeRadius: 0
 --- !u!61 &4964011167582498505
 BoxCollider2D:
@@ -289,7 +290,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06990105, y: -0.0053352043}
+  m_Offset: {x: -0.06990105, y: 0.1082464}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -300,7 +301,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.52105576, y: 0.4723345}
+  m_Size: {x: 0.52105576, y: 0.87332785}
   m_EdgeRadius: 0
 --- !u!50 &1553888329075043200
 Rigidbody2D:
@@ -425,6 +426,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2995973090111271240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4018931307076601648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0748318194eda48a4627b1b13f2c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRunning: 0
+  isFinish: 1
+  elapseTime: 0
+  alarmTime: 1
 --- !u!1001 &7324366146565461342
 PrefabInstance:
   m_ObjectHideFlags: 0
