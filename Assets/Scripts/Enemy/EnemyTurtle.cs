@@ -6,8 +6,7 @@ public class EnemyTurtle : MonoBehaviour
 {
 
     private Animator animator;
-    private float damage = 0.05f;
-    private float currentHealth = 0.5f;
+    private float currentHealth = 1f;
     [SerializeField]
     private Healbar healbar;
 
@@ -21,21 +20,42 @@ public class EnemyTurtle : MonoBehaviour
     private void Update()
     {
         healbar.localScale.x = currentHealth;
+
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (!collision.gameObject.CompareTag("Player") &&
+            !collision.gameObject.CompareTag("ArmLeft") &&
+            !collision.gameObject.CompareTag("ArmRight") &&
+            !collision.gameObject.CompareTag("Knife") &&
+            !collision.gameObject.CompareTag("Bullet"))
+        {
+            animator.SetBool("IsAttack", false);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        animator.SetBool("IsAttack", false);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Animator animator = GetComponent<Animator>();
-            animator.Play("tancong"); 
-        }
-        else if (collision.gameObject.CompareTag("ArmLeft") || collision.gameObject.CompareTag("ArmLeft"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ArmLeft")
+            || collision.gameObject.CompareTag("ArmRight"))
         {
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
-            gameObject.transform.rotation = rotation;
-            currentHealth -= damage;
+            if(rotation.x * Vector3.right.x > 0)
+            {
+                gameObject.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+            }
+            else
+            {
+                gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+            }
+            currentHealth -= 0.1f;
 
 
             animator.SetFloat("Health", currentHealth);
@@ -50,8 +70,15 @@ public class EnemyTurtle : MonoBehaviour
         {
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
-            gameObject.transform.rotation = rotation;
-            currentHealth -= 0.07f;
+            if (rotation.x * Vector3.right.x > 0)
+            {
+                gameObject.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+            }
+            else
+            {
+                gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+            }
+            currentHealth -= 0.2f;
 
 
             animator.SetFloat("Health", currentHealth);
@@ -66,8 +93,15 @@ public class EnemyTurtle : MonoBehaviour
         {
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
-            gameObject.transform.rotation = rotation;
-            currentHealth -= 0.06f;
+            if (rotation.x * Vector3.right.x > 0)
+            {
+                gameObject.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+            }
+            else
+            {
+                gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+            }
+            currentHealth -= 0.125f;
 
 
             animator.SetFloat("Health", currentHealth);
@@ -79,16 +113,8 @@ public class EnemyTurtle : MonoBehaviour
                 Destroy(gameObject, 2f);
             }
         }
-
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            animator.SetBool("IsAttack", false);
-        }
-
-    }
+    
 
     void PlaySound()
     {
