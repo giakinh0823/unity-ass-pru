@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4079164849284120}
   m_Layer: 0
-  m_Name: ChunkEnemy2
+  m_Name: ChunkNothing2
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToSpawn:
   - {fileID: 5851987858125069655, guid: cb9af3e78e139ed4181cba79d88d8e62, type: 3}
-  - {fileID: 418877448508959347, guid: 41b66c447aee7db4aa103319509038a2, type: 3}
+  - {fileID: 1265759502714698, guid: 7a7b03cf2c1022f42983af05941f5589, type: 3}
 --- !u!1 &4058804515525566425
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,12 +224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsToSpawn:
+  - {fileID: 5851987858125069655, guid: cb9af3e78e139ed4181cba79d88d8e62, type: 3}
   - {fileID: 1265759502714698, guid: 7a7b03cf2c1022f42983af05941f5589, type: 3}
-  - {fileID: 5560369465959164206, guid: 861d1bce47bede74a9a005d0c9b656b2, type: 3}
-  - {fileID: 4788364542702073346, guid: 06760b663313a7345bbf1f84bea27748, type: 3}
-  - {fileID: 1265759502714698, guid: 7a7b03cf2c1022f42983af05941f5589, type: 3}
-  - {fileID: 1265759502714698, guid: 7a7b03cf2c1022f42983af05941f5589, type: 3}
-  - {fileID: 5213698662971317614, guid: 2404164f1bf2f9e4fa1dde78599b756a, type: 3}
 --- !u!1 &6179635948675016599
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,10 +272,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToSpawn:
   - {fileID: 5851987858125069655, guid: cb9af3e78e139ed4181cba79d88d8e62, type: 3}
-  - {fileID: 1265759502714698, guid: 7a7b03cf2c1022f42983af05941f5589, type: 3}
-  - {fileID: 5560369465959164206, guid: 861d1bce47bede74a9a005d0c9b656b2, type: 3}
-  - {fileID: 4788364542702073346, guid: 06760b663313a7345bbf1f84bea27748, type: 3}
-  - {fileID: 1265759502714698, guid: 7a7b03cf2c1022f42983af05941f5589, type: 3}
   - {fileID: 1265759502714698, guid: 7a7b03cf2c1022f42983af05941f5589, type: 3}
 --- !u!1 &6383149047541862540
 GameObject:
@@ -328,7 +320,6 @@ MonoBehaviour:
   objectsToSpawn:
   - {fileID: 5851987858125069655, guid: cb9af3e78e139ed4181cba79d88d8e62, type: 3}
   - {fileID: 1265759502714698, guid: 7a7b03cf2c1022f42983af05941f5589, type: 3}
-  - {fileID: 1265759502714698, guid: 7a7b03cf2c1022f42983af05941f5589, type: 3}
 --- !u!1 &7216360251336067646
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToSpawn:
   - {fileID: 5851987858125069655, guid: cb9af3e78e139ed4181cba79d88d8e62, type: 3}
+  - {fileID: 1265759502714698, guid: 7a7b03cf2c1022f42983af05941f5589, type: 3}
 --- !u!1 &8472712991595821659
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,7 +414,3 @@ MonoBehaviour:
   objectsToSpawn:
   - {fileID: 5851987858125069655, guid: cb9af3e78e139ed4181cba79d88d8e62, type: 3}
   - {fileID: 1265759502714698, guid: 7a7b03cf2c1022f42983af05941f5589, type: 3}
-  - {fileID: 418877448508959347, guid: 41b66c447aee7db4aa103319509038a2, type: 3}
-  - {fileID: 1265759502714698, guid: 7a7b03cf2c1022f42983af05941f5589, type: 3}
-  - {fileID: 1265759502714698, guid: 7a7b03cf2c1022f42983af05941f5589, type: 3}
-  - {fileID: 5213698662971317614, guid: 2404164f1bf2f9e4fa1dde78599b756a, type: 3}
