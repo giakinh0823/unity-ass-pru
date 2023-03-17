@@ -6,8 +6,9 @@
     {
         public ScreenManager ScreenManager { get; set; }
 
-        public bool IsVisible    { get; set; }
-        public bool Interactable { get; set; }
+        public object Data         { get; set; }
+        public bool   IsVisible    { get; set; }
+        public bool   Interactable { get; set; }
 
         public Action<bool> OnStateChange { get; set; }
 

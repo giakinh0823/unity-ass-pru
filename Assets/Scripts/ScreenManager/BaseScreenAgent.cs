@@ -18,6 +18,7 @@
         }
 
         public ScreenManager ScreenManager { get; set; }
+        public object        Data          { get; set; }
 
         public bool IsVisible
         {

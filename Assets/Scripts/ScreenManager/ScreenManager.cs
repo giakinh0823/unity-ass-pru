@@ -71,11 +71,13 @@
             if (!this.IsAnyPopupShowed) this.CurrentScreen.Show();
         }
 
-        public void OpenScreen<T>() where T : IScreen
+        public void OpenScreen<T>(object data = null) where T : IScreen
         {
             var screen = this.GetScreen<T>();
 
             if (screen is null) return;
+
+            screen.Data = data;
 
             if (screen is BaseScreen baseScreen)
             {
