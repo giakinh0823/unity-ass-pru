@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Close this game?
+  m_text: Revive?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: No
+  m_text: New Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -336,7 +336,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Yes
+  m_text: Revive
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -417,9 +417,9 @@ GameObject:
   - component: {fileID: 3703619337566457004}
   - component: {fileID: 2137778584539975486}
   - component: {fileID: 3048083972376378666}
-  - component: {fileID: 8717226140092997990}
+  - component: {fileID: 8428262172247874693}
   m_Layer: 5
-  m_Name: QuitPopup
+  m_Name: DeadPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -497,7 +497,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8717226140092997990
+--- !u!114 &8428262172247874693
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -506,7 +506,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3703619337566456993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18be4eb3d2774e2a86a01c6fbdb72f25, type: 3}
+  m_Script: {fileID: 11500000, guid: afd60db4cdbf489394aefe4c0eaf4e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5530369861381008015
@@ -600,7 +600,7 @@ GameObject:
   - component: {fileID: 3993172457957410143}
   - component: {fileID: 8928073809971760143}
   m_Layer: 5
-  m_Name: BtnNo
+  m_Name: BtnNewGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -709,9 +709,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8717226140092997990}
-        m_TargetAssemblyTypeName: ScreenManager.Screens.BaseScreenAgent, Assembly-CSharp
-        m_MethodName: Hide
+      - m_Target: {fileID: 8428262172247874693}
+        m_TargetAssemblyTypeName: ScreenManager.Popups.DeadPopup, Assembly-CSharp
+        m_MethodName: NewGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -772,7 +772,7 @@ GameObject:
   - component: {fileID: 2178044929071513652}
   - component: {fileID: 3224677689370863534}
   m_Layer: 5
-  m_Name: BtnYes
+  m_Name: BtnRevive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -881,9 +881,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8717226140092997990}
-        m_TargetAssemblyTypeName: ScreenManager.Popups.QuitPopup, Assembly-CSharp
-        m_MethodName: Quit
+      - m_Target: {fileID: 8428262172247874693}
+        m_TargetAssemblyTypeName: ScreenManager.Popups.DeadPopup, Assembly-CSharp
+        m_MethodName: Revive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
