@@ -2,56 +2,113 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySnake : MonoBehaviour
+public class EnemySnake : BaseEnemy
 {
     // Start is called before the first frame update
     private Animator animator;
-    private float damage = 0.05f;
+    private float maxHealth = 1.5f;
     private float currentHealth = 1.5f;
     [SerializeField]
     private Healbar healbar;
 
+    TimerEnemy timers;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         animator.SetFloat("Health", currentHealth);
+        timers = GetComponent<TimerEnemy>();
+        timers.alarmTime = 1;
+        timers.StartTime();
     }
+
+    
 
     private void Update()
     {
-        healbar.localScale.x = currentHealth;
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        animator.SetFloat("Health", currentHealth);
+        animator.SetBool("IsAttack", true);
+        if (timers.isFinish)
         {
-            healbar.gameObject.SetActive(true);
-            Quaternion rotation = collision.gameObject.transform.rotation;
-            gameObject.transform.rotation = rotation;
-            Debug.Log(currentHealth);
-            currentHealth -= damage;
-
-
-            animator.SetFloat("Health", currentHealth);
-            animator.SetBool("IsAttack", true);
-
-            if (currentHealth <= 0)
+            if (currentHealth < maxHealth)
             {
-                currentHealth = 0;
-                Destroy(gameObject, 2f);
+                currentHealth += currentHealth * 5 / 100;
+                timers.alarmTime = 1;
+                timers.StartTime();
+            }
+            else
+            {
+                healbar.gameObject.SetActive(false);
+                animator.SetBool("IsAttack", false);
+                return;
             }
         }
 
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Destroy(gameObject, 2f);
+        }
+        healbar.localScale.x = currentHealth;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    
+
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ArmLeft")
+            || collision.gameObject.CompareTag("ArmRight"))
         {
-            animator.SetBool("IsAttack", false);
+            healbar.gameObject.SetActive(true);
+            Quaternion rotation = collision.gameObject.transform.rotation;
+            if (rotation.x * Vector3.right.x > 0)
+            {
+                gameObject.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+            }
+            else
+            {
+                gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+            }
+            currentHealth -= GetDameArm();
+
+
         }
+        else if (collision.gameObject.CompareTag("Knife"))
+        {
+            healbar.gameObject.SetActive(true);
+            Quaternion rotation = collision.gameObject.transform.rotation;
+            if (rotation.x * Vector3.right.x > 0)
+            {
+                gameObject.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+            }
+            else
+            {
+                gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+            }
+            currentHealth -= GetDameKnife();
+
+
+
+        }
+        else if (collision.gameObject.CompareTag("Bullet"))
+        {
+            healbar.gameObject.SetActive(true);
+            Quaternion rotation = collision.gameObject.transform.rotation;
+            if (rotation.x * Vector3.right.x > 0)
+            {
+                gameObject.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+            }
+            else
+            {
+                gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+            }
+            currentHealth -= GetDameGun();
+
+
+
+        }
+
     }
 
     void PlaySound()
