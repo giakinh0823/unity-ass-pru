@@ -94,12 +94,12 @@
             }
         }
 
-        public IScreen GetScreen<T>() where T : IScreen
+        public T GetScreen<T>() where T : IScreen
         {
-            if (this.TypeToScreen.TryGetValue(typeof(T), out var screen)) return screen;
+            if (this.TypeToScreen.TryGetValue(typeof(T), out var screen)) return (T)screen;
 
             Debug.LogError($"{typeof(T).Name} not found!");
-            return null;
+            return default;
         }
     }
 }
