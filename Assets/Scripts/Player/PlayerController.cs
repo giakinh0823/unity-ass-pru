@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using ScreenManager.Popups;
 using ScreenManager.Screens;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     private int maxHealth = 1000;
     private int currentHealth;
+    private int reviveTime = 5;
 
     private int stateWeapon = 1;
 
@@ -23,9 +26,21 @@ public class PlayerController : MonoBehaviour
     private InputAction     weaponInput;
     private GameplayScreen  gameplayScreen;
 
+    public int ReviveTime
+    {
+        get => this.reviveTime;
+        set => this.gameplayScreen.ReviveTime = this.reviveTime = value;
+    }
+
+    public int CurrentHealth
+    {
+        get => this.currentHealth;
+        set => this.gameplayScreen.HealthPercent = (float)(this.currentHealth = value) / this.maxHealth;
+    }
+
     private void Awake()
     {
-        playerInput         = new MyPlayerActions();
+        playerInput = new MyPlayerActions();
     }
 
     private void Start()
@@ -35,8 +50,8 @@ public class PlayerController : MonoBehaviour
             anim = GetComponent<Animator>();
         }
 
-        currentHealth       = maxHealth;
         this.gameplayScreen = ScreenManager.ScreenManager.Instance.GetScreen<GameplayScreen>();
+        this.ReHealth();
     }
 
     private void Update()
@@ -47,10 +62,25 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Debug.Log("current Health" + currentHealth);
-        currentHealth -= damage;
-        this.gameplayScreen.SetHealthPercent((float)this.currentHealth / this.maxHealth);
+        this.CurrentHealth -= damage;
+
+        if (this.currentHealth <= 0)
+        {
+            if (this.ReviveTime > 0)
+            {
+                this.gameplayScreen.ScreenManager.OpenScreen<DeadPopup>(this);
+            }
+            else
+            {
+                SceneManager.LoadScene("Main Menu");
+            }
+        }
     }
 
+    public void ReHealth()
+    {
+        this.CurrentHealth = this.maxHealth;
+    }
 
     private void updateWeapon()
     {
