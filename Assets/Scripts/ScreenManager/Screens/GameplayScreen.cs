@@ -4,6 +4,7 @@
     using global::ScreenManager.Popups;
     using TMPro;
     using UnityEngine;
+    using UnityEngine.SceneManagement;
     using UnityEngine.UI;
 
     public class GameplayScreen : BaseScreen
@@ -37,7 +38,9 @@
 
         public void OnTimerEnd()
         {
-            
+            // TODO: Player will die and back to level 1
+            // But for now, just take him to the main menu
+            SceneManager.LoadScene("Main Menu");
         }
     }
 }
