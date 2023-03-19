@@ -1,14 +1,17 @@
 ﻿namespace ScreenManager.Screens
 {
+    using System;
     using global::ScreenManager.Popups;
     using TMPro;
     using UnityEngine;
+    using UnityEngine.SceneManagement;
     using UnityEngine.UI;
 
     public class GameplayScreen : BaseScreen
     {
         [SerializeField] private Slider   healthBarPlayer;
         [SerializeField] private TMP_Text reviveTime;
+        [SerializeField] private TMP_Text countDownTimer;
 
         public float HealthPercent
         {
@@ -25,6 +28,19 @@
         {
             Time.timeScale = 0;
             this.ScreenManager.OpenScreen<PausePopup>();
+        }
+
+        public void OnTimerUpdate(bool isRunning, float timeLeft)
+        {
+            var timespan = TimeSpan.FromSeconds(timeLeft);
+            this.countDownTimer.text = isRunning ? $"{timespan.Minutes:00}:{timespan.Seconds:00}" : "00:00";
+        }
+
+        public void OnTimerEnd()
+        {
+            // TODO: Player will die and back to level 1
+            // But for now, just take him to the main menu
+            SceneManager.LoadScene("Main Menu");
         }
     }
 }
