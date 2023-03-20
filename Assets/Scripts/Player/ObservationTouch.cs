@@ -1,4 +1,5 @@
-﻿using ScreenManager.Screens;
+﻿using Model;
+using ScreenManager.Screens;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,38 +27,33 @@ public class ObservationTouch : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        int level = PlayerLocalData.Instance.CurrentPlayerLevel;
 
         if (collision.gameObject.tag == "Enemy")
         {
             if(collision.gameObject.layer == 17)
             {
-                Debug.Log("Bird");
             }else if(collision.gameObject.layer == 18)
             {
-                Debug.Log("Mushroom");
-                playerController.TakeDamage(damageMushroom);
+                playerController.TakeDamage(damageMushroom*(level*2/3));
             }
             else if (collision.gameObject.layer == 19)
             {
-                Debug.Log("Snake");
-                playerController.TakeDamage(damageSnake);
+                playerController.TakeDamage(damageSnake * (level * 2 / 3));
             }
             else if (collision.gameObject.layer == 20)
             {
-                Debug.Log("Slime");
-                playerController.TakeDamage(damageSlime);
+                playerController.TakeDamage(damageSlime * (level * 2 / 3));
             }
             else
             {
-                Debug.Log("Turtle");
-                playerController.TakeDamage(damageTurtle);
+                playerController.TakeDamage(damageTurtle * (level * 2 / 3));
             }
 
         }
         if(collision.gameObject.tag == "BulletBird")
         {
-            Debug.Log("Bullet");
-            playerController.TakeDamage(damageGun);
+            playerController.TakeDamage(damageGun * (level * 2 / 3));
             Destroy(collision.gameObject);
         }
     }
