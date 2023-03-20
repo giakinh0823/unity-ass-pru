@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1628185766962159142}
   - component: {fileID: 4798704344196096512}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1553888329075043200}
   - component: {fileID: 7172511948767910272}
   - component: {fileID: -2995973090111271240}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 252db9ed9d9bc9e4f95a272b167560c6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -453,6 +453,10 @@ PrefabInstance:
     - target: {fileID: 6088793995693563712, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
       propertyPath: m_Name
       value: Healthbar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088793995693563712, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
+      propertyPath: m_Layer
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6088793995693563712, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
       propertyPath: m_IsActive
