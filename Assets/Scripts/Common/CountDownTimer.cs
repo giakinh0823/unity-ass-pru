@@ -47,5 +47,10 @@ namespace Common
                 this.onTimeout?.Invoke();
             }
         }
+
+        public void CollectionTime(int collectionTime)
+        {
+            this.TimeLeft += collectionTime;
+        }
     }
 }
