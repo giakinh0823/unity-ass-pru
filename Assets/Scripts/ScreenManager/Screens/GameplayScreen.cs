@@ -2,6 +2,7 @@
 {
     using System;
     using global::ScreenManager.Popups;
+    using Model;
     using TMPro;
     using UnityEngine;
     using UnityEngine.SceneManagement;
@@ -12,6 +13,7 @@
         [SerializeField] private Slider   healthBarPlayer;
         [SerializeField] private TMP_Text reviveTime;
         [SerializeField] private TMP_Text countDownTimer;
+        [SerializeField] private TMP_Text currentLevelText;
 
         public float HealthPercent
         {
@@ -22,6 +24,11 @@
         public int ReviveTime
         {
             set => this.reviveTime.text = $"X{value}";
+        }
+
+        public int CurrentLevel
+        {
+            set => this.currentLevelText.text = $"Level {value}";
         }
 
         public void Pause()
@@ -41,6 +48,13 @@
             // TODO: Player will die and back to level 1
             // But for now, just take him to the main menu
             SceneManager.LoadScene("Main Menu");
+        }
+
+        public override void OnShow()
+        {
+            base.OnShow();
+            this.ReviveTime   = PlayerLocalData.Instance.CurrentPlayerReviveTime;
+            this.CurrentLevel = PlayerLocalData.Instance.CurrentPlayerLevel;
         }
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Model;
 using ScreenManager.Popups;
 using ScreenManager.Screens;
 using UnityEngine;
@@ -29,7 +30,11 @@ public class PlayerController : MonoBehaviour
     public int ReviveTime
     {
         get => this.reviveTime;
-        set => this.gameplayScreen.ReviveTime = this.reviveTime = value;
+        set
+        {
+            this.gameplayScreen.ReviveTime = this.reviveTime = value;
+            this.UpdatePlayerLocalData();
+        }
     }
 
     public int CurrentHealth
@@ -40,7 +45,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        playerInput = new MyPlayerActions();
+        playerInput     = new MyPlayerActions();
+        this.reviveTime = PlayerLocalData.Instance.CurrentPlayerReviveTime;
     }
 
     private void Start()
@@ -57,6 +63,12 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         updateWeapon();
+    }
+
+    public void UpdatePlayerLocalData()
+    {
+        PlayerLocalData.Instance.CurrentPlayerReviveTime = this.ReviveTime;
+        PlayerLocalData.Instance.Save();
     }
 
     public void TakeDamage(int damage)
