@@ -8,7 +8,12 @@ public class ObservationTouch : MonoBehaviour
     private PlayerController playerController;
 
     private int damage = 100;
-    public int damageBird = 100;
+    public int damageTurtle = 10;
+    public int damageMushroom = 20;
+    public int damageSnake = 30;
+    public int damageSlime = 20;
+    public int damageGun = 30;
+
 
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -29,24 +34,30 @@ public class ObservationTouch : MonoBehaviour
             }else if(collision.gameObject.layer == 18)
             {
                 Debug.Log("Mushroom");
+                playerController.TakeDamage(damageMushroom);
             }
             else if (collision.gameObject.layer == 19)
             {
                 Debug.Log("Snake");
+                playerController.TakeDamage(damageSnake);
             }
             else if (collision.gameObject.layer == 20)
             {
                 Debug.Log("Slime");
+                playerController.TakeDamage(damageSlime);
             }
             else
             {
                 Debug.Log("Turtle");
+                playerController.TakeDamage(damageTurtle);
             }
 
         }
         if(collision.gameObject.tag == "BulletBird")
         {
             Debug.Log("Bullet");
+            playerController.TakeDamage(damageGun);
+            Destroy(collision.gameObject);
         }
     }
 
