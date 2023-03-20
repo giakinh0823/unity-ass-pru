@@ -130,4 +130,5 @@ public class PlayerController : MonoBehaviour
         weaponInput = playerInput.Player.Weapon;
         weaponInput.Disable();
     }
+
 }
