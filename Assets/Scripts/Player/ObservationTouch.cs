@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using ScreenManager.Screens;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +16,6 @@ public class ObservationTouch : MonoBehaviour
     public int damageGun = 30;
 
 
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Observation")
@@ -26,6 +26,7 @@ public class ObservationTouch : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.tag == "Enemy")
         {
             if(collision.gameObject.layer == 17)
