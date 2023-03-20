@@ -32,15 +32,14 @@
                 var spawnedScreen = Instantiate(prefab);
                 var screen        = spawnedScreen.GetComponent<IScreen>();
                 screen.ScreenManager = this;
-
-                if (this.CurrentScreen is not null || screen is BasePopup) screen.Hide();
+                screen.Hide();
 
                 var rectTransform = spawnedScreen.GetComponent<RectTransform>();
 
                 if (screen is BaseScreen baseScreen)
                 {
                     spawnedScreen.transform.SetParent(this._screenTransform);
-                    this.CurrentScreen = baseScreen;
+                    this.CurrentScreen ??= baseScreen;
                 }
                 else if (screen is BasePopup)
                 {
@@ -63,6 +62,8 @@
 
                 this.TypeToScreen.Add(screen.GetType(), screen);
             }
+
+            this.CurrentScreen.Show();
         }
 
         private void OnStateChange(bool state)

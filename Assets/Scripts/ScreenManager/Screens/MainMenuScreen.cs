@@ -1,12 +1,14 @@
 ﻿namespace ScreenManager.Screens
 {
     using global::ScreenManager.Popups;
+    using Model;
     using UnityEngine.SceneManagement;
 
     public class MainMenuScreen : BaseScreen
     {
         public void OnClickNewGameBtn()
         {
+            PlayerLocalData.Instance.Init();
             SceneManager.LoadScene("Game");
         }
 
@@ -22,7 +24,7 @@
 
         public void OnClickResumeBtn()
         {
-            // TODO: 
+            SceneManager.LoadScene("Game");
         }
     }
 }

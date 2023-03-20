@@ -1,5 +1,6 @@
 ﻿namespace ScreenManager.Popups
 {
+    using Model;
     using UnityEngine;
     using UnityEngine.SceneManagement;
 
@@ -11,9 +12,10 @@
             Time.timeScale = 1;
         }
 
-        public void BackToMainMenu()
+        public void SaveAndExit()
         {
             Time.timeScale = 1;
+            PlayerLocalData.Instance.Save();
             SceneManager.LoadScene("Main Menu");
         }
 
