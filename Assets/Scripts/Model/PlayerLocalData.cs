@@ -11,6 +11,7 @@ namespace Model
         {
             this.CurrentPlayerLevel      = 1;
             this.CurrentPlayerReviveTime = 5;
+            base.Init();
         }
     }
 }

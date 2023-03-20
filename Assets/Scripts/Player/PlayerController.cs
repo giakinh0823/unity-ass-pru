@@ -45,7 +45,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        playerInput = new MyPlayerActions();
+        playerInput     = new MyPlayerActions();
+        this.reviveTime = PlayerLocalData.Instance.CurrentPlayerReviveTime;
     }
 
     private void Start()

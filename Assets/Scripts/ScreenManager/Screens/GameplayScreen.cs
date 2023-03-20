@@ -2,6 +2,7 @@
 {
     using System;
     using global::ScreenManager.Popups;
+    using Model;
     using TMPro;
     using UnityEngine;
     using UnityEngine.SceneManagement;
@@ -41,6 +42,12 @@
             // TODO: Player will die and back to level 1
             // But for now, just take him to the main menu
             SceneManager.LoadScene("Main Menu");
+        }
+
+        public override void OnShow()
+        {
+            base.OnShow();
+            this.ReviveTime = PlayerLocalData.Instance.CurrentPlayerReviveTime;
         }
     }
 }

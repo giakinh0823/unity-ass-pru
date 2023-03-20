@@ -8,23 +8,11 @@ namespace Element
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class Gate : MonoBehaviour
     {
-        [SerializeField] private float stayTime = 2f;
-
-        private float stayTimer;
-        private bool  isTriggered;
-
-        private void OnTriggerStay2D(Collider2D other)
+        private void OnTriggerEnter2D(Collider2D col)
         {
-            if (this.isTriggered) return;
-
-            if (this.stayTimer < this.stayTime)
-            {
-                this.stayTimer += Time.deltaTime;
-            }
-            else
+            if (col.gameObject.CompareTag("Player"))
             {
                 this.OnOpenGate();
-                this.isTriggered = true;
             }
         }
 
@@ -34,11 +22,6 @@ namespace Element
             PlayerLocalData.Instance.Save();
             Debug.Log($"Open Gate: {PlayerLocalData.Instance.CurrentPlayerLevel}");
             SceneManager.LoadScene("Game");
-        }
-
-        private void OnTriggerExit2D(Collider2D other)
-        {
-            this.stayTimer = 0f;
         }
     }
 }

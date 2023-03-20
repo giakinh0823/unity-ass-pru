@@ -46,11 +46,11 @@ namespace Common
             var data = this;
             if (LocalDataHandler.LoadData(ref data)) return;
             this.Init();
-            this.Save();
         }
 
         public virtual void Init()
         {
+            this.Save();
         }
     }
 }
