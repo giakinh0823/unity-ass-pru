@@ -8,7 +8,7 @@ public class EnemySlime : BaseEnemy
 {
     private Animator animator;
     private float damage = 0.05f;
-    private float currentHealth = 1f;
+    public float currentHealth = 1f;
     private float maxHealth = 1f;
     [SerializeField]
     private Healbar healbar;
@@ -102,6 +102,7 @@ public class EnemySlime : BaseEnemy
         {
             if (currentHealth < maxHealth)
             {
+                healbar.gameObject.SetActive(true);
                 currentHealth += currentHealth * 5 / 100;
                 timers.alarmTime = 1;
                 timers.StartTime();
@@ -125,7 +126,7 @@ public class EnemySlime : BaseEnemy
 
     
 
-    void OnTriggerEnter2D(Collider2D collision)
+    /*void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ArmLeft")
            || collision.gameObject.CompareTag("ArmRight"))
@@ -180,7 +181,7 @@ public class EnemySlime : BaseEnemy
         }
 
 
-    }
+    }*/
 
     public void AttackPlayer()
     {
