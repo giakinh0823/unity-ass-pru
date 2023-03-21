@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Model;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,10 +8,13 @@ public class HitController : MonoBehaviour
 {
     [SerializeField]
     private SlidingController slidingController;
+
     [SerializeField]
     private PlayerController playerController;
+
     [SerializeField]
     private ShootController shootController;
+
     public AudioSource soundShoots;
     public AudioSource soundSlashing;
 
@@ -18,7 +22,7 @@ public class HitController : MonoBehaviour
     private int hit;
 
     private MyPlayerActions playerInput;
-    private InputAction attackInput;
+    private InputAction     attackInput;
 
     public float dameGunPlayerAttackEnemy = 0.25f;
 
@@ -30,9 +34,9 @@ public class HitController : MonoBehaviour
 
     void Start()
     {
-        hit = 0;
+        hit               = 0;
         slidingController = gameObject.GetComponent<SlidingController>();
-        playerController = gameObject.GetComponent<PlayerController>();
+        playerController  = gameObject.GetComponent<PlayerController>();
     }
 
     void Update()
@@ -54,19 +58,21 @@ public class HitController : MonoBehaviour
 
     public void AttackEnemyByArm()
     {
-    float dameArmPlayerAttackEnemy = 0.2f;
+        // Giảm sát thương mỗi level đi 0.01 tối đa còn 0.1
+        float dameArmPlayerAttackEnemy = Mathf.Clamp(0.2f - PlayerLocalData.Instance.CurrentPlayerLevel * 0.01f, 0.1f, 0.2f);
 
-    GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach(GameObject go in enemy)
+        GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject go in enemy)
         {
             if (Mathf.Abs(Vector3.Distance(transform.position, go.transform.position)) <= 2f)
             {
-                if(go.layer== 21) {
+                if (go.layer == 21)
+                {
                     EnemyTurtle enemyTurtle = go.GetComponent<EnemyTurtle>();
-                    Vector2 rotation = enemyTurtle.transform.localScale;
+                    Vector2     rotation    = enemyTurtle.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
-                        if(transform.position.x > enemyTurtle.transform.position.x)
+                        if (transform.position.x > enemyTurtle.transform.position.x)
                         {
                             enemyTurtle.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
                         }
@@ -78,13 +84,13 @@ public class HitController : MonoBehaviour
                             enemyTurtle.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
-                    
+
                     enemyTurtle.currentHealth -= dameArmPlayerAttackEnemy;
                 }
-                else if(go.layer== 18)
+                else if (go.layer == 18)
                 {
                     EnemyMushroom enemyMushroom = go.GetComponent<EnemyMushroom>();
-                    Vector2 rotation = enemyMushroom.transform.localScale;
+                    Vector2       rotation      = enemyMushroom.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
                         if (transform.position.x > enemyMushroom.transform.position.x)
@@ -99,12 +105,13 @@ public class HitController : MonoBehaviour
                             enemyMushroom.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
+
                     enemyMushroom.currentHealth -= dameArmPlayerAttackEnemy;
                 }
                 else if (go.layer == 19)
                 {
                     EnemySnake enemySnake = go.GetComponent<EnemySnake>();
-                    Vector2 rotation = enemySnake.transform.localScale;
+                    Vector2    rotation   = enemySnake.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
                         if (transform.position.x > enemySnake.transform.position.x)
@@ -119,12 +126,13 @@ public class HitController : MonoBehaviour
                             enemySnake.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
+
                     enemySnake.currentHealth -= dameArmPlayerAttackEnemy;
                 }
                 else if (go.layer == 20)
                 {
                     EnemySlime enemySlime = go.GetComponent<EnemySlime>();
-                    Vector2 rotation = enemySlime.transform.localScale;
+                    Vector2    rotation   = enemySlime.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
                         if (transform.position.x > enemySlime.transform.position.x)
@@ -139,12 +147,13 @@ public class HitController : MonoBehaviour
                             enemySlime.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
                         }
                     }
+
                     enemySlime.currentHealth -= dameArmPlayerAttackEnemy;
                 }
                 else if (go.layer == 17)
                 {
                     EnemyBird enemyBird = go.GetComponent<EnemyBird>();
-                    Vector2 rotation = enemyBird.transform.localScale;
+                    Vector2   rotation  = enemyBird.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
                         if (transform.position.x > enemyBird.transform.position.x)
@@ -159,17 +168,17 @@ public class HitController : MonoBehaviour
                             enemyBird.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
                         }
                     }
+
                     enemyBird.currentHealth -= dameArmPlayerAttackEnemy;
                 }
-
             }
         }
-       
     }
 
     public void AttackEnemyByKnife()
     {
-        float dameKnifePlayerAttackEnemy = 0.5f;
+        // Giảm sát thương của player mỗi level đi 0.05, giảm tối đa 0.4 tức còn 0.1
+        float dameKnifePlayerAttackEnemy = Mathf.Clamp(0.5f - PlayerLocalData.Instance.CurrentPlayerLevel * 0.05f, 0.1f, 1f);
 
         GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject go in enemy)
@@ -179,7 +188,7 @@ public class HitController : MonoBehaviour
                 if (go.layer == 21)
                 {
                     EnemyTurtle enemyTurtle = go.GetComponent<EnemyTurtle>();
-                    Vector2 rotation = enemyTurtle.transform.localScale;
+                    Vector2     rotation    = enemyTurtle.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
                         if (transform.position.x > enemyTurtle.transform.position.x)
@@ -200,7 +209,7 @@ public class HitController : MonoBehaviour
                 else if (go.layer == 18)
                 {
                     EnemyMushroom enemyMushroom = go.GetComponent<EnemyMushroom>();
-                    Vector2 rotation = enemyMushroom.transform.localScale;
+                    Vector2       rotation      = enemyMushroom.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
                         if (transform.position.x > enemyMushroom.transform.position.x)
@@ -215,12 +224,13 @@ public class HitController : MonoBehaviour
                             enemyMushroom.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
+
                     enemyMushroom.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
                 else if (go.layer == 19)
                 {
                     EnemySnake enemySnake = go.GetComponent<EnemySnake>();
-                    Vector2 rotation = enemySnake.transform.localScale;
+                    Vector2    rotation   = enemySnake.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
                         if (transform.position.x > enemySnake.transform.position.x)
@@ -235,12 +245,13 @@ public class HitController : MonoBehaviour
                             enemySnake.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
+
                     enemySnake.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
                 else if (go.layer == 20)
                 {
                     EnemySlime enemySlime = go.GetComponent<EnemySlime>();
-                    Vector2 rotation = enemySlime.transform.localScale;
+                    Vector2    rotation   = enemySlime.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
                         if (transform.position.x > enemySlime.transform.position.x)
@@ -255,12 +266,13 @@ public class HitController : MonoBehaviour
                             enemySlime.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
                         }
                     }
+
                     enemySlime.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
                 else if (go.layer == 17)
                 {
                     EnemyBird enemyBird = go.GetComponent<EnemyBird>();
-                    Vector2 rotation = enemyBird.transform.localScale;
+                    Vector2   rotation  = enemyBird.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
                         if (transform.position.x > enemyBird.transform.position.x)
@@ -275,12 +287,11 @@ public class HitController : MonoBehaviour
                             enemyBird.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
                         }
                     }
+
                     enemyBird.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
-
             }
         }
-
     }
 
 
@@ -300,6 +311,7 @@ public class HitController : MonoBehaviour
     {
         soundShoots.Play();
     }
+
     private void SoundHitSlashing()
     {
         soundSlashing.Play();
