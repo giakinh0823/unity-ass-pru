@@ -5,10 +5,10 @@ using UnityEngine;
 public class BaseEnemy : MonoBehaviour
 {
 
-    private float dameArm = 0.2f;
-    private float dameGun = 0.25f;
-    private float dameKnife = 0.5f;
-     
+    private float dameArm;
+    private float dameGun;
+    private float dameKnife;
+
     public float GetDameArm()
     {
         return dameArm;

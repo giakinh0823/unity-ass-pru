@@ -20,6 +20,9 @@ public class HitController : MonoBehaviour
     private MyPlayerActions playerInput;
     private InputAction attackInput;
 
+    public float dameKnifePlayerAttackEnemy = 0.5f;
+    public float dameGunPlayerAttackEnemy = 0.25f;
+
     private void Awake()
     {
         playerInput = new MyPlayerActions();
@@ -48,6 +51,26 @@ public class HitController : MonoBehaviour
                 hit++;
             }
         }
+    }
+
+    public void AttackEnemy()
+    {
+    float dameArmPlayerAttackEnemy = 0.2f;
+
+    GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach(GameObject go in enemy)
+        {
+            if (Mathf.Abs(Vector3.Distance(transform.position, go.transform.position)) <= 2f)
+            {
+                if(go.layer== 21) {
+                    EnemyTurtle enemyTurtle = go.GetComponent<EnemyTurtle>();
+                    enemyTurtle.currentHealth -= dameArmPlayerAttackEnemy;
+                }
+                
+
+            }
+        }
+       
     }
 
 

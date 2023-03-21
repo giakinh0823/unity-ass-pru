@@ -8,9 +8,9 @@ public class EnemyTurtle : BaseEnemy
 
     private Animator animator;
     private float maxHealth = 0.5f;
-    private float currentHealth = 0.5f;
+    public float currentHealth = 0.5f;
     [SerializeField]
-    private Healbar healbar;
+    public Healbar healbar;
 
     TimerEnemy timers;
     public int damageTurtle = 10;
@@ -34,6 +34,7 @@ public class EnemyTurtle : BaseEnemy
         {
             if (currentHealth < maxHealth)
             {
+                healbar.gameObject.SetActive(true);
                 currentHealth += currentHealth * 5 / 100;
                 timers.alarmTime = 1;
                 timers.StartTime();
@@ -51,16 +52,17 @@ public class EnemyTurtle : BaseEnemy
             currentHealth = 0;
             Destroy(gameObject, 2f);
         }
+        Debug.Log("Health " + currentHealth);
+
         healbar.localScale.x = currentHealth;
 
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    /*void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ArmLeft")
             || collision.gameObject.CompareTag("ArmRight"))
         {
-            healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
             if(rotation.x * Vector3.right.x > 0)
             {
@@ -104,7 +106,7 @@ public class EnemyTurtle : BaseEnemy
 
 
         }
-    }
+    }*/
 
     public void AttackPlayer()
     {
