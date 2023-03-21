@@ -6,7 +6,7 @@ public class EnemyBird : BaseEnemy
     private Animator animator;
     private float damage = 0.05f;
     private float maxHealth = 1.5f;
-    private float currentHealth = 1.5f;
+    public float currentHealth = 1.5f;
     [SerializeField]
     private Healbar healbar;
 
@@ -23,7 +23,7 @@ public class EnemyBird : BaseEnemy
     public float chaseDistance;
 
     public GameObject bulletPrefab;
-    private float bulletSpeed = 15f;
+    private float bulletSpeed = 3f;
     Vector3 closestWalkerDirection = Vector3.zero;
     TimerEnemy timers;
     TimerEnemy timers2;
@@ -38,7 +38,7 @@ public class EnemyBird : BaseEnemy
         direction = Vector3.right;
 
         timers = GetComponent<TimerEnemy>();
-        timers.alarmTime = 1;
+        timers.alarmTime = 2;
         timers.StartTime();
         
         timers2 = GetComponent<TimerEnemy>();
@@ -64,7 +64,7 @@ public class EnemyBird : BaseEnemy
                 bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
                 bullet.GetComponent<AudioSource>().Play();
                 Destroy(bullet, 4f);
-                timers.alarmTime = 5;
+                timers.alarmTime = 2;
                 timers.StartTime();
             }
             if (gameObject.transform.position.x > playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x > 0)
@@ -115,6 +115,7 @@ public class EnemyBird : BaseEnemy
         {
             if (currentHealth < maxHealth)
             {
+                healbar.gameObject.SetActive(true);
                 currentHealth += currentHealth * 5 / 100;
                 timers2.alarmTime = 1;
                 timers2.StartTime();
@@ -145,39 +146,9 @@ public class EnemyBird : BaseEnemy
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ArmLeft")
-            || collision.gameObject.CompareTag("ArmRight"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            healbar.gameObject.SetActive(true);
-            Quaternion rotation = collision.gameObject.transform.rotation;
-            if (rotation.x * Vector3.right.x > 0)
-            {
-                gameObject.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
-            }
-            else
-            {
-                gameObject.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
-            }
-            currentHealth -= GetDameArm();
-
-
-        }
-        else if (collision.gameObject.CompareTag("Knife"))
-        {
-            healbar.gameObject.SetActive(true);
-            Quaternion rotation = collision.gameObject.transform.rotation;
-            if (rotation.x * Vector3.right.x > 0)
-            {
-                gameObject.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
-            }
-            else
-            {
-                gameObject.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
-            }
-            currentHealth -= GetDameKnife();
-
-
-
+            currentHealth -= 0.000001f;
         }
         else if (collision.gameObject.CompareTag("Bullet"))
         {
@@ -192,8 +163,6 @@ public class EnemyBird : BaseEnemy
                 gameObject.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
             }
             currentHealth -= GetDameGun();
-
-
 
         }
 

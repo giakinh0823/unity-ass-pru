@@ -10,10 +10,6 @@ public class ObservationTouch : MonoBehaviour
     private PlayerController playerController;
 
     private int damage = 100;
-    public int damageTurtle = 10;
-    public int damageMushroom = 20;
-    public int damageSnake = 30;
-    public int damageSlime = 20;
     public int damageGun = 30;
 
 
@@ -29,34 +25,14 @@ public class ObservationTouch : MonoBehaviour
     {
         int level = PlayerLocalData.Instance.CurrentPlayerLevel;
 
-        if (collision.gameObject.tag == "Enemy")
-        {
-            if(collision.gameObject.layer == 17)
-            {
-            }else if(collision.gameObject.layer == 18)
-            {
-                playerController.TakeDamage(damageMushroom*(level*2/3));
-            }
-            else if (collision.gameObject.layer == 19)
-            {
-                playerController.TakeDamage(damageSnake * (level * 2 / 3));
-            }
-            else if (collision.gameObject.layer == 20)
-            {
-                playerController.TakeDamage(damageSlime * (level * 2 / 3));
-            }
-            else
-            {
-                playerController.TakeDamage(damageTurtle * (level * 2 / 3));
-            }
-
-        }
         if(collision.gameObject.tag == "BulletBird")
         {
-            playerController.TakeDamage(damageGun * (level * 2 / 3));
+            playerController.TakeDamage(damageGun + level + 2);
             Destroy(collision.gameObject);
         }
     }
 
-
+   
 }
+
+

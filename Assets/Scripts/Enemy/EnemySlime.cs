@@ -1,3 +1,4 @@
+using Model;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ public class EnemySlime : BaseEnemy
 {
     private Animator animator;
     private float damage = 0.05f;
-    private float currentHealth = 1f;
+    public float currentHealth = 1f;
     private float maxHealth = 1f;
     [SerializeField]
     private Healbar healbar;
@@ -27,6 +28,8 @@ public class EnemySlime : BaseEnemy
     private float distanceMoved = 0f;
     
     TimerEnemy timers;
+    public int damageSlime = 20;
+
 
 
     // Start is called before the first frame update
@@ -38,6 +41,7 @@ public class EnemySlime : BaseEnemy
         timers = GetComponent<TimerEnemy>();
         timers.alarmTime = 1;
         timers.StartTime();
+
     }
 
     void Update()
@@ -99,6 +103,7 @@ public class EnemySlime : BaseEnemy
         {
             if (currentHealth < maxHealth)
             {
+                healbar.gameObject.SetActive(true);
                 currentHealth += currentHealth * 5 / 100;
                 timers.alarmTime = 1;
                 timers.StartTime();
@@ -124,39 +129,9 @@ public class EnemySlime : BaseEnemy
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ArmLeft")
-           || collision.gameObject.CompareTag("ArmRight"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            healbar.gameObject.SetActive(true);
-            Quaternion rotation = collision.gameObject.transform.rotation;
-            if (rotation.x * Vector3.right.x > 0)
-            {
-                gameObject.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
-            }
-            else
-            {
-                gameObject.transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
-            }
-            currentHealth -= GetDameArm();
-
-
-        }
-        else if (collision.gameObject.CompareTag("Knife"))
-        {
-            healbar.gameObject.SetActive(true);
-            Quaternion rotation = collision.gameObject.transform.rotation;
-            if (rotation.x * Vector3.right.x > 0)
-            {
-                gameObject.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
-            }
-            else
-            {
-                gameObject.transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
-            }
-            currentHealth -= GetDameKnife();
-
-
-
+            currentHealth -= 0.000001f;
         }
         else if (collision.gameObject.CompareTag("Bullet"))
         {
@@ -172,11 +147,25 @@ public class EnemySlime : BaseEnemy
             }
             currentHealth -= GetDameGun();
 
-
-
         }
 
 
+    }
+
+    public void AttackPlayer()
+    {
+        int level = PlayerLocalData.Instance.CurrentPlayerLevel;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if(player != null)
+        {
+            PlayerController playerController = player.GetComponent<PlayerController>();
+            if (Vector3.Distance(transform.position, player.transform.position) <= 2f)
+            {
+                playerController.TakeDamage(damageSlime + level + 2);
+            }
+        }
+        
     }
 
     void PlaySound()
