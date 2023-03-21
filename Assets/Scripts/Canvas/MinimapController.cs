@@ -13,6 +13,7 @@ public class MinimapController : MonoBehaviour, IPointerClickHandler
 
     private bool isShowMap;
 
+
     void Start()
     {
         isShowMap = false;
