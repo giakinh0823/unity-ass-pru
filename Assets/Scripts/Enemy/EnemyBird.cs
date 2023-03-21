@@ -13,7 +13,7 @@ public class EnemyBird : BaseEnemy
     public float speed = 2.0f;
     public Vector3 direction;
 
-    bool isWallTouch = false;
+    //bool isWallTouch = false;
     public LayerMask wallerLayerMask;
     [SerializeField]
     private Transform wallCheckPoint;
