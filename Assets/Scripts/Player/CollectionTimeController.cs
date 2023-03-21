@@ -6,14 +6,14 @@ using UnityEngine;
 public class CollectionTimeController : MonoBehaviour
 {
 	[SerializeField] private PlayerController playerController;
-
+	[SerializeField] private float _collectionTime = 10f;
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.gameObject.tag == "Timer")
 		{
 
 			CountDownTimer countDowObjects = FindObjectOfType<CountDownTimer>();
-			countDowObjects.TimeLeft+= 30f;
+			countDowObjects.TimeLeft+= _collectionTime;
 			Destroy(collision.gameObject);
 		}
 	}
