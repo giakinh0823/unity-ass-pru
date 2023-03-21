@@ -48,9 +48,5 @@ namespace Common
             }
         }
 
-        public void CollectionTime(int collectionTime)
-        {
-            this.TimeLeft += collectionTime;
-        }
     }
 }
