@@ -13,6 +13,7 @@ public class EnemyMushroom : BaseEnemy
 
     TimerEnemy timers;
     public int damageMushroom = 20;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class EnemyMushroom : BaseEnemy
         timers = GetComponent<TimerEnemy>();
         timers.alarmTime = 1;
         timers.StartTime();
+        
     }
 
     void Update()
@@ -68,6 +70,7 @@ public class EnemyMushroom : BaseEnemy
             {
                 gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
             }
+
             currentHealth -= GetDameGun();
 
         }

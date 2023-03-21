@@ -41,6 +41,7 @@ public class EnemySlime : BaseEnemy
         timers = GetComponent<TimerEnemy>();
         timers.alarmTime = 1;
         timers.StartTime();
+
     }
 
     void Update()

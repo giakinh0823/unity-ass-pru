@@ -20,7 +20,6 @@ public class HitController : MonoBehaviour
     private MyPlayerActions playerInput;
     private InputAction attackInput;
 
-    public float dameKnifePlayerAttackEnemy = 0.5f;
     public float dameGunPlayerAttackEnemy = 0.25f;
 
     private void Awake()
@@ -170,7 +169,7 @@ public class HitController : MonoBehaviour
 
     public void AttackEnemyByKnife()
     {
-        float dameArmPlayerAttackEnemy = 0.5f;
+        float dameKnifePlayerAttackEnemy = 0.5f;
 
         GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject go in enemy)
@@ -196,7 +195,7 @@ public class HitController : MonoBehaviour
                         }
                     }
 
-                    enemyTurtle.currentHealth -= dameArmPlayerAttackEnemy;
+                    enemyTurtle.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
                 else if (go.layer == 18)
                 {
@@ -216,7 +215,7 @@ public class HitController : MonoBehaviour
                             enemyMushroom.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
-                    enemyMushroom.currentHealth -= dameArmPlayerAttackEnemy;
+                    enemyMushroom.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
                 else if (go.layer == 19)
                 {
@@ -236,7 +235,7 @@ public class HitController : MonoBehaviour
                             enemySnake.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
-                    enemySnake.currentHealth -= dameArmPlayerAttackEnemy;
+                    enemySnake.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
                 else if (go.layer == 20)
                 {
@@ -256,7 +255,7 @@ public class HitController : MonoBehaviour
                             enemySlime.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
                         }
                     }
-                    enemySlime.currentHealth -= dameArmPlayerAttackEnemy;
+                    enemySlime.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
                 else if (go.layer == 17)
                 {
@@ -276,7 +275,7 @@ public class HitController : MonoBehaviour
                             enemyBird.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
                         }
                     }
-                    enemyBird.currentHealth -= dameArmPlayerAttackEnemy;
+                    enemyBird.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
 
             }
