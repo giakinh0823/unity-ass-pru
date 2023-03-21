@@ -13,6 +13,9 @@
         public Action changeWeapon;
 
         [SerializeField]
+        private FixedJoystick fixedJoystick;
+
+        [SerializeField]
         private Button jumpButton;
 
         [SerializeField]
@@ -27,5 +30,7 @@
             this.attackButton.onClick.AddListener(() => this.attack?.Invoke());
             this.changeWeaponButton.onClick.AddListener(() => this.changeWeapon?.Invoke());
         }
+
+        public Vector2 JoystickDirection => this.fixedJoystick.Direction;
     }
 }
