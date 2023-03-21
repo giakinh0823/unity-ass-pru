@@ -114,7 +114,7 @@ public class EnemyTurtle : BaseEnemy
         PlayerController playerController = player.GetComponent<PlayerController>();
         if (Vector3.Distance(transform.position, player.transform.position) <= 2f)
         {
-            playerController.TakeDamage(damageTurtle);
+            playerController.TakeDamage(damageTurtle + level + 2);
         }
     }
 

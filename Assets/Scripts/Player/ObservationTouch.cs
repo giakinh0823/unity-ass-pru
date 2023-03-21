@@ -10,8 +10,6 @@ public class ObservationTouch : MonoBehaviour
     private PlayerController playerController;
 
     private int damage = 100;
-    public int damageSnake = 30;
-    public int damageSlime = 20;
     public int damageGun = 30;
     public Transform mushroomTransfrom;
 

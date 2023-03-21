@@ -1,3 +1,4 @@
+using Model;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class EnemySnake : BaseEnemy
     private Healbar healbar;
 
     TimerEnemy timers;
+    public int damageSnake = 30;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -109,6 +112,18 @@ public class EnemySnake : BaseEnemy
 
         }
 
+    }
+
+    public void AttackPlayer()
+    {
+        int level = PlayerLocalData.Instance.CurrentPlayerLevel;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        PlayerController playerController = player.GetComponent<PlayerController>();
+        if (Vector3.Distance(transform.position, player.transform.position) <= 2f)
+        {
+            playerController.TakeDamage(damageSnake + level + 2);
+        }
     }
 
     void PlaySound()
