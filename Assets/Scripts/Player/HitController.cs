@@ -64,16 +64,62 @@ public class HitController : MonoBehaviour
             {
                 if(go.layer== 21) {
                     EnemyTurtle enemyTurtle = go.GetComponent<EnemyTurtle>();
+                    Vector2 rotation = enemyTurtle.transform.localScale;
+                    if (rotation.x * transform.localScale.x > 0)
+                    {
+                        if(transform.position.x > enemyTurtle.transform.position.x)
+                        {
+                            enemyTurtle.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+                        }
+                    }
+                    else
+                    {
+                        if (transform.position.x < enemyTurtle.transform.position.x)
+                        {
+                            enemyTurtle.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+                        }
+                    }
+                    
                     enemyTurtle.currentHealth -= dameArmPlayerAttackEnemy;
                 }
                 else if(go.layer== 18)
                 {
                     EnemyMushroom enemyMushroom = go.GetComponent<EnemyMushroom>();
+                    Vector2 rotation = enemyMushroom.transform.localScale;
+                    if (rotation.x * transform.localScale.x > 0)
+                    {
+                        if (transform.position.x > enemyMushroom.transform.position.x)
+                        {
+                            enemyMushroom.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+                        }
+                    }
+                    else
+                    {
+                        if (transform.position.x < enemyMushroom.transform.position.x)
+                        {
+                            enemyMushroom.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+                        }
+                    }
                     enemyMushroom.currentHealth -= dameArmPlayerAttackEnemy;
                 }
                 else if (go.layer == 19)
                 {
                     EnemySnake enemySnake = go.GetComponent<EnemySnake>();
+                    Vector2 rotation = enemySnake.transform.localScale;
+                    if (rotation.x * transform.localScale.x > 0)
+                    {
+                        if (transform.position.x > enemySnake.transform.position.x)
+                        {
+                            enemySnake.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+                        }
+                    }
+                    else
+                    {
+                        if (transform.position.x < enemySnake.transform.position.x)
+                        {
+                            enemySnake.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+                        }
+                    }
                     enemySnake.currentHealth -= dameArmPlayerAttackEnemy;
                 }
 
