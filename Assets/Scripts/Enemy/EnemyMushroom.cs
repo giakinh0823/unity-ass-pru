@@ -13,6 +13,7 @@ public class EnemyMushroom : BaseEnemy
 
     TimerEnemy timers;
     public int damageMushroom = 20;
+    bool check;
    
 
     // Start is called before the first frame update
@@ -24,36 +25,59 @@ public class EnemyMushroom : BaseEnemy
         timers.alarmTime = 1;
         timers.StartTime();
         
+
     }
 
     void Update()
     {
-        animator.SetFloat("Health", currentHealth);
-        animator.SetBool("IsAttack", true);
-        if (timers.isFinish)
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if(player != null )
         {
-            if (currentHealth < maxHealth)
+            if (Vector3.Distance(transform.position, player.transform.position) <= 2f)
             {
-                healbar.gameObject.SetActive(true);
-                currentHealth += currentHealth * 5 / 100;
-                timers.alarmTime = 1;
-                timers.StartTime();
+                currentHealth -= 0.000001f;
+                check = true;
+                animator.SetFloat("Health", currentHealth);
+
+                if (check)
+                {
+                    animator.SetBool("IsAttack", true);
+                }
             }
             else
             {
-                healbar.gameObject.SetActive(false);
+                check = false;
                 animator.SetBool("IsAttack", false);
-                return;
             }
-        }
 
-        if (currentHealth <= 0)
-        {
-            currentHealth = 0;
-            Destroy(gameObject, 2f);
-        }
-        healbar.localScale.x = currentHealth;
+            if (timers.isFinish)
+            {
+                healbar.gameObject.SetActive(true);
 
+                if (!check)
+                {
+                    if (currentHealth < maxHealth)
+                    {
+                        currentHealth += currentHealth * 5 / 100;
+                        timers.alarmTime = 1;
+                        timers.StartTime();
+                    }
+                    else
+                    {
+                        healbar.gameObject.SetActive(false);
+                        check = false;
+                    }
+                }
+            }
+
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                Destroy(gameObject, 2f);
+            }
+            healbar.localScale.x = currentHealth;
+        }
+        
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -81,11 +105,15 @@ public class EnemyMushroom : BaseEnemy
         int level = PlayerLocalData.Instance.CurrentPlayerLevel;
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        PlayerController playerController = player.GetComponent<PlayerController>();    
-        if (Vector3.Distance(transform.position, player.transform.position) <= 2f)
+        if(player != null)
         {
-            playerController.TakeDamage(damageMushroom + level + 2);
+            PlayerController playerController = player.GetComponent<PlayerController>();
+            if (Vector3.Distance(transform.position, player.transform.position) <= 2f)
+            {
+                playerController.TakeDamage(damageMushroom + level + 2);
+            }
         }
+        
     }
 
 
