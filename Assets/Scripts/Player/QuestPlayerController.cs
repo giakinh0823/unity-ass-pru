@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Model;
 using TMPro;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
@@ -15,8 +16,8 @@ public class QuestPlayerController : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI bird;
 	[SerializeField] private TextMeshProUGUI coin;
 
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
 
 	}
@@ -24,23 +25,36 @@ public class QuestPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+	   	Dictionary<int, int> itemMap = itemsLevel();
 	    LevelGeneration levelGeneration = FindObjectOfType<LevelGeneration>();
-	    if (levelGeneration.stopGeneration)
-	    {
-			Dictionary<int, int> itemMap = items();
 
-			bird.text = itemMap[17].ToString();
-			mushRoom.text = itemMap[18].ToString();
-			snake.text = itemMap[19].ToString();
-			slime.text = itemMap[20].ToString();
-			turtle.text = itemMap[21].ToString();
-			coin.text = itemMap[0].ToString();
+		if (levelGeneration.stopGeneration)
+		{
+			itemMap = itemsLevel();
+		}
 
-	    }
-		
-	}
+		if (itemMap != null && itemMap.Count > 0)
+		{
+			bird.text = itemMap.ContainsKey(17) ? itemMap[17].ToString() : "0";
+			mushRoom.text = itemMap.ContainsKey(18) ? itemMap[18].ToString() : "0";
+			snake.text = itemMap.ContainsKey(19) ? itemMap[19].ToString() : "0";
+			slime.text = itemMap.ContainsKey(20) ? itemMap[20].ToString() : "0";
+			turtle.text = itemMap.ContainsKey(21) ? itemMap[21].ToString() : "0";
+			coin.text = itemMap.ContainsKey(0) ? itemMap[0].ToString() : "0";
+		}
 
-    private Dictionary<int, int> items()
+    }
+
+    private Dictionary<int, int> itemsLevel()
+    {
+	    int levelCurrent = PlayerLocalData.Instance.CurrentPlayerLevel;
+		Debug.Log(levelCurrent.ToString());
+	    Dictionary<int, int> itemMapsLevel = items();
+	    
+	    return itemMapsLevel;
+    }
+
+	private Dictionary<int, int> items()
     {
 	    GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
 	    GameObject[] coins = GameObject.FindGameObjectsWithTag("Coin");
