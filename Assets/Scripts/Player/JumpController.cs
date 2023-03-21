@@ -50,7 +50,8 @@ public class JumpController : MonoBehaviour
 
         if (this.isGrounded)
         {
-            doubleJump = false;
+            doubleJump      = false;
+            jumpTimeCounter = jumpTime;
             anim.SetBool("isJumping", false);
         }
         else
@@ -71,12 +72,10 @@ public class JumpController : MonoBehaviour
             }
         }
 
-        if (isGrounded == false && doubleJump == false)
+        if (!isGrounded && doubleJump == false)
         {
             isJumping          = true;
             doubleJump         = true;
-            isJumping          = true;
-            jumpTimeCounter    = jumpTime;
         }
     }
 
@@ -96,7 +95,6 @@ public class JumpController : MonoBehaviour
         {
             anim.SetTrigger("takeOf");
             isJumping          = true;
-            jumpTimeCounter    = jumpTime;
             rigidBody.velocity = Vector2.up * jumpForce;
         }
     }
