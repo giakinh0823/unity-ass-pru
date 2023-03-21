@@ -129,7 +129,11 @@ public class EnemySlime : BaseEnemy
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-       if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            currentHealth -= 0.000001f;
+        }
+        else if (collision.gameObject.CompareTag("Bullet"))
         {
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
@@ -153,11 +157,15 @@ public class EnemySlime : BaseEnemy
         int level = PlayerLocalData.Instance.CurrentPlayerLevel;
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        PlayerController playerController = player.GetComponent<PlayerController>();
-        if (Vector3.Distance(transform.position, player.transform.position) <= 2f)
+        if(player != null)
         {
-            playerController.TakeDamage(damageSlime + level + 2);
+            PlayerController playerController = player.GetComponent<PlayerController>();
+            if (Vector3.Distance(transform.position, player.transform.position) <= 2f)
+            {
+                playerController.TakeDamage(damageSlime + level + 2);
+            }
         }
+        
     }
 
     void PlaySound()

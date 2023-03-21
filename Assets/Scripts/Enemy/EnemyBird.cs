@@ -146,7 +146,11 @@ public class EnemyBird : BaseEnemy
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            currentHealth -= 0.000001f;
+        }
+        else if (collision.gameObject.CompareTag("Bullet"))
         {
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
