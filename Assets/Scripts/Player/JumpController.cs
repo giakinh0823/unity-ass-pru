@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Common;
-using UnityEditor.VersionControl;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using Task = System.Threading.Tasks.Task;
 
 public class JumpController : MonoBehaviour
 {
