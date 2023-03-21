@@ -130,17 +130,37 @@ public class HitController : MonoBehaviour
                     {
                         if (transform.position.x > enemySlime.transform.position.x)
                         {
-                            enemySlime.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+                            enemySlime.transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
                         }
                     }
                     else
                     {
                         if (transform.position.x < enemySlime.transform.position.x)
                         {
-                            enemySlime.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+                            enemySlime.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
                         }
                     }
                     enemySlime.currentHealth -= dameArmPlayerAttackEnemy;
+                }
+                else if (go.layer == 17)
+                {
+                    EnemyBird enemyBird = go.GetComponent<EnemyBird>();
+                    Vector2 rotation = enemyBird.transform.localScale;
+                    if (rotation.x * transform.localScale.x > 0)
+                    {
+                        if (transform.position.x > enemyBird.transform.position.x)
+                        {
+                            enemyBird.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
+                        }
+                    }
+                    else
+                    {
+                        if (transform.position.x < enemyBird.transform.position.x)
+                        {
+                            enemyBird.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
+                        }
+                    }
+                    enemyBird.currentHealth -= dameArmPlayerAttackEnemy;
                 }
 
             }
