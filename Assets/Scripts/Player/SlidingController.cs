@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Common;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -31,17 +32,32 @@ public class SlidingController : MonoBehaviour
     [SerializeField]
     private AudioSource wallSlidingSound;
 
-    private MyPlayerActions playerInput;
-    private InputAction jumpInput;
-
-    private void Awake()
-    {
-        playerInput = new MyPlayerActions();
-    }
-
     private void Start()
     {
-        anim = GetComponent<Animator>();
+        anim                                  =  GetComponent<Animator>();
+        FindObjectOfType<InputManager>().jump += this.OnJump;
+    }
+
+    private void OnJump()
+    {
+        if(wallJumpingCounter > 0f) {
+            isWallJumping = true;
+            anim.SetBool("isWallJumping", true);
+            anim.SetBool("isWallSliding", false);
+            rigidBody.velocity = new Vector2(wallJumpingDuration * wallJumpingPower.x, wallJumpingPower.y);
+            wallJumpingCounter = 0f;
+
+            if(transform.localScale.x != wallJumpingDirection)
+            {
+                movement.isFaceRight = !movement.isFaceRight;
+            }
+
+            Invoke(nameof(StopWallJumping), wallJumpingDuration);
+        } 
+        else
+        {
+            anim.SetBool("isWallJumping", false);
+        }
     }
 
     private void Update()
@@ -79,25 +95,6 @@ public class SlidingController : MonoBehaviour
             wallJumpingCounter -= Time.deltaTime;
             anim.SetBool("isWallJumping", true);
         }
-
-        if(jumpInput.triggered && wallJumpingCounter > 0f) {
-            isWallJumping = true;
-            anim.SetBool("isWallJumping", true);
-            anim.SetBool("isWallSliding", false);
-            rigidBody.velocity = new Vector2(wallJumpingDuration * wallJumpingPower.x, wallJumpingPower.y);
-            wallJumpingCounter = 0f;
-
-            if(transform.localScale.x != wallJumpingDirection)
-            {
-                movement.isFaceRight = !movement.isFaceRight;
-            }
-
-            Invoke(nameof(StopWallJumping), wallJumpingDuration);
-        } 
-        else
-        {
-            anim.SetBool("isWallJumping", false);
-        }
     }
 
     private void StopWallJumping()
@@ -128,17 +125,5 @@ public class SlidingController : MonoBehaviour
     public void playSoundWallSliding()
     {
         wallSlidingSound.Play();
-    }
-
-    private void OnEnable()
-    {
-        jumpInput = playerInput.Player.Jump;
-        jumpInput.Enable();
-    }
-
-    private void OnDisable()
-    {
-        jumpInput = playerInput.Player.Jump;
-        jumpInput.Disable();
     }
 }
