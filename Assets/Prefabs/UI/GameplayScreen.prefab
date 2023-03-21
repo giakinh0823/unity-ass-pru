@@ -161,9 +161,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1353749034904004192}
+  - component: {fileID: 6933565826448500293}
   m_Layer: 5
   m_Name: QuestSystem
-  m_TagString: Untagged
+  m_TagString: UIQuestSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,6 +195,24 @@ RectTransform:
   m_AnchoredPosition: {x: -398, y: -72}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6933565826448500293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512800830493148299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d291ed0891e6c944908b9d8b4cf98b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mushRoom: {fileID: 3912111661011375430}
+  snake: {fileID: 6467186932958372892}
+  slime: {fileID: 2276862658324721289}
+  turtle: {fileID: 7817604193421941225}
+  bird: {fileID: 6674456159659025093}
+  coin: {fileID: 1155304027125435439}
 --- !u!1 &1888191575637362446
 GameObject:
   m_ObjectHideFlags: 0

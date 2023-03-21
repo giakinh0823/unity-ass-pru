@@ -8,12 +8,12 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class QuestPlayerController : MonoBehaviour
 {
-	[SerializeField] private TextMeshPro mushRoom;
-	[SerializeField] private TextMeshPro snake;
-	[SerializeField] private TextMeshPro slime;
-	[SerializeField] private TextMeshPro turtle;
-	[SerializeField] private TextMeshPro bird;
-	[SerializeField] private TextMeshPro coin;
+	[SerializeField] private TextMeshProUGUI mushRoom;
+	[SerializeField] private TextMeshProUGUI snake;
+	[SerializeField] private TextMeshProUGUI slime;
+	[SerializeField] private TextMeshProUGUI turtle;
+	[SerializeField] private TextMeshProUGUI bird;
+	[SerializeField] private TextMeshProUGUI coin;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +27,16 @@ public class QuestPlayerController : MonoBehaviour
 	    LevelGeneration levelGeneration = FindObjectOfType<LevelGeneration>();
 	    if (levelGeneration.stopGeneration)
 	    {
-		    foreach (KeyValuePair<int, int> pair in items())
-		    {
-			    Debug.Log(pair.Key + ": " + pair.Value);
-		    }
-		}
+			Dictionary<int, int> itemMap = items();
+
+			bird.text = itemMap[17].ToString();
+			mushRoom.text = itemMap[18].ToString();
+			snake.text = itemMap[19].ToString();
+			slime.text = itemMap[20].ToString();
+			turtle.text = itemMap[21].ToString();
+			coin.text = itemMap[0].ToString();
+
+	    }
 		
 	}
 
