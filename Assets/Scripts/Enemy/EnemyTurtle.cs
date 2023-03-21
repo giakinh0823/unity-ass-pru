@@ -1,3 +1,4 @@
+using Model;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class EnemyTurtle : BaseEnemy
     private Healbar healbar;
 
     TimerEnemy timers;
+    public int damageTurtle = 10;
+
 
     // Start is called before the first frame update
     void Start()
@@ -102,7 +105,19 @@ public class EnemyTurtle : BaseEnemy
 
         }
     }
-    
+
+    public void AttackPlayer()
+    {
+        int level = PlayerLocalData.Instance.CurrentPlayerLevel;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        PlayerController playerController = player.GetComponent<PlayerController>();
+        if (Vector3.Distance(transform.position, player.transform.position) <= 2f)
+        {
+            playerController.TakeDamage(damageTurtle + level + 2);
+        }
+    }
+
 
     void PlaySound()
     {

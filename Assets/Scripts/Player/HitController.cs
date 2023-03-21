@@ -50,6 +50,8 @@ public class HitController : MonoBehaviour
         }
     }
 
+
+
     private void OnEnable()
     {
         attackInput = playerInput.Player.Attack;

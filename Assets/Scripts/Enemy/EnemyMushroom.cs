@@ -1,3 +1,4 @@
+using Model;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class EnemyMushroom : BaseEnemy
     private Healbar healbar;
 
     TimerEnemy timers;
+    public int damageMushroom = 20;
 
     // Start is called before the first frame update
     void Start()
@@ -105,6 +107,19 @@ public class EnemyMushroom : BaseEnemy
             
         }
     }
+
+    public void AttackPlayer()
+    {
+        int level = PlayerLocalData.Instance.CurrentPlayerLevel;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        PlayerController playerController = player.GetComponent<PlayerController>();    
+        if (Vector3.Distance(transform.position, player.transform.position) <= 2f)
+        {
+            playerController.TakeDamage(damageMushroom + level + 2);
+        }
+    }
+
 
 
     void PlaySound()

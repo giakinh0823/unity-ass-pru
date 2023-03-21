@@ -1,3 +1,4 @@
+using Model;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,8 @@ public class EnemySlime : BaseEnemy
     private float distanceMoved = 0f;
     
     TimerEnemy timers;
+    public int damageSlime = 20;
+
 
 
     // Start is called before the first frame update
@@ -177,6 +180,18 @@ public class EnemySlime : BaseEnemy
         }
 
 
+    }
+
+    public void AttackPlayer()
+    {
+        int level = PlayerLocalData.Instance.CurrentPlayerLevel;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        PlayerController playerController = player.GetComponent<PlayerController>();
+        if (Vector3.Distance(transform.position, player.transform.position) <= 2f)
+        {
+            playerController.TakeDamage(damageSlime + level + 2);
+        }
     }
 
     void PlaySound()
