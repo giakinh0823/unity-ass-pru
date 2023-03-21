@@ -115,6 +115,7 @@ public class EnemyBird : BaseEnemy
         {
             if (currentHealth < maxHealth)
             {
+                healbar.gameObject.SetActive(true);
                 currentHealth += currentHealth * 5 / 100;
                 timers2.alarmTime = 1;
                 timers2.StartTime();
@@ -143,7 +144,7 @@ public class EnemyBird : BaseEnemy
 
     
 
-    void OnTriggerEnter2D(Collider2D collision)
+    /*void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ArmLeft")
             || collision.gameObject.CompareTag("ArmRight"))
@@ -198,7 +199,7 @@ public class EnemyBird : BaseEnemy
         }
 
 
-    }
+    }*/
 
     void PlaySound()
     {
