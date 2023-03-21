@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Common;
-using UnityEditor.VersionControl;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using Task = System.Threading.Tasks.Task;
 
 public class JumpController : MonoBehaviour
 {
@@ -55,7 +50,8 @@ public class JumpController : MonoBehaviour
 
         if (this.isGrounded)
         {
-            doubleJump = false;
+            doubleJump      = false;
+            jumpTimeCounter = jumpTime;
             anim.SetBool("isJumping", false);
         }
         else
@@ -76,13 +72,10 @@ public class JumpController : MonoBehaviour
             }
         }
 
-        if (isGrounded == false && doubleJump == false)
+        if (!isGrounded && doubleJump == false)
         {
             isJumping          = true;
             doubleJump         = true;
-            isJumping          = true;
-            jumpTimeCounter    = jumpTime;
-            rigidBody.velocity = Vector2.up * jumpForce;
         }
     }
 
@@ -102,7 +95,6 @@ public class JumpController : MonoBehaviour
         {
             anim.SetTrigger("takeOf");
             isJumping          = true;
-            jumpTimeCounter    = jumpTime;
             rigidBody.velocity = Vector2.up * jumpForce;
         }
     }

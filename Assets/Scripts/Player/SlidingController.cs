@@ -6,29 +6,35 @@ using UnityEngine.InputSystem;
 
 public class SlidingController : MonoBehaviour
 {
-    public bool isWallSliding;
+    public  bool  isWallSliding;
     private float wallSlidingSpeed;
 
-    private bool isWallJumping;
-    private float isWallJumpingSpeed;
-    private float wallJumpingDirection;
-    private float wallJumpingTime = 0.2f;
-    private float wallJumpingCounter;
-    private float wallJumpingDuration =0.4f;
-    private Vector2 wallJumpingPower = new Vector2(8f, 16f);
+    private bool    isWallJumping;
+    private float   isWallJumpingSpeed;
+    private float   wallJumpingDirection;
+    private float   wallJumpingTime = 0.2f;
+    private float   wallJumpingCounter;
+    private float   wallJumpingDuration = 0.4f;
+    private Vector2 wallJumpingPower    = new Vector2(8f, 16f);
 
     [SerializeField]
     private Animator anim;
+
     [SerializeField]
     private Transform wallCheck;
+
     [SerializeField]
     private LayerMask wallLayer;
+
     [SerializeField]
     private Rigidbody2D rigidBody;
+
     [SerializeField]
     private JumpController jump;
+
     [SerializeField]
     private MovementController movement;
+
     [SerializeField]
     private AudioSource wallSlidingSound;
 
@@ -40,23 +46,20 @@ public class SlidingController : MonoBehaviour
 
     private void OnJump()
     {
-        if(wallJumpingCounter > 0f) {
+        if (wallJumpingCounter > 0f)
+        {
             isWallJumping = true;
             anim.SetBool("isWallJumping", true);
             anim.SetBool("isWallSliding", false);
             rigidBody.velocity = new Vector2(wallJumpingDuration * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpingCounter = 0f;
 
-            if(transform.localScale.x != wallJumpingDirection)
+            if (transform.localScale.x != wallJumpingDirection)
             {
                 movement.isFaceRight = !movement.isFaceRight;
             }
 
             Invoke(nameof(StopWallJumping), wallJumpingDuration);
-        } 
-        else
-        {
-            anim.SetBool("isWallJumping", false);
         }
     }
 
@@ -65,11 +68,15 @@ public class SlidingController : MonoBehaviour
         WallSlide();
         WallJump();
 
-        if(!isWallJumping)
+        if (!isWallJumping)
         {
             movement.Flip();
-        } 
+        }
 
+        if (this.wallJumpingCounter <= 0)
+        {
+            anim.SetBool("isWallJumping", false);
+        }
     }
 
     private void FixedUpdate()
@@ -77,7 +84,7 @@ public class SlidingController : MonoBehaviour
         if (!isWallJumping)
         {
             rigidBody.velocity = new Vector2(movement.horizontal * movement.speed, rigidBody.velocity.y);
-        } 
+        }
     }
 
     private void WallJump()
@@ -87,10 +94,11 @@ public class SlidingController : MonoBehaviour
             isWallJumping = false;
             anim.SetBool("isWallJumping", false);
             wallJumpingDirection = -transform.localScale.x;
-            wallJumpingCounter = wallJumpingTime;
+            wallJumpingCounter   = wallJumpingTime;
 
             CancelInvoke(nameof(StopWallJumping));
-        } else
+        }
+        else
         {
             wallJumpingCounter -= Time.deltaTime;
             anim.SetBool("isWallJumping", true);
@@ -105,14 +113,15 @@ public class SlidingController : MonoBehaviour
 
     private void WallSlide()
     {
-        if(IsWalled() && !jump.IsGrounded() && movement.horizontal != 0f)
+        if (IsWalled() && !jump.IsGrounded() && movement.horizontal != 0f)
         {
-            isWallSliding= true;
+            isWallSliding = true;
             anim.SetBool("isWallSliding", true);
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -wallSlidingSpeed, float.MaxValue));
-        } else
+        }
+        else
         {
-            isWallSliding= false;
+            isWallSliding = false;
             anim.SetBool("isWallSliding", false);
         }
     }
