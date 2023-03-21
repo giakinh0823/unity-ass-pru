@@ -41,16 +41,12 @@ public class JumpController : MonoBehaviour
     private bool isJumping;
     private bool doubleJump;
 
-    private async void Start()
+    private void Start()
     {
         anim      = this.GetComponent<Animator>();
         rigidBody = this.GetComponent<Rigidbody2D>();
 
-        while (InputManager.Instance == null)
-        {
-            await Task.Delay(100);
-        }
-        InputManager.Instance.jump += this.OnJump;
+        FindObjectOfType<InputManager>().jump += this.OnJump;
     }
 
     private void Update()
