@@ -71,6 +71,11 @@ public class HitController : MonoBehaviour
                     EnemyMushroom enemyMushroom = go.GetComponent<EnemyMushroom>();
                     enemyMushroom.currentHealth -= dameArmPlayerAttackEnemy;
                 }
+                else if (go.layer == 19)
+                {
+                    EnemySnake enemySnake = go.GetComponent<EnemySnake>();
+                    enemySnake.currentHealth -= dameArmPlayerAttackEnemy;
+                }
 
             }
         }

@@ -8,7 +8,7 @@ public class EnemySnake : BaseEnemy
     // Start is called before the first frame update
     private Animator animator;
     private float maxHealth = 1.5f;
-    private float currentHealth = 1.5f;
+    public float currentHealth = 1.5f;
     [SerializeField]
     private Healbar healbar;
 
@@ -35,6 +35,7 @@ public class EnemySnake : BaseEnemy
         {
             if (currentHealth < maxHealth)
             {
+                healbar.gameObject.SetActive(true);
                 currentHealth += currentHealth * 5 / 100;
                 timers.alarmTime = 1;
                 timers.StartTime();
@@ -58,7 +59,7 @@ public class EnemySnake : BaseEnemy
     
 
 
-    void OnTriggerEnter2D(Collider2D collision)
+    /*void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ArmLeft")
             || collision.gameObject.CompareTag("ArmRight"))
@@ -112,7 +113,7 @@ public class EnemySnake : BaseEnemy
 
         }
 
-    }
+    }*/
 
     public void AttackPlayer()
     {
