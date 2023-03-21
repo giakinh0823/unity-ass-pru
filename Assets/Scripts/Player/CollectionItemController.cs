@@ -1,23 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using Common;
+using Model;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class CollectionTimeController : MonoBehaviour
+public class CollectionItemController : MonoBehaviour
 {
-	[SerializeField] private PlayerController playerController;
-	[SerializeField] private float _collectionTime = 10f;
-	[SerializeField] private AudioSource audioSource;
-	void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.gameObject.tag == "Timer")
-		{
+    [SerializeField] private PlayerController playerController;
+    [SerializeField] private float            _collectionTime = 10f;
+    [SerializeField] private AudioSource      audioTimer;
 
-			CountDownTimer countDowObjects = FindObjectOfType<CountDownTimer>();
-			countDowObjects.TimeLeft+= _collectionTime;
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer != 13)
+        {
+            return;
+        }
 
-			audioSource.Play();
-			Destroy(collision.gameObject);
-		} else audioSource.Stop();
-	}
+        if (collision.gameObject.CompareTag("Timer"))
+        {
+            CountDownTimer countDowObjects = FindObjectOfType<CountDownTimer>();
+            countDowObjects.TimeLeft += _collectionTime;
+            this.audioTimer.Play();
+        }
+        else if (collision.gameObject.CompareTag("Coin"))
+        {
+            PlayerLocalData.Instance.CurrentCoin += 1;
+            PlayerLocalData.Instance.Save();
+        }
+
+        Destroy(collision.gameObject);
+    }
 }
