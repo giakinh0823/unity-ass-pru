@@ -11,10 +11,10 @@ public class ObservationTouch : MonoBehaviour
 
     private int damage = 100;
     public int damageTurtle = 10;
-    public int damageMushroom = 20;
     public int damageSnake = 30;
     public int damageSlime = 20;
     public int damageGun = 30;
+    public Transform mushroomTransfrom;
 
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -25,7 +25,7 @@ public class ObservationTouch : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         int level = PlayerLocalData.Instance.CurrentPlayerLevel;
 
@@ -56,7 +56,9 @@ public class ObservationTouch : MonoBehaviour
             playerController.TakeDamage(damageGun + level + 2);
             Destroy(collision.gameObject);
         }
-    }
+    }*/
 
-
+   
 }
+
+
