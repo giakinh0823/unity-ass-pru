@@ -7,7 +7,7 @@ public class EnemyMushroom : BaseEnemy
 {
     private Animator animator;
     private float maxHealth = 1f;
-    private float currentHealth = 1f;
+    public float currentHealth = 1f;
     [SerializeField]
     private Healbar healbar;
 
@@ -32,6 +32,7 @@ public class EnemyMushroom : BaseEnemy
         {
             if (currentHealth < maxHealth)
             {
+                healbar.gameObject.SetActive(true);
                 currentHealth += currentHealth * 5 / 100;
                 timers.alarmTime = 1;
                 timers.StartTime();
@@ -53,7 +54,7 @@ public class EnemyMushroom : BaseEnemy
 
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    /*void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ArmLeft")
             || collision.gameObject.CompareTag("ArmRight"))
@@ -106,7 +107,7 @@ public class EnemyMushroom : BaseEnemy
 
             
         }
-    }
+    }*/
 
     public void AttackPlayer()
     {

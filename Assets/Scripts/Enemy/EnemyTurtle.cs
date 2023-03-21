@@ -10,7 +10,7 @@ public class EnemyTurtle : BaseEnemy
     private float maxHealth = 0.5f;
     public float currentHealth = 0.5f;
     [SerializeField]
-    public Healbar healbar;
+    private Healbar healbar;
 
     TimerEnemy timers;
     public int damageTurtle = 10;
