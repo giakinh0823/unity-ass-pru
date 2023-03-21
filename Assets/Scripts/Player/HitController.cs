@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Common;
 using Model;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -21,38 +22,28 @@ public class HitController : MonoBehaviour
 
     private int hit;
 
-    private MyPlayerActions playerInput;
-    private InputAction     attackInput;
-
     public float dameGunPlayerAttackEnemy = 0.25f;
-
-    private void Awake()
-    {
-        playerInput = new MyPlayerActions();
-    }
-
 
     void Start()
     {
         hit               = 0;
         slidingController = gameObject.GetComponent<SlidingController>();
         playerController  = gameObject.GetComponent<PlayerController>();
+
+        FindObjectOfType<InputManager>().attack += this.OnAttack;
     }
 
-    void Update()
+    private void OnAttack()
     {
-        if (attackInput.triggered)
+        if (hit >= 2 && !slidingController.isWallSliding)
         {
-            if (hit >= 2 && !slidingController.isWallSliding)
-            {
-                playerController.anim.SetTrigger("isLongHit");
-                hit = 0;
-            }
-            else if (!slidingController.isWallSliding)
-            {
-                playerController.anim.SetTrigger("isShortHit");
-                hit++;
-            }
+            playerController.anim.SetTrigger("isLongHit");
+            hit = 0;
+        }
+        else if (!slidingController.isWallSliding)
+        {
+            playerController.anim.SetTrigger("isShortHit");
+            hit++;
         }
     }
 
@@ -292,19 +283,6 @@ public class HitController : MonoBehaviour
                 }
             }
         }
-    }
-
-
-    private void OnEnable()
-    {
-        attackInput = playerInput.Player.Attack;
-        attackInput.Enable();
-    }
-
-    private void OnDisable()
-    {
-        attackInput = playerInput.Player.Attack;
-        attackInput.Disable();
     }
 
     private void SoundHitGun()
