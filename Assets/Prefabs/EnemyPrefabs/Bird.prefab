@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173a9a8637d78814da9dc37e237e763a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 1.5
   healbar: {fileID: 8969796906700965820}
   speed: 2
   direction: {x: 0, y: 0, z: 0}
@@ -135,7 +136,7 @@ MonoBehaviour:
   wallCheckPoint: {fileID: 3209239347867853139}
   playerTransfrom: {fileID: 0}
   isChasing: 0
-  chaseDistance: 2
+  chaseDistance: 4
   bulletPrefab: {fileID: 6024477093397777429, guid: b9b05574595f97548b4390fa72439dbd, type: 3}
   distanceLimit: 3
 --- !u!61 &3452136594140666658
