@@ -16,6 +16,7 @@ TagManager:
   - ArmLeft
   - ArmRight
   - Wall
+  - BulletBird
   layers:
   - Default
   - TransparentFX
@@ -34,12 +35,12 @@ TagManager:
   - Background
   - Explosion
   - Weapon
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Bird
+  - Mushroom
+  - Snake
+  - Slime
+  - Turtle
+  - Bullet
   - 
   - 
   - 

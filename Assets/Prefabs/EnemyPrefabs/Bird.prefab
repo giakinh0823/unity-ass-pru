@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4682317584636258531}
   - component: {fileID: 8745643912330849717}
   - component: {fileID: 7645437518725753918}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Bird
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 913328c4fbf5cad47a2950073db29282, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -424,7 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3209239347867853139}
   - component: {fileID: 3018929887027243575}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,6 +502,10 @@ PrefabInstance:
     - target: {fileID: 6088793995693563712, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
       propertyPath: m_Name
       value: Healthbar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088793995693563712, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6088793995693563712, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
       propertyPath: m_IsActive
