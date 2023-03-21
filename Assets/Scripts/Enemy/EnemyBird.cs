@@ -4,7 +4,7 @@ public class EnemyBird : BaseEnemy
 {
 
     private Animator animator;
-    //private float damage = 0.05f;
+    private float damage = 0.05f;
     private float maxHealth = 1.5f;
     public float currentHealth = 1.5f;
     [SerializeField]
