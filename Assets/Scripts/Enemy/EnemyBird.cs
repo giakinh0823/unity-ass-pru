@@ -6,7 +6,7 @@ public class EnemyBird : BaseEnemy
     private Animator animator;
     private float damage = 0.05f;
     private float maxHealth = 1.5f;
-    private float currentHealth = 1.5f;
+    public float currentHealth = 1.5f;
     [SerializeField]
     private Healbar healbar;
 
@@ -115,6 +115,7 @@ public class EnemyBird : BaseEnemy
         {
             if (currentHealth < maxHealth)
             {
+                healbar.gameObject.SetActive(true);
                 currentHealth += currentHealth * 5 / 100;
                 timers2.alarmTime = 1;
                 timers2.StartTime();
@@ -145,41 +146,7 @@ public class EnemyBird : BaseEnemy
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ArmLeft")
-            || collision.gameObject.CompareTag("ArmRight"))
-        {
-            healbar.gameObject.SetActive(true);
-            Quaternion rotation = collision.gameObject.transform.rotation;
-            if (rotation.x * Vector3.right.x > 0)
-            {
-                gameObject.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
-            }
-            else
-            {
-                gameObject.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
-            }
-            currentHealth -= GetDameArm();
-
-
-        }
-        else if (collision.gameObject.CompareTag("Knife"))
-        {
-            healbar.gameObject.SetActive(true);
-            Quaternion rotation = collision.gameObject.transform.rotation;
-            if (rotation.x * Vector3.right.x > 0)
-            {
-                gameObject.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
-            }
-            else
-            {
-                gameObject.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
-            }
-            currentHealth -= GetDameKnife();
-
-
-
-        }
-        else if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Bullet"))
         {
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
@@ -192,8 +159,6 @@ public class EnemyBird : BaseEnemy
                 gameObject.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
             }
             currentHealth -= GetDameGun();
-
-
 
         }
 

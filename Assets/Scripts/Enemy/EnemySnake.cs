@@ -8,7 +8,7 @@ public class EnemySnake : BaseEnemy
     // Start is called before the first frame update
     private Animator animator;
     private float maxHealth = 1.5f;
-    private float currentHealth = 1.5f;
+    public float currentHealth = 1.5f;
     [SerializeField]
     private Healbar healbar;
 
@@ -35,6 +35,7 @@ public class EnemySnake : BaseEnemy
         {
             if (currentHealth < maxHealth)
             {
+                healbar.gameObject.SetActive(true);
                 currentHealth += currentHealth * 5 / 100;
                 timers.alarmTime = 1;
                 timers.StartTime();
@@ -60,41 +61,7 @@ public class EnemySnake : BaseEnemy
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ArmLeft")
-            || collision.gameObject.CompareTag("ArmRight"))
-        {
-            healbar.gameObject.SetActive(true);
-            Quaternion rotation = collision.gameObject.transform.rotation;
-            if (rotation.x * Vector3.right.x > 0)
-            {
-                gameObject.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
-            }
-            else
-            {
-                gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
-            }
-            currentHealth -= GetDameArm();
-
-
-        }
-        else if (collision.gameObject.CompareTag("Knife"))
-        {
-            healbar.gameObject.SetActive(true);
-            Quaternion rotation = collision.gameObject.transform.rotation;
-            if (rotation.x * Vector3.right.x > 0)
-            {
-                gameObject.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
-            }
-            else
-            {
-                gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
-            }
-            currentHealth -= GetDameKnife();
-
-
-
-        }
-        else if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Bullet"))
         {
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
@@ -107,8 +74,6 @@ public class EnemySnake : BaseEnemy
                 gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
             }
             currentHealth -= GetDameGun();
-
-
 
         }
 
