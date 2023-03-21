@@ -9,11 +9,11 @@ public class MainMenu : MonoBehaviour
     }
     public void SettingGame()
     {
-        //SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Game");
     }
     public void HighestScore()
     {
-        //SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Game");
     }
     public void Exit()
     {
