@@ -126,43 +126,9 @@ public class EnemySlime : BaseEnemy
 
     
 
-    /*void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ArmLeft")
-           || collision.gameObject.CompareTag("ArmRight"))
-        {
-            healbar.gameObject.SetActive(true);
-            Quaternion rotation = collision.gameObject.transform.rotation;
-            if (rotation.x * Vector3.right.x > 0)
-            {
-                gameObject.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
-            }
-            else
-            {
-                gameObject.transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
-            }
-            currentHealth -= GetDameArm();
-
-
-        }
-        else if (collision.gameObject.CompareTag("Knife"))
-        {
-            healbar.gameObject.SetActive(true);
-            Quaternion rotation = collision.gameObject.transform.rotation;
-            if (rotation.x * Vector3.right.x > 0)
-            {
-                gameObject.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
-            }
-            else
-            {
-                gameObject.transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
-            }
-            currentHealth -= GetDameKnife();
-
-
-
-        }
-        else if (collision.gameObject.CompareTag("Bullet"))
+       if (collision.gameObject.CompareTag("Bullet"))
         {
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
@@ -176,12 +142,10 @@ public class EnemySlime : BaseEnemy
             }
             currentHealth -= GetDameGun();
 
-
-
         }
 
 
-    }*/
+    }
 
     public void AttackPlayer()
     {

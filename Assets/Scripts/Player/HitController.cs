@@ -170,7 +170,7 @@ public class HitController : MonoBehaviour
 
     public void AttackEnemyByKnife()
     {
-        float dameArmPlayerAttackEnemy = 0.2f;
+        float dameArmPlayerAttackEnemy = 0.5f;
 
         GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject go in enemy)

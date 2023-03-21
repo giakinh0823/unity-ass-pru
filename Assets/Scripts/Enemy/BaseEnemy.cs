@@ -5,38 +5,18 @@ using UnityEngine;
 public class BaseEnemy : MonoBehaviour
 {
 
-    private float dameArm;
-    private float dameGun;
-    private float dameKnife;
+    private float dameGun = 0.25f;
 
-    public float GetDameArm()
-    {
-        return dameArm;
-    }
 
     public float GetDameGun()
     {
         return dameGun;
     }
 
-    public float GetDameKnife()
-    {
-        return dameKnife;
-    }
-
-    public void SetDameArm(float dameArm)
-    {
-        this.dameArm = dameArm;
-    }
 
     public void SetDameGun(float dameGun)
     {
         this.dameGun = dameGun;
-    }
-
-    public void SetDameKnife(float dameKnife)
-    {
-        this.dameKnife = dameKnife;
     }
 
 
