@@ -2,11 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 
 public class QuestPlayerController : MonoBehaviour
 {
+	[SerializeField] private TextMeshPro mushRoom;
+	[SerializeField] private TextMeshPro snake;
+	[SerializeField] private TextMeshPro slime;
+	[SerializeField] private TextMeshPro turtle;
+	[SerializeField] private TextMeshPro bird;
+	[SerializeField] private TextMeshPro coin;
+
     // Start is called before the first frame update
     void Start()
     {
