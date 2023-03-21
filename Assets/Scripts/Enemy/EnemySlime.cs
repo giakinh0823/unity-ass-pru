@@ -157,7 +157,7 @@ public class EnemySlime : BaseEnemy
         int level = PlayerLocalData.Instance.CurrentPlayerLevel;
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if(player != null)
+        if (player)
         {
             PlayerController playerController = player.GetComponent<PlayerController>();
             if (Vector3.Distance(transform.position, player.transform.position) <= 2f)
@@ -165,7 +165,6 @@ public class EnemySlime : BaseEnemy
                 playerController.TakeDamage(damageSlime + level + 2);
             }
         }
-        
     }
 
     void PlaySound()
