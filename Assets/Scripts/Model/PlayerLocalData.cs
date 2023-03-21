@@ -6,17 +6,33 @@ namespace Model
 
     public class PlayerLocalData : BaseLocalData<PlayerLocalData>
     {
-        public int CurrentPlayerLevel      { get; set; }
+        public int HighestLevel { get; set; }
+
+        private int currentPlayerLevel;
+
+        public int CurrentPlayerLevel
+        {
+            get => this.currentPlayerLevel;
+            set
+            {
+                this.currentPlayerLevel = value;
+                if (this.currentPlayerLevel > this.HighestLevel)
+                {
+                    this.HighestLevel = this.currentPlayerLevel;
+                }
+            }
+        }
+
         public int CurrentPlayerReviveTime { get; set; }
 
-        private int _currentCoin;
+        private int currentCoin;
 
         public int CurrentCoin
         {
-            get => this._currentCoin;
+            get => this.currentCoin;
             set
             {
-                this._currentCoin = value;
+                this.currentCoin = value;
                 Object.FindObjectOfType<GameplayScreen>()?.CoinUpdate();
             }
         }
