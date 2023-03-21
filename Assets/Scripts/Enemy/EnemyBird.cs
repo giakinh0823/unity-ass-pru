@@ -23,7 +23,7 @@ public class EnemyBird : BaseEnemy
     public float chaseDistance;
 
     public GameObject bulletPrefab;
-    private float bulletSpeed = 15f;
+    private float bulletSpeed = 3f;
     Vector3 closestWalkerDirection = Vector3.zero;
     TimerEnemy timers;
     TimerEnemy timers2;
@@ -38,7 +38,7 @@ public class EnemyBird : BaseEnemy
         direction = Vector3.right;
 
         timers = GetComponent<TimerEnemy>();
-        timers.alarmTime = 1;
+        timers.alarmTime = 2;
         timers.StartTime();
         
         timers2 = GetComponent<TimerEnemy>();
@@ -64,7 +64,7 @@ public class EnemyBird : BaseEnemy
                 bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
                 bullet.GetComponent<AudioSource>().Play();
                 Destroy(bullet, 4f);
-                timers.alarmTime = 5;
+                timers.alarmTime = 2;
                 timers.StartTime();
             }
             if (gameObject.transform.position.x > playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x > 0)
