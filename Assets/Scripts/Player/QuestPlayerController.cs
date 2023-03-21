@@ -16,13 +16,16 @@ public class QuestPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-	   
-		foreach (KeyValuePair<int, int> pair in items())
-		{
-		 Debug.Log(pair.Key + ": " + pair.Value);
+	    LevelGeneration levelGeneration = FindObjectOfType<LevelGeneration>();
+	    if (levelGeneration.stopGeneration)
+	    {
+		    foreach (KeyValuePair<int, int> pair in items())
+		    {
+			    Debug.Log(pair.Key + ": " + pair.Value);
+		    }
 		}
-
-    }
+		
+	}
 
     private Dictionary<int, int> items()
     {
