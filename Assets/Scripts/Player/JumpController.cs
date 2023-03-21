@@ -68,7 +68,6 @@ public class JumpController : MonoBehaviour
         {
             if (jumpTimeCounter > 0)
             {
-                rigidBody.velocity =  Vector2.up * jumpForce;
                 jumpTimeCounter    -= Time.deltaTime;
             }
             else
@@ -99,7 +98,7 @@ public class JumpController : MonoBehaviour
 
     private void OnJump()
     {
-        if (isGrounded)
+        if (isGrounded || (this.isJumping && this.jumpTimeCounter > 0))
         {
             anim.SetTrigger("takeOf");
             isJumping          = true;
