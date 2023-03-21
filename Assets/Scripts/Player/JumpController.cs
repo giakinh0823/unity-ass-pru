@@ -77,7 +77,6 @@ public class JumpController : MonoBehaviour
             doubleJump         = true;
             isJumping          = true;
             jumpTimeCounter    = jumpTime;
-            rigidBody.velocity = Vector2.up * jumpForce;
         }
     }
 
