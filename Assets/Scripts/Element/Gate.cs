@@ -14,7 +14,11 @@ namespace Element
         {
             if (col.gameObject.CompareTag("Player"))
             {
-                this.OnOpenGate();
+                var questController = col.gameObject.GetComponent<QuestPlayerController>();
+                if (questController is { IsReadyToUse: true, IsQuestCompleted: true })
+                {
+                    this.OnOpenGate();
+                }
             }
         }
 
