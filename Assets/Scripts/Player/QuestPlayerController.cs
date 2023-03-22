@@ -15,6 +15,7 @@ public class QuestPlayerController : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI turtle;
 	[SerializeField] private TextMeshProUGUI bird;
 	[SerializeField] private TextMeshProUGUI coin;
+	private bool isInit = false;
 
 	// Start is called before the first frame update
 	void Start()
@@ -28,19 +29,19 @@ public class QuestPlayerController : MonoBehaviour
 		Dictionary<int, int> itemMap = itemsLevel();
 		LevelGeneration levelGeneration = FindObjectOfType<LevelGeneration>();
 
-		if (levelGeneration.stopGeneration)
+		if (levelGeneration.stopGeneration && !isInit)
 		{
 			itemMap = itemsLevel();
-		}
-
-		if (itemMap != null && itemMap.Count > 0)
-		{
-			bird.text = itemMap.ContainsKey(17) ? itemMap[17].ToString() : "0";
-			mushRoom.text = itemMap.ContainsKey(18) ? itemMap[18].ToString() : "0";
-			snake.text = itemMap.ContainsKey(19) ? itemMap[19].ToString() : "0";
-			slime.text = itemMap.ContainsKey(20) ? itemMap[20].ToString() : "0";
-			turtle.text = itemMap.ContainsKey(21) ? itemMap[21].ToString() : "0";
-			coin.text = itemMap.ContainsKey(0) ? itemMap[0].ToString() : "0";
+			if (itemMap != null && itemMap.Count > 0)
+			{
+				bird.text = itemMap.ContainsKey(17) ? itemMap[17].ToString() : "0";
+				mushRoom.text = itemMap.ContainsKey(18) ? itemMap[18].ToString() : "0";
+				snake.text = itemMap.ContainsKey(19) ? itemMap[19].ToString() : "0";
+				slime.text = itemMap.ContainsKey(20) ? itemMap[20].ToString() : "0";
+				turtle.text = itemMap.ContainsKey(21) ? itemMap[21].ToString() : "0";
+				coin.text = itemMap.ContainsKey(0) ? itemMap[0].ToString() : "0";
+				isInit = true;
+			}
 		}
 	}
 
