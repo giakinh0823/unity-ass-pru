@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 95318426618180248}
+  joystick: {fileID: 0}
   knife: {fileID: 4240065931079579583}
   gun: {fileID: 5494919778298546448}
   gunRotation: {fileID: 9138879865722871807}
@@ -282,7 +283,6 @@ MonoBehaviour:
   shootController: {fileID: 2019886393461917477}
   soundShoots: {fileID: 6126990609675363818}
   soundSlashing: {fileID: 4252693716988723598}
-  dameKnifePlayerAttackEnemy: 0.5
   dameGunPlayerAttackEnemy: 0.25
 --- !u!114 &3763689777161444118
 MonoBehaviour:
@@ -628,7 +628,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e9dbbbeac87b244096f15646a81fca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystickValue: {x: 0, y: 0}
 --- !u!82 &6126990609675363818
 AudioSource:
   m_ObjectHideFlags: 0
@@ -835,7 +834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: -3017213790409573602}
   _collectionTime: 10
-  audioSource: {fileID: 5106553901953131025}
+  audioTimer: {fileID: 5106553901953131025}
 --- !u!82 &5106553901953131025
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1065,7 +1064,7 @@ MonoBehaviour:
   - {x: -0.16581354, y: 0.033363163, z: -0.000000010244548}
   m_ShapePathHash: 1639765140
   m_Mesh: {fileID: 0}
-  m_InstanceId: 60528
+  m_InstanceId: 39958
 --- !u!1 &1237780248342096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,7 +1218,7 @@ MonoBehaviour:
   - {x: -0.12976903, y: -0.18525726, z: -0.000000010244548}
   m_ShapePathHash: -1680198045
   m_Mesh: {fileID: 0}
-  m_InstanceId: 60518
+  m_InstanceId: 39948
 --- !u!1 &1412382395120440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,7 +1348,7 @@ MonoBehaviour:
   - {x: -0.044145733, y: 0.005266428, z: -0.000000010244548}
   m_ShapePathHash: -1272301859
   m_Mesh: {fileID: 0}
-  m_InstanceId: 60514
+  m_InstanceId: 39944
 --- !u!1 &1746004791257256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,7 +1470,7 @@ MonoBehaviour:
   - {x: -0.025051177, y: -0.24891531, z: -0.000000010244548}
   m_ShapePathHash: -675951043
   m_Mesh: {fileID: 0}
-  m_InstanceId: 60504
+  m_InstanceId: 39934
 --- !u!1 &1930540462979778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,7 +1592,7 @@ MonoBehaviour:
   - {x: -0.013189614, y: -0.21743912, z: -0.000000010244548}
   m_ShapePathHash: -460280787
   m_Mesh: {fileID: 0}
-  m_InstanceId: 60548
+  m_InstanceId: 39978
 --- !u!1 &1993595382086298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,7 +1716,7 @@ MonoBehaviour:
   - {x: 0.080355376, y: -0.19361633, z: -0.000000010244548}
   m_ShapePathHash: -1258716273
   m_Mesh: {fileID: 0}
-  m_InstanceId: 60502
+  m_InstanceId: 39932
 --- !u!1 &5769963805523465670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,7 +1888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7637276437162030065, guid: 828557874100dac4996f3b5f3c1b5e54, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

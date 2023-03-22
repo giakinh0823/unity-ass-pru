@@ -23,13 +23,15 @@ public class CollectionItemController : MonoBehaviour
             CountDownTimer countDowObjects = FindObjectOfType<CountDownTimer>();
             countDowObjects.TimeLeft += _collectionTime;
             this.audioTimer.Play();
+            Destroy(collision.gameObject);
         }
-        else if (collision.gameObject.CompareTag("Coin"))
+        
+        if (collision.gameObject.CompareTag("Coin"))
         {
             PlayerLocalData.Instance.CurrentCoin += 1;
             PlayerLocalData.Instance.Save();
+            this.audioTimer.Play();
+            Destroy(collision.gameObject);
         }
-
-        Destroy(collision.gameObject);
     }
 }
