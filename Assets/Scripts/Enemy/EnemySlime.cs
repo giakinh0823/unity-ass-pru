@@ -55,6 +55,8 @@ public class EnemySlime : BaseEnemy
         healbar.localScale.x = currentHealth;
         if (playerTransfrom != null && Vector3.Distance(transform.position, playerTransfrom.position) <= chaseDistance)
         {
+            healbar.gameObject.SetActive(true);
+
             if (gameObject.transform.position.x > playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x > 0)
             {
                 transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
