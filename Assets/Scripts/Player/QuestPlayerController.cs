@@ -19,12 +19,6 @@ public class QuestPlayerController : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
 		Dictionary<int, int> itemMap = itemsLevel();
 		LevelGeneration levelGeneration = FindObjectOfType<LevelGeneration>();
 
@@ -32,6 +26,12 @@ public class QuestPlayerController : MonoBehaviour
 		{
 			itemMap = itemsLevel();
 		}
+
+		foreach (int enemy in itemMap.Keys)
+		{
+			Console.WriteLine(enemy + ": " + itemMap[enemy]);
+		}
+		Console.WriteLine();
 
 		if (itemMap != null && itemMap.Count > 0)
 		{
@@ -52,14 +52,20 @@ public class QuestPlayerController : MonoBehaviour
 
 		Dictionary<int, int> itemMapsLevel = items();
 		Dictionary<int, int> levelEnemies = new Dictionary<int, int>();
-		//int numEnemies = 1;
+		itemMapsLevel[17] = 0;
+		itemMapsLevel[18] = 0;
+		itemMapsLevel[19] = 0;
+		itemMapsLevel[20] = 0;
+		itemMapsLevel[21] = 0;
 		int initNumEnemies = 3;
+		Debug.Log("initNumEnemies" + initNumEnemies);
 		int numEnemiesToGet = initNumEnemies + levelCurrent - 1;
+
+		Debug.Log("numEnemiesToGet" + numEnemiesToGet);
 		levelEnemies.Clear();
 		while (numEnemiesToGet > 0)
 		{
 			int enemy = itemMapsLevel.Keys.ElementAt(random.Next(itemMapsLevel.Count)); 
-			//int numEnemy = Math.Min(numEnemies, itemMapsLevel[enemy]);
 			if (levelEnemies.ContainsKey(enemy)) 
 			{
 				levelEnemies[enemy] += 1;
