@@ -54,27 +54,22 @@ public class QuestPlayerController : MonoBehaviour
 		Dictionary<int, int> itemMapsLevel = items();
 		Dictionary<int, int> levelEnemies = new Dictionary<int, int>();
 		int numEnemies = 2;
-		while (true)
+		int numEnemiesToGet = numEnemies + levelCurrent - 1;
+		levelEnemies.Clear();
+		while (numEnemiesToGet > 0)
 		{
-			int numEnemiesToGet = numEnemies + levelCurrent - 1;
-			levelEnemies.Clear();
-			while (numEnemiesToGet > 0)
+			int enemy = itemMapsLevel.Keys.ElementAt(random.Next(itemMapsLevel.Count));
+			int numEnemy = Math.Min(numEnemiesToGet, itemMapsLevel[enemy]);
+			if (levelEnemies.ContainsKey(enemy))
 			{
-				int enemy = items().Keys.ElementAt(random.Next(itemMapsLevel.Count));
-				int numEnemy = Math.Min(numEnemiesToGet, itemMapsLevel[enemy]);
-				if (levelEnemies.ContainsKey(enemy))
-				{
-					levelEnemies[enemy] += numEnemy;
-				}
-				else
-				{
-					levelEnemies.Add(enemy, numEnemy);
-				}
-				numEnemiesToGet -= numEnemy;
+				levelEnemies[enemy] += numEnemy;
 			}
-			numEnemies += levelCurrent;
+			else
+			{
+				levelEnemies.Add(enemy, numEnemy);
+			}
+			numEnemiesToGet -= numEnemy;
 		}
-
 		return levelEnemies;
 	}
 
