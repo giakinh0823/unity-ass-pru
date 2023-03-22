@@ -5,6 +5,7 @@ using System.Linq;
 using Model;
 using TMPro;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 using static UnityEngine.Rendering.DebugUI;
 
 public class QuestPlayerController : MonoBehaviour
@@ -53,17 +54,17 @@ public class QuestPlayerController : MonoBehaviour
 		levelEnemies.Clear();
 		while (numEnemiesToGet > 0)
 		{
-			int enemy = itemMapsLevel.Keys.ElementAt(random.Next(itemMapsLevel.Count)); 
+			int enemy = itemMapsLevel.Keys.ElementAt(random.Next(itemMapsLevel.Count-1)); 
 			if (levelEnemies.ContainsKey(enemy)) 
 			{
 				levelEnemies[enemy] += 1;
-			}
-			else
+			}else 
 			{
-				levelEnemies.Add(enemy, 1); 
-			}
+				levelEnemies.Add(enemy, 1);
+			} 
 			numEnemiesToGet -= 1;
 		}
+		levelEnemies.Add(0, Math.Min(initNumEnemies + levelCurrent - 1, itemMapsLevel[0]));
 		return levelEnemies;
 	}
 
