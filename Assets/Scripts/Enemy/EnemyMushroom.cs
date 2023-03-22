@@ -5,27 +5,24 @@ using UnityEngine;
 
 public class EnemyMushroom : BaseEnemy
 {
-    private Animator animator;
-    private float maxHealth = 1f;
-    public float currentHealth = 1f;
-    [SerializeField]
-    private Healbar healbar;
+    private                  Animator animator;
+    private                  float    maxHealth     = 1f;
+    public                   float    currentHealth = 1f;
+    [SerializeField] private Healbar  healbar;
 
     TimerEnemy timers;
     public int damageMushroom = 20;
-    bool check;
-   
+    bool       check;
+
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         animator.SetFloat("Health", currentHealth);
-        timers = GetComponent<TimerEnemy>();
+        timers           = GetComponent<TimerEnemy>();
         timers.alarmTime = 1;
         timers.StartTime();
-        
-
     }
 
     void Update()
@@ -33,7 +30,7 @@ public class EnemyMushroom : BaseEnemy
         animator.SetFloat("Health", currentHealth);
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if(player != null )
+        if (player != null)
         {
             if (Vector3.Distance(transform.position, player.transform.position) <= 2f)
             {
@@ -47,8 +44,8 @@ public class EnemyMushroom : BaseEnemy
                 {
                     if (currentHealth < maxHealth)
                     {
-                        currentHealth += currentHealth * 5 / 100;
-                        timers.alarmTime = 1;
+                        currentHealth    += currentHealth * 5 / 100;
+                        timers.alarmTime =  1;
                         timers.StartTime();
                     }
                     else
@@ -63,14 +60,9 @@ public class EnemyMushroom : BaseEnemy
                 currentHealth = 0;
                 Destroy(gameObject, 2f);
             }
+
             healbar.localScale.x = currentHealth;
-
-
-            
-
         }
-
-
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -89,7 +81,6 @@ public class EnemyMushroom : BaseEnemy
             }
 
             currentHealth -= GetDameGun();
-
         }
     }
 
@@ -98,7 +89,7 @@ public class EnemyMushroom : BaseEnemy
         int level = PlayerLocalData.Instance.CurrentPlayerLevel;
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if(player != null)
+        if (player != null)
         {
             PlayerController playerController = player.GetComponent<PlayerController>();
             if (Vector3.Distance(transform.position, player.transform.position) <= 2f)
@@ -106,9 +97,7 @@ public class EnemyMushroom : BaseEnemy
                 playerController.TakeDamage(damageMushroom + level + 2);
             }
         }
-        
     }
-
 
 
     void PlaySound()
@@ -116,5 +105,8 @@ public class EnemyMushroom : BaseEnemy
         gameObject.GetComponent<AudioSource>().Play();
     }
 
-
+    private void OnDestroy()
+    {
+        if (this.QuestPlayerController  is { IsReadyToUse: true })  this.QuestPlayerController.QuestMushroom--;
+    }
 }
