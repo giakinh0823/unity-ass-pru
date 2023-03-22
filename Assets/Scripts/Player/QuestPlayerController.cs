@@ -22,11 +22,11 @@ public class QuestPlayerController : MonoBehaviour
 
 	}
 
-    // Update is called once per frame
-    void Update()
-    {
-	   	Dictionary<int, int> itemMap = itemsLevel();
-	    LevelGeneration levelGeneration = FindObjectOfType<LevelGeneration>();
+	// Update is called once per frame
+	void Update()
+	{
+		Dictionary<int, int> itemMap = itemsLevel();
+		LevelGeneration levelGeneration = FindObjectOfType<LevelGeneration>();
 
 		if (levelGeneration.stopGeneration)
 		{
@@ -43,39 +43,63 @@ public class QuestPlayerController : MonoBehaviour
 			coin.text = itemMap.ContainsKey(0) ? itemMap[0].ToString() : "0";
 		}
 
-    }
+	}
 
-    private Dictionary<int, int> itemsLevel()
-    {
-	    int levelCurrent = PlayerLocalData.Instance.CurrentPlayerLevel;
+	private Dictionary<int, int> itemsLevel()
+	{
+		int levelCurrent = PlayerLocalData.Instance.CurrentPlayerLevel;
 		Debug.Log(levelCurrent.ToString());
-	    Dictionary<int, int> itemMapsLevel = items();
-	    
-	    return itemMapsLevel;
-    }
+		System.Random random = new System.Random();
+
+		Dictionary<int, int> itemMapsLevel = items();
+		Dictionary<int, int> levelEnemies = new Dictionary<int, int>();
+		int numEnemies = 2;
+		while (true)
+		{
+			int numEnemiesToGet = numEnemies + levelCurrent - 1;
+			levelEnemies.Clear();
+			while (numEnemiesToGet > 0)
+			{
+				int enemy = items().Keys.ElementAt(random.Next(itemMapsLevel.Count));
+				int numEnemy = Math.Min(numEnemiesToGet, itemMapsLevel[enemy]);
+				if (levelEnemies.ContainsKey(enemy))
+				{
+					levelEnemies[enemy] += numEnemy;
+				}
+				else
+				{
+					levelEnemies.Add(enemy, numEnemy);
+				}
+				numEnemiesToGet -= numEnemy;
+			}
+			numEnemies += levelCurrent;
+		}
+
+		return levelEnemies;
+	}
 
 	private Dictionary<int, int> items()
-    {
-	    GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
-	    GameObject[] coins = GameObject.FindGameObjectsWithTag("Coin");
+	{
+		GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
+		GameObject[] coins = GameObject.FindGameObjectsWithTag("Coin");
 
-	    Dictionary<int, int> map = new Dictionary<int, int>();
-	    foreach (GameObject go in enemy)
-	    {
-		    if (go.layer == 17)
-		    {
-			    if (!map.ContainsKey(17))
-			    {
-				    map.Add(17, 1);
-			    }
-			    else
-			    {
-				    map[17] += 1;
-			    }
+		Dictionary<int, int> map = new Dictionary<int, int>();
+		foreach (GameObject go in enemy)
+		{
+			if (go.layer == 17)
+			{
+				if (!map.ContainsKey(17))
+				{
+					map.Add(17, 1);
+				}
+				else
+				{
+					map[17] += 1;
+				}
 			}
 
-		    if (go.layer == 18)
-		    {
+			if (go.layer == 18)
+			{
 				if (!map.ContainsKey(18))
 				{
 					map.Add(18, 1);
@@ -86,8 +110,8 @@ public class QuestPlayerController : MonoBehaviour
 				}
 			}
 
-		    if (go.layer == 19)
-		    {
+			if (go.layer == 19)
+			{
 				if (!map.ContainsKey(19))
 				{
 					map.Add(19, 1);
@@ -98,8 +122,8 @@ public class QuestPlayerController : MonoBehaviour
 				}
 			}
 
-		    if (go.layer == 20)
-		    {
+			if (go.layer == 20)
+			{
 				if (!map.ContainsKey(20))
 				{
 					map.Add(20, 1);
@@ -111,8 +135,8 @@ public class QuestPlayerController : MonoBehaviour
 
 			}
 
-		    if (go.layer == 21)
-		    {
+			if (go.layer == 21)
+			{
 				if (!map.ContainsKey(21))
 				{
 					map.Add(21, 1);
@@ -122,11 +146,11 @@ public class QuestPlayerController : MonoBehaviour
 					map[21] += 1;
 				}
 			}
-	    }
+		}
 
 		map.Add(0, coins.Count());
 
-	    return map;
-    }
+		return map;
+	}
 
 }
