@@ -43,7 +43,6 @@ public class EnemyMushroom : BaseEnemy
             else
             {
                 animator.SetBool("IsAttack", false);
-                Debug.Log(animator.GetBool("IsAttack"));
                 if (timers.isFinish)
                 {
                     if (currentHealth < maxHealth)
