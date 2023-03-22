@@ -42,7 +42,6 @@ public class QuestPlayerController : MonoBehaviour
 			turtle.text = itemMap.ContainsKey(21) ? itemMap[21].ToString() : "0";
 			coin.text = itemMap.ContainsKey(0) ? itemMap[0].ToString() : "0";
 		}
-
 	}
 
 	private Dictionary<int, int> itemsLevel()
@@ -53,22 +52,23 @@ public class QuestPlayerController : MonoBehaviour
 
 		Dictionary<int, int> itemMapsLevel = items();
 		Dictionary<int, int> levelEnemies = new Dictionary<int, int>();
-		int numEnemies = 2;
-		int numEnemiesToGet = numEnemies + levelCurrent - 1;
+		//int numEnemies = 1;
+		int initNumEnemies = 3;
+		int numEnemiesToGet = initNumEnemies + levelCurrent - 1;
 		levelEnemies.Clear();
 		while (numEnemiesToGet > 0)
 		{
-			int enemy = itemMapsLevel.Keys.ElementAt(random.Next(itemMapsLevel.Count));
-			int numEnemy = Math.Min(numEnemiesToGet, itemMapsLevel[enemy]);
-			if (levelEnemies.ContainsKey(enemy))
+			int enemy = itemMapsLevel.Keys.ElementAt(random.Next(itemMapsLevel.Count)); 
+			//int numEnemy = Math.Min(numEnemies, itemMapsLevel[enemy]);
+			if (levelEnemies.ContainsKey(enemy)) 
 			{
-				levelEnemies[enemy] += numEnemy;
+				levelEnemies[enemy] += 1;
 			}
 			else
 			{
-				levelEnemies.Add(enemy, numEnemy);
+				levelEnemies.Add(enemy, 1); 
 			}
-			numEnemiesToGet -= numEnemy;
+			numEnemiesToGet -= 1;
 		}
 		return levelEnemies;
 	}
