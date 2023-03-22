@@ -5,142 +5,170 @@ using System.Linq;
 using Model;
 using TMPro;
 using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
-using static UnityEngine.Rendering.DebugUI;
+using Random = System.Random;
 
 public class QuestPlayerController : MonoBehaviour
 {
-	[SerializeField] private TextMeshProUGUI mushRoom;
-	[SerializeField] private TextMeshProUGUI snake;
-	[SerializeField] private TextMeshProUGUI slime;
-	[SerializeField] private TextMeshProUGUI turtle;
-	[SerializeField] private TextMeshProUGUI bird;
-	[SerializeField] private TextMeshProUGUI coin;
-	private bool isInit = false;
+    #region Fields and properties
 
-	// Start is called before the first frame update
-	void Update()
+    [SerializeField] private TextMeshProUGUI mushRoom;
+    [SerializeField] private TextMeshProUGUI snake;
+    [SerializeField] private TextMeshProUGUI slime;
+    [SerializeField] private TextMeshProUGUI turtle;
+    [SerializeField] private TextMeshProUGUI bird;
+    [SerializeField] private TextMeshProUGUI coin;
+
+    private Dictionary<Layers, int> questEnemy;
+    private int                     questCoin;
+
+    public int QuestMushroom
     {
-		Dictionary<int, int> itemMap = itemsLevel();
-		LevelGeneration levelGeneration = FindObjectOfType<LevelGeneration>();
-
-		if (levelGeneration.stopGeneration && !isInit)
-		{
-			itemMap = itemsLevel();
-			if (itemMap != null && itemMap.Count > 0)
-			{
-				bird.text = itemMap.ContainsKey(17) ? itemMap[17].ToString() : "0";
-				mushRoom.text = itemMap.ContainsKey(18) ? itemMap[18].ToString() : "0";
-				snake.text = itemMap.ContainsKey(19) ? itemMap[19].ToString() : "0";
-				slime.text = itemMap.ContainsKey(20) ? itemMap[20].ToString() : "0";
-				turtle.text = itemMap.ContainsKey(21) ? itemMap[21].ToString() : "0";
-				coin.text = itemMap.ContainsKey(0) ? itemMap[0].ToString() : "0";
-				isInit = true;
-			}
-		}
+        get => this.questEnemy[Layers.Mushroom];
+        set
+        {
+            if (value < 0) return;
+            this.mushRoom.text               = value.ToString();
+            this.mushRoom.color              = value <= 0 ? Color.green : Color.red;
+            this.questEnemy[Layers.Mushroom] = value;
+        }
     }
 
-	private Dictionary<int, int> itemsLevel()
-	{
-		int levelCurrent = PlayerLocalData.Instance.CurrentPlayerLevel;
-		Debug.Log(levelCurrent.ToString());
-		System.Random random = new System.Random();
+    public int QuestSnake
+    {
+        get => this.questEnemy[Layers.Snake];
+        set
+        {
+            if (value < 0) return;
+            this.snake.text               = value.ToString();
+            this.snake.color              = value <= 0 ? Color.green : Color.red;
+            this.questEnemy[Layers.Snake] = value;
+        }
+    }
 
-		Dictionary<int, int> itemMapsLevel = items();
-		Dictionary<int, int> levelEnemies = new Dictionary<int, int>();
-		//int numEnemies = 1;
-		int initNumEnemies = 3;
-		int numEnemiesToGet = initNumEnemies + levelCurrent - 1;
-		levelEnemies.Clear();
-		while (numEnemiesToGet > 0)
-		{
-			int enemy = itemMapsLevel.Keys.ElementAt(random.Next(itemMapsLevel.Count-1)); 
-			if (levelEnemies.ContainsKey(enemy)) 
-			{
-				levelEnemies[enemy] += 1;
-			}else 
-			{
-				levelEnemies.Add(enemy, 1);
-			} 
-			numEnemiesToGet -= 1;
-		}
-		levelEnemies.Add(0, Math.Min(initNumEnemies + levelCurrent - 1, itemMapsLevel[0]));
-		return levelEnemies;
-	}
+    public int QuestSlime
+    {
+        get => this.questEnemy[Layers.Slime];
+        set
+        {
+            if (value < 0) return;
+            this.slime.text               = value.ToString();
+            this.slime.color              = value <= 0 ? Color.green : Color.red;
+            this.questEnemy[Layers.Slime] = value;
+        }
+    }
 
-	private Dictionary<int, int> items()
-	{
-		GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
-		GameObject[] coins = GameObject.FindGameObjectsWithTag("Coin");
+    public int QuestTurtle
+    {
+        get => this.questEnemy[Layers.Turtle];
+        set
+        {
+            if (value < 0) return;
+            this.turtle.text               = value.ToString();
+            this.turtle.color              = value <= 0 ? Color.green : Color.red;
+            this.questEnemy[Layers.Turtle] = value;
+        }
+    }
 
-		Dictionary<int, int> map = new Dictionary<int, int>();
-		foreach (GameObject go in enemy)
-		{
-			if (go.layer == 17)
-			{
-				if (!map.ContainsKey(17))
-				{
-					map.Add(17, 1);
-				}
-				else
-				{
-					map[17] += 1;
-				}
-			}
+    public int QuestBird
+    {
+        get => this.questEnemy[Layers.Bird];
+        set
+        {
+            if (value < 0) return;
+            this.bird.text               = value.ToString();
+            this.bird.color              = value <= 0 ? Color.green : Color.red;
+            this.questEnemy[Layers.Bird] = value;
+        }
+    }
 
-			if (go.layer == 18)
-			{
-				if (!map.ContainsKey(18))
-				{
-					map.Add(18, 1);
-				}
-				else
-				{
-					map[18] += 1;
-				}
-			}
+    public int QuestCoin
+    {
+        get => this.questCoin;
+        set
+        {
+            if (value < 0) return;
+            this.coin.text  = value.ToString();
+            this.coin.color = value <= 0 ? Color.green : Color.red;
+            this.questCoin  = value;
+        }
+    }
 
-			if (go.layer == 19)
-			{
-				if (!map.ContainsKey(19))
-				{
-					map.Add(19, 1);
-				}
-				else
-				{
-					map[19] += 1;
-				}
-			}
+    public bool IsReadyToUse => this.questEnemy is not null;
 
-			if (go.layer == 20)
-			{
-				if (!map.ContainsKey(20))
-				{
-					map.Add(20, 1);
-				}
-				else
-				{
-					map[20] += 1;
-				}
+    public bool IsQuestCompleted => this.questEnemy.Values.All(x => x <= 0) && this.questCoin <= 0;
 
-			}
+    #endregion
 
-			if (go.layer == 21)
-			{
-				if (!map.ContainsKey(21))
-				{
-					map.Add(21, 1);
-				}
-				else
-				{
-					map[21] += 1;
-				}
-			}
-		}
+    private IEnumerator InitData()
+    {
+        var levelGeneration = FindObjectOfType<LevelGeneration>();
 
-		map.Add(0, coins.Count());
+        yield return new WaitUntil(() => levelGeneration.stopGeneration);
 
-		return map;
-	}
+        (this.questEnemy, this.questCoin) = GenerateQuest();
 
+        this.QuestMushroom = this.questEnemy.ContainsKey(Layers.Mushroom) ? this.questEnemy[Layers.Mushroom] : 0;
+        this.QuestSnake    = this.questEnemy.ContainsKey(Layers.Snake) ? this.questEnemy[Layers.Snake] : 0;
+        this.QuestSlime    = this.questEnemy.ContainsKey(Layers.Slime) ? this.questEnemy[Layers.Slime] : 0;
+        this.QuestTurtle   = this.questEnemy.ContainsKey(Layers.Turtle) ? this.questEnemy[Layers.Turtle] : 0;
+        this.QuestBird     = this.questEnemy.ContainsKey(Layers.Bird) ? this.questEnemy[Layers.Bird] : 0;
+        this.QuestCoin     = this.questCoin;
+    }
+
+    private void Start()
+    {
+        this.StartCoroutine(this.InitData());
+    }
+
+    private static (Dictionary<Layers, int> questEnemy, int questCoin) GenerateQuest()
+    {
+        var currentLevel = PlayerLocalData.Instance.CurrentPlayerLevel;
+        var random       = new Random();
+
+        var layerToCount = CalculateEnemyLayerToCount();
+        var coinCount    = GetCoinCount();
+        var totalEnemy   = layerToCount.Values.Sum();
+
+        // quest amount config
+        const int minKilledEnemy   = 3;
+        var       killedEnemyCount = Math.Clamp(minKilledEnemy + currentLevel - 1, minKilledEnemy, totalEnemy);
+
+        var questEnemy = layerToCount.ToDictionary(x => x.Key, x => 0);
+
+        for (var i = 0; i < killedEnemyCount;)
+        {
+            var randomLayer = layerToCount.Keys.ElementAt(random.Next(layerToCount.Count));
+            if (layerToCount[randomLayer] == 0) continue;
+            questEnemy[randomLayer]   += 1;
+            layerToCount[randomLayer] -= 1;
+            i++;
+        }
+
+        // lượng coin cần kiếm được sẽ random từ 0 đến 1/2 số coin hiện có trong map
+        return (questEnemy, random.Next(coinCount) % (coinCount / 2 == 0 ? 1 : coinCount / 2));
+    }
+
+    private static Dictionary<Layers, int> CalculateEnemyLayerToCount()
+    {
+        var enemy = GameObject.FindGameObjectsWithTag("Enemy");
+
+        var result = new Dictionary<Layers, int>();
+        foreach (var go in enemy)
+        {
+            var layer = (Layers)go.layer;
+            if (result.ContainsKey(layer))
+                result[layer] += 1;
+            else
+                result.Add(layer, 1);
+        }
+
+        return result;
+    }
+
+    private static int GetCoinCount()
+    {
+        var coins = GameObject.FindGameObjectsWithTag("Coin");
+
+        return coins.Length;
+    }
 }
