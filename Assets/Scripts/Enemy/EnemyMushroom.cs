@@ -30,31 +30,21 @@ public class EnemyMushroom : BaseEnemy
 
     void Update()
     {
+        animator.SetFloat("Health", currentHealth);
+
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if(player != null )
         {
             if (Vector3.Distance(transform.position, player.transform.position) <= 2f)
             {
-                currentHealth -= 0.000001f;
-                check = true;
-                animator.SetFloat("Health", currentHealth);
-
-                if (check)
-                {
-                    animator.SetBool("IsAttack", true);
-                }
+                animator.SetBool("IsAttack", true);
+                healbar.gameObject.SetActive(true);
             }
             else
             {
-                check = false;
                 animator.SetBool("IsAttack", false);
-            }
-
-            if (timers.isFinish)
-            {
-                healbar.gameObject.SetActive(true);
-
-                if (!check)
+                Debug.Log(animator.GetBool("IsAttack"));
+                if (timers.isFinish)
                 {
                     if (currentHealth < maxHealth)
                     {
@@ -65,19 +55,23 @@ public class EnemyMushroom : BaseEnemy
                     else
                     {
                         healbar.gameObject.SetActive(false);
-                        check = false;
                     }
                 }
-            }
 
+            }
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
                 Destroy(gameObject, 2f);
             }
             healbar.localScale.x = currentHealth;
+
+
+            
+
         }
-        
+
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)
