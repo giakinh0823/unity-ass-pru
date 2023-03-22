@@ -6,6 +6,7 @@
     using TMPro;
     using UnityEngine;
     using UnityEngine.SceneManagement;
+    using UnityEngine.Serialization;
     using UnityEngine.UI;
 
     public class GameplayScreen : BaseScreen
@@ -14,6 +15,7 @@
         [SerializeField] private TMP_Text reviveTime;
         [SerializeField] private TMP_Text countDownTimer;
         [SerializeField] private TMP_Text currentLevelText;
+        [SerializeField] private TMP_Text currentCoin;
 
         public float HealthPercent
         {
@@ -29,6 +31,11 @@
         public int CurrentLevel
         {
             set => this.currentLevelText.text = $"Level {value}";
+        }
+
+        public int CurrentCoin
+        {
+            set => this.currentCoin.text = $"{value}";
         }
 
         public void Pause()
@@ -55,6 +62,12 @@
             base.OnShow();
             this.ReviveTime   = PlayerLocalData.Instance.CurrentPlayerReviveTime;
             this.CurrentLevel = PlayerLocalData.Instance.CurrentPlayerLevel;
+            this.CurrentCoin  = PlayerLocalData.Instance.CurrentCoin;
+        }
+
+        public void CoinUpdate()
+        {
+            this.CurrentCoin = PlayerLocalData.Instance.CurrentCoin;
         }
     }
 }

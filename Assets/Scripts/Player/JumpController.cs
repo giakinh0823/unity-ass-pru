@@ -1,23 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+using Common;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class JumpController : MonoBehaviour
 {
     [SerializeField]
     public float jumpForce;
+
     [SerializeField]
     public Rigidbody2D rigidBody;
+
     private Animator anim;
 
     [SerializeField]
     public Transform groundPos;
+
     public bool isGrounded;
+
     [SerializeField]
     public float checkRadius;
+
     [SerializeField]
     public LayerMask whatIsGround;
+
     [SerializeField]
     public AudioSource soundRun;
 
@@ -25,41 +29,29 @@ public class JumpController : MonoBehaviour
     public AudioSource soundJumpDown;
 
     private float jumpTimeCounter;
+
     [SerializeField]
     public float jumpTime;
+
     private bool isJumping;
     private bool doubleJump;
 
-    private MyPlayerActions playerInput;
-    private InputAction jumpInput;
-
-    private void Awake()
-    {
-        playerInput = new MyPlayerActions();
-    }
-
     private void Start()
     {
-        anim = GetComponent<Animator>();
-        rigidBody = GetComponent<Rigidbody2D>();
+        anim      = this.GetComponent<Animator>();
+        rigidBody = this.GetComponent<Rigidbody2D>();
+
+        FindObjectOfType<InputManager>().jump += this.OnJump;
     }
 
     private void Update()
     {
-
         isGrounded = IsGrounded();
 
-        if (isGrounded == true && jumpInput.triggered)
+        if (this.isGrounded)
         {
-            anim.SetTrigger("takeOf");
-            isJumping = true;
+            doubleJump      = false;
             jumpTimeCounter = jumpTime;
-            rigidBody.velocity = Vector2.up * jumpForce;
-        }
-
-        if (isGrounded == true)
-        {
-            doubleJump = false;
             anim.SetBool("isJumping", false);
         }
         else
@@ -68,34 +60,22 @@ public class JumpController : MonoBehaviour
             soundRun.Stop();
         }
 
-
-        if (jumpInput.triggered && isJumping == true)
+        if (this.isJumping)
         {
             if (jumpTimeCounter > 0)
             {
-                rigidBody.velocity = Vector2.up * jumpForce;
-                jumpTimeCounter -= Time.deltaTime;
+                jumpTimeCounter    -= Time.deltaTime;
             }
             else
             {
                 isJumping = false;
             }
-
         }
 
-        if (jumpInput.triggered)
+        if (!isGrounded && doubleJump == false)
         {
-            isJumping = false;
-
-        }
-
-        if (isGrounded == false && doubleJump == false && jumpInput.triggered)
-        {
-            isJumping = true;
-            doubleJump = true;
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
-            rigidBody.velocity = Vector2.up * jumpForce;
+            isJumping          = true;
+            doubleJump         = true;
         }
     }
 
@@ -109,16 +89,13 @@ public class JumpController : MonoBehaviour
         soundJumpDown.Play();
     }
 
-    private void OnEnable()
+    private void OnJump()
     {
-        jumpInput = playerInput.Player.Jump;
-        jumpInput.Enable();
+        if (isGrounded || (this.isJumping && this.jumpTimeCounter > 0))
+        {
+            anim.SetTrigger("takeOf");
+            isJumping          = true;
+            rigidBody.velocity = Vector2.up * jumpForce;
+        }
     }
-
-    private void OnDisable()
-    {
-        jumpInput = playerInput.Player.Jump;
-        jumpInput.Disable();
-    }
-
 }

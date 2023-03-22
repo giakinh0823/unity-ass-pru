@@ -1,46 +1,29 @@
+using Common;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class JoystickController : MonoBehaviour
 {
-    public Vector2 joystickValue;
-    private MyPlayerActions playerControls;
+    public  Vector2      JoystickValue => this.inputManager.JoystickDirection;
+    private InputManager inputManager;
 
-    private void Awake()
+    private void Start()
     {
-        playerControls = new MyPlayerActions();
-        playerControls.Enable();
-        playerControls.Player.Move.performed += OnJoystickPerformed;
-        playerControls.Player.Move.canceled += OnJoystickCanceled;
-    }
-
-    private void OnDestroy()
-    {
-        playerControls.Disable();
-    }
-
-    private void OnJoystickPerformed(InputAction.CallbackContext ctx)
-    {
-        joystickValue = ctx.ReadValue<Vector2>();
-    }
-
-    private void OnJoystickCanceled(InputAction.CallbackContext ctx)
-    {
-        joystickValue = Vector2.zero;
+        this.inputManager = FindObjectOfType<InputManager>();
     }
 
     public float GetHorizontalValue()
     {
-        return joystickValue.x;
+        return this.JoystickValue.x;
     }
 
     public float GetVerticalValue()
     {
-        return joystickValue.y;
+        return this.JoystickValue.y;
     }
 
     public Vector3 GetDirection()
     {
-        return new Vector3(joystickValue.x, 0, joystickValue.y).normalized;
+        return new Vector3(this.JoystickValue.x, 0, this.JoystickValue.y).normalized;
     }
 }

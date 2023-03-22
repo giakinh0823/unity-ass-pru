@@ -57,6 +57,8 @@ public class EnemyBird : BaseEnemy
 
         if (playerTransfrom != null && Vector3.Distance(transform.position, playerTransfrom.position) <= chaseDistance)
         {
+            healbar.gameObject.SetActive(true);
+
             if (timers.isFinish)
             {
                 closestWalkerDirection = (playerTransfrom.position - transform.position).normalized;
@@ -123,7 +125,6 @@ public class EnemyBird : BaseEnemy
             else
             {
                 healbar.gameObject.SetActive(false);
-                return;
             }
         }
 
