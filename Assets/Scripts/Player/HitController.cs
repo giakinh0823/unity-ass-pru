@@ -214,16 +214,25 @@ public class HitController : MonoBehaviour
                     Vector2     rotation    = enemyTurtle.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
-                        if (transform.position.x > enemyTurtle.transform.position.x)
+                        if (transform.position.x < enemyTurtle.transform.position.x)
+                        {
+                            enemyTurtle.transform.localScale = new Vector3(-3, 3, 3);
+                        }
+                        else
                         {
                             enemyTurtle.transform.localScale = new Vector3(3, 3, 3);
                         }
                     }
                     else
                     {
-                        if (transform.position.x < enemyTurtle.transform.position.x)
+                        if (transform.position.x > enemyTurtle.transform.position.x)
+                        {
+                            enemyTurtle.transform.localScale = new Vector3(3, 3, 3);
+                        }
+                        else
                         {
                             enemyTurtle.transform.localScale = new Vector3(-3, 3, 3);
+
                         }
                     }
                     enemyTurtle.PlaySound();
