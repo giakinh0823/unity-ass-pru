@@ -6,10 +6,11 @@ using UnityEngine;
 
 public class EnemyTurtle : BaseEnemy
 {
-    private                  Animator animator;
-    private                  float    maxHealth     = 0.5f;
-    public                   float    currentHealth = 0.5f;
-    [SerializeField] private Healbar  healbar;
+    private                  Animator       animator;
+    private                  float          maxHealth     = 0.5f;
+    public                   float          currentHealth = 0.5f;
+    [SerializeField] private Healbar        healbar;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     TimerEnemy timers;
     public int damageTurtle = 10;
@@ -23,6 +24,8 @@ public class EnemyTurtle : BaseEnemy
         timers           = GetComponent<TimerEnemy>();
         timers.alarmTime = 1;
         timers.StartTime();
+
+        gameObject.transform.localScale = Vector3.one * 3f;
     }
 
     private void Update()
@@ -75,14 +78,7 @@ public class EnemyTurtle : BaseEnemy
         {
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
-            if (rotation.x * Vector3.right.x > 0)
-            {
-                gameObject.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
-            }
-            else
-            {
-                gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
-            }
+            this.spriteRenderer.flipX = rotation.x * Vector3.right.x > 0;
 
             currentHealth -= GetDameGun();
         }
@@ -111,6 +107,6 @@ public class EnemyTurtle : BaseEnemy
 
     private void OnDestroy()
     {
-        if (this.QuestPlayerController  is { IsReadyToUse: true })  this.QuestPlayerController.QuestTurtle--;
+        if (this.QuestPlayerController is { IsReadyToUse: true }) this.QuestPlayerController.QuestTurtle--;
     }
 }
