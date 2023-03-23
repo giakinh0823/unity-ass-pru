@@ -125,7 +125,7 @@ public class EnemySlime : BaseEnemy
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            currentHealth -= 0.000001f;
+           
         }
         else if (collision.gameObject.CompareTag("Bullet"))
         {
