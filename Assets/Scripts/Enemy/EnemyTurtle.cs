@@ -70,16 +70,12 @@ public class EnemyTurtle : BaseEnemy
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            currentHealth -= 0.000001f;
-        }
-        else if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Bullet"))
         {
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
             this.spriteRenderer.flipX = rotation.x * Vector3.right.x > 0;
-
+            PlaySound();
             currentHealth -= GetDameGun();
         }
     }
@@ -100,7 +96,7 @@ public class EnemyTurtle : BaseEnemy
     }
 
 
-    void PlaySound()
+    public void PlaySound()
     {
         gameObject.GetComponent<AudioSource>().Play();
     }

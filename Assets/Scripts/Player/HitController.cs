@@ -63,19 +63,27 @@ public class HitController : MonoBehaviour
                     Vector2     rotation    = enemyTurtle.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
-                        if (transform.position.x > enemyTurtle.transform.position.x)
+                        if (transform.position.x < enemyTurtle.transform.position.x)
                         {
-                            enemyTurtle.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+                            enemyTurtle.transform.localScale = new Vector3(-3, 3, 3);
+                        }
+                        else{
+                            enemyTurtle.transform.localScale = new Vector3(3, 3, 3);
                         }
                     }
                     else
                     {
-                        if (transform.position.x < enemyTurtle.transform.position.x)
+                        if (transform.position.x > enemyTurtle.transform.position.x)
                         {
-                            enemyTurtle.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+                            enemyTurtle.transform.localScale = new Vector3(3, 3, 3);
+                        }
+                        else
+                        {
+                            enemyTurtle.transform.localScale = new Vector3(-3, 3, 3);
+
                         }
                     }
-
+                    enemyTurtle.PlaySound();
                     enemyTurtle.currentHealth -= dameArmPlayerAttackEnemy;
                 }
                 else if (go.layer == 18)
@@ -84,19 +92,27 @@ public class HitController : MonoBehaviour
                     Vector2       rotation      = enemyMushroom.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
-                        if (transform.position.x > enemyMushroom.transform.position.x)
+                        if (transform.position.x < enemyMushroom.transform.position.x)
+                        {
+                            enemyMushroom.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+                        }
+                        else
                         {
                             enemyMushroom.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
                         }
                     }
                     else
                     {
-                        if (transform.position.x < enemyMushroom.transform.position.x)
+                        if (transform.position.x > enemyMushroom.transform.position.x)
+                        {
+                            enemyMushroom.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+                        }
+                        else
                         {
                             enemyMushroom.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
-
+                    enemyMushroom.PlaySound();
                     enemyMushroom.currentHealth -= dameArmPlayerAttackEnemy;
                 }
                 else if (go.layer == 19)
@@ -105,19 +121,27 @@ public class HitController : MonoBehaviour
                     Vector2    rotation   = enemySnake.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
-                        if (transform.position.x > enemySnake.transform.position.x)
+                        if (transform.position.x < enemySnake.transform.position.x)
+                        {
+                            enemySnake.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+                        }
+                        else
                         {
                             enemySnake.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
                         }
                     }
                     else
                     {
-                        if (transform.position.x < enemySnake.transform.position.x)
+                        if (transform.position.x > enemySnake.transform.position.x)
+                        {
+                            enemySnake.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+                        }
+                        else
                         {
                             enemySnake.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
-
+                    enemySnake.PlaySound();
                     enemySnake.currentHealth -= dameArmPlayerAttackEnemy;
                 }
                 else if (go.layer == 20)
@@ -138,7 +162,7 @@ public class HitController : MonoBehaviour
                             enemySlime.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
                         }
                     }
-
+                    enemySlime.PlaySound();
                     enemySlime.currentHealth -= dameArmPlayerAttackEnemy;
                 }
                 else if (go.layer == 17)
@@ -147,19 +171,27 @@ public class HitController : MonoBehaviour
                     Vector2   rotation  = enemyBird.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
-                        if (transform.position.x > enemyBird.transform.position.x)
+                        if (transform.position.x < enemyBird.transform.position.x)
+                        {
+                            enemyBird.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
+                        }
+                        else
                         {
                             enemyBird.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
                         }
                     }
                     else
                     {
-                        if (transform.position.x < enemyBird.transform.position.x)
+                        if (transform.position.x > enemyBird.transform.position.x)
+                        {
+                            enemyBird.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
+                        }
+                        else
                         {
                             enemyBird.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
                         }
                     }
-
+                    enemyBird.PlaySound();
                     enemyBird.currentHealth -= dameArmPlayerAttackEnemy;
                 }
             }
@@ -182,19 +214,28 @@ public class HitController : MonoBehaviour
                     Vector2     rotation    = enemyTurtle.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
-                        if (transform.position.x > enemyTurtle.transform.position.x)
+                        if (transform.position.x < enemyTurtle.transform.position.x)
                         {
-                            enemyTurtle.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+                            enemyTurtle.transform.localScale = new Vector3(-3, 3, 3);
+                        }
+                        else
+                        {
+                            enemyTurtle.transform.localScale = new Vector3(3, 3, 3);
                         }
                     }
                     else
                     {
-                        if (transform.position.x < enemyTurtle.transform.position.x)
+                        if (transform.position.x > enemyTurtle.transform.position.x)
                         {
-                            enemyTurtle.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+                            enemyTurtle.transform.localScale = new Vector3(3, 3, 3);
+                        }
+                        else
+                        {
+                            enemyTurtle.transform.localScale = new Vector3(-3, 3, 3);
+
                         }
                     }
-
+                    enemyTurtle.PlaySound();
                     enemyTurtle.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
                 else if (go.layer == 18)
@@ -203,19 +244,27 @@ public class HitController : MonoBehaviour
                     Vector2       rotation      = enemyMushroom.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
-                        if (transform.position.x > enemyMushroom.transform.position.x)
+                        if (transform.position.x < enemyMushroom.transform.position.x)
+                        {
+                            enemyMushroom.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+                        }
+                        else
                         {
                             enemyMushroom.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
                         }
                     }
                     else
                     {
-                        if (transform.position.x < enemyMushroom.transform.position.x)
+                        if (transform.position.x > enemyMushroom.transform.position.x)
+                        {
+                            enemyMushroom.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+                        }
+                        else
                         {
                             enemyMushroom.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
-
+                    enemyMushroom.PlaySound();
                     enemyMushroom.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
                 else if (go.layer == 19)
@@ -224,19 +273,27 @@ public class HitController : MonoBehaviour
                     Vector2    rotation   = enemySnake.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
-                        if (transform.position.x > enemySnake.transform.position.x)
+                        if (transform.position.x < enemySnake.transform.position.x)
+                        {
+                            enemySnake.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+                        }
+                        else
                         {
                             enemySnake.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
                         }
                     }
                     else
                     {
-                        if (transform.position.x < enemySnake.transform.position.x)
+                        if (transform.position.x > enemySnake.transform.position.x)
+                        {
+                            enemySnake.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+                        }
+                        else
                         {
                             enemySnake.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
-
+                    enemySnake.PlaySound();
                     enemySnake.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
                 else if (go.layer == 20)
@@ -257,7 +314,7 @@ public class HitController : MonoBehaviour
                             enemySlime.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
                         }
                     }
-
+                    enemySlime.PlaySound();
                     enemySlime.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
                 else if (go.layer == 17)
@@ -266,19 +323,27 @@ public class HitController : MonoBehaviour
                     Vector2   rotation  = enemyBird.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
-                        if (transform.position.x > enemyBird.transform.position.x)
+                        if (transform.position.x < enemyBird.transform.position.x)
+                        {
+                            enemyBird.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
+                        }
+                        else
                         {
                             enemyBird.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
                         }
                     }
                     else
                     {
-                        if (transform.position.x < enemyBird.transform.position.x)
+                        if (transform.position.x > enemyBird.transform.position.x)
+                        {
+                            enemyBird.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
+                        }
+                        else
                         {
                             enemyBird.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
                         }
                     }
-
+                    enemyBird.PlaySound();
                     enemyBird.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
             }

@@ -86,7 +86,7 @@ public class EnemySnake : BaseEnemy
             {
                 gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
             }
-
+            PlaySound();
             currentHealth -= GetDameGun();
         }
     }
@@ -106,7 +106,7 @@ public class EnemySnake : BaseEnemy
         }
     }
 
-    void PlaySound()
+    public void PlaySound()
     {
         gameObject.GetComponent<AudioSource>().Play();
     }

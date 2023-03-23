@@ -92,24 +92,26 @@ public class EnemySlime : BaseEnemy
                 distanceMoved = 0f;
                 direction     = -direction;
             }
+
+            if (timers.isFinish)
+            {
+                if (currentHealth < maxHealth)
+                {
+                    healbar.gameObject.SetActive(true);
+                    currentHealth += currentHealth * 5 / 100;
+                    timers.alarmTime = 1;
+                    timers.StartTime();
+                }
+                else
+                {
+                    healbar.gameObject.SetActive(false);
+                    return;
+                }
+            }
         }
 
         animator.SetFloat("Health", currentHealth);
-        if (timers.isFinish)
-        {
-            if (currentHealth < maxHealth)
-            {
-                healbar.gameObject.SetActive(true);
-                currentHealth    += currentHealth * 5 / 100;
-                timers.alarmTime =  1;
-                timers.StartTime();
-            }
-            else
-            {
-                healbar.gameObject.SetActive(false);
-                return;
-            }
-        }
+        
 
         if (currentHealth <= 0)
         {
@@ -123,16 +125,12 @@ public class EnemySlime : BaseEnemy
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            currentHealth -= 0.000001f;
-        }
-        else if (collision.gameObject.CompareTag("Bullet"))
+       if (collision.gameObject.CompareTag("Bullet"))
         {
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
             this.spriteRenderer.flipX = rotation.x * Vector3.right.x > 0;
-
+            PlaySound();
             currentHealth -= GetDameGun();
         }
     }
@@ -152,7 +150,7 @@ public class EnemySlime : BaseEnemy
         }
     }
 
-    void PlaySound()
+    public void PlaySound()
     {
         gameObject.GetComponent<AudioSource>().Play();
     }

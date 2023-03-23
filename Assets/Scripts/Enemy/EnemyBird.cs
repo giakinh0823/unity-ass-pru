@@ -110,23 +110,24 @@ public class EnemyBird : BaseEnemy
                 distanceMoved = 0f;
                 direction     = -direction;
             }
+            if (timers2.isFinish)
+            {
+                if (currentHealth < maxHealth)
+                {
+                    healbar.gameObject.SetActive(true);
+                    currentHealth += currentHealth * 5 / 100;
+                    timers2.alarmTime = 1;
+                    timers2.StartTime();
+                }
+                else
+                {
+                    healbar.gameObject.SetActive(false);
+                }
+            }
         }
 
         animator.SetFloat("Health", currentHealth);
-        if (timers2.isFinish)
-        {
-            if (currentHealth < maxHealth)
-            {
-                healbar.gameObject.SetActive(true);
-                currentHealth     += currentHealth * 5 / 100;
-                timers2.alarmTime =  1;
-                timers2.StartTime();
-            }
-            else
-            {
-                healbar.gameObject.SetActive(false);
-            }
-        }
+        
 
         if (currentHealth <= 0)
         {
@@ -145,11 +146,7 @@ public class EnemyBird : BaseEnemy
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            currentHealth -= 0.000001f;
-        }
-        else if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Bullet"))
         {
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
@@ -161,12 +158,12 @@ public class EnemyBird : BaseEnemy
             {
                 gameObject.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
             }
-
+            PlaySound();
             currentHealth -= GetDameGun();
         }
     }
 
-    void PlaySound()
+    public void PlaySound()
     {
         gameObject.GetComponent<AudioSource>().Play();
     }
