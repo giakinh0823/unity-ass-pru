@@ -40,7 +40,6 @@ public class EnemySlime : BaseEnemy
         timers.alarmTime = 1;
         timers.StartTime();
 
-        this.transform.localScale = Vector3.one * 3f;
     }
 
     void Update()
