@@ -184,14 +184,14 @@ public class HitController : MonoBehaviour
                     {
                         if (transform.position.x > enemyTurtle.transform.position.x)
                         {
-                            enemyTurtle.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+                            enemyTurtle.transform.localScale = new Vector3(-3, 3, 3);
                         }
                     }
                     else
                     {
                         if (transform.position.x < enemyTurtle.transform.position.x)
                         {
-                            enemyTurtle.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+                            enemyTurtle.transform.localScale = new Vector3(3, 3, 3);
                         }
                     }
                     enemyTurtle.PlaySound();
