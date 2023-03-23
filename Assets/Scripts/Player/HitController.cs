@@ -147,21 +147,7 @@ public class HitController : MonoBehaviour
                 else if (go.layer == 20)
                 {
                     EnemySlime enemySlime = go.GetComponent<EnemySlime>();
-                    Vector2    rotation   = enemySlime.transform.localScale;
-                    if (rotation.x * transform.localScale.x > 0)
-                    {
-                        if (transform.position.x > enemySlime.transform.position.x)
-                        {
-                            enemySlime.transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
-                        }
-                    }
-                    else
-                    {
-                        if (transform.position.x < enemySlime.transform.position.x)
-                        {
-                            enemySlime.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
-                        }
-                    }
+                    
                     enemySlime.PlaySound();
                     enemySlime.currentHealth -= dameArmPlayerAttackEnemy;
                 }
@@ -299,21 +285,7 @@ public class HitController : MonoBehaviour
                 else if (go.layer == 20)
                 {
                     EnemySlime enemySlime = go.GetComponent<EnemySlime>();
-                    Vector2    rotation   = enemySlime.transform.localScale;
-                    if (rotation.x * transform.localScale.x > 0)
-                    {
-                        if (transform.position.x > enemySlime.transform.position.x)
-                        {
-                            enemySlime.transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
-                        }
-                    }
-                    else
-                    {
-                        if (transform.position.x < enemySlime.transform.position.x)
-                        {
-                            enemySlime.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
-                        }
-                    }
+                    
                     enemySlime.PlaySound();
                     enemySlime.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
