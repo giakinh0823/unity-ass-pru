@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Common;
+using Constant;
 using Model;
 using ScreenManager.Popups;
 using ScreenManager.Screens;
@@ -110,19 +111,19 @@ public class PlayerController : MonoBehaviour
                 knife.gameObject.SetActive(false);
                 gun.gameObject.SetActive(false);
                 gunRotation.gunSprite.SetActive(false);
-                stateWeapon = 1;
+                stateWeapon = StateWeaponConstant.KNIFE;
                 break;
             case 1:
                 knife.gameObject.SetActive(true);
                 gun.gameObject.SetActive(false);
                 gunRotation.gunSprite.SetActive(false);
-                stateWeapon = 2;
+                stateWeapon = StateWeaponConstant.GUN;
                 break;
             case 2:
                 knife.gameObject.SetActive(false);
                 gun.gameObject.SetActive(true);
                 gunRotation.gunSprite.SetActive(true);
-                stateWeapon = 0;
+                stateWeapon = StateWeaponConstant.HAND;
                 break;
             default:
                 knife.gameObject.SetActive(false);

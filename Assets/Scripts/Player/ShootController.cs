@@ -13,7 +13,7 @@ public class ShootController : MonoBehaviour
 
     private void Start()
     {
-        FindObjectOfType<InputManager>().attack += this.Shoot;
+        //FindObjectOfType<InputManager>().attack += this.Shoot;
     }
 
     public void Shoot()
