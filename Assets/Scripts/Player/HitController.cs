@@ -215,7 +215,7 @@ public class HitController : MonoBehaviour
                             enemyMushroom.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
-
+                    enemyMushroom.PlaySound();
                     enemyMushroom.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
                 else if (go.layer == 19)
