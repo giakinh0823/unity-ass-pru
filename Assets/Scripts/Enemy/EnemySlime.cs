@@ -92,24 +92,26 @@ public class EnemySlime : BaseEnemy
                 distanceMoved = 0f;
                 direction     = -direction;
             }
+
+            if (timers.isFinish)
+            {
+                if (currentHealth < maxHealth)
+                {
+                    healbar.gameObject.SetActive(true);
+                    currentHealth += currentHealth * 5 / 100;
+                    timers.alarmTime = 1;
+                    timers.StartTime();
+                }
+                else
+                {
+                    healbar.gameObject.SetActive(false);
+                    return;
+                }
+            }
         }
 
         animator.SetFloat("Health", currentHealth);
-        if (timers.isFinish)
-        {
-            if (currentHealth < maxHealth)
-            {
-                healbar.gameObject.SetActive(true);
-                currentHealth    += currentHealth * 5 / 100;
-                timers.alarmTime =  1;
-                timers.StartTime();
-            }
-            else
-            {
-                healbar.gameObject.SetActive(false);
-                return;
-            }
-        }
+        
 
         if (currentHealth <= 0)
         {
