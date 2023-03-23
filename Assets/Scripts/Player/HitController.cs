@@ -77,6 +77,11 @@ public class HitController : MonoBehaviour
                         {
                             enemyTurtle.transform.localScale = new Vector3(3, 3, 3);
                         }
+                        else
+                        {
+                            enemyTurtle.transform.localScale = new Vector3(-3, 3, 3);
+
+                        }
                     }
                     enemyTurtle.PlaySound();
                     enemyTurtle.currentHealth -= dameArmPlayerAttackEnemy;
