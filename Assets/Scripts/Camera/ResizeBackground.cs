@@ -32,8 +32,8 @@ public class ResizeBackground : MonoBehaviour
         float spriteHeight = background.sprite.bounds.size.y;
         float spriteWidth = background.sprite.bounds.size.x;
 
-        float worldScreenHeight = mainCamera.orthographicSize * 2.0f;
-        float worldScreenWidth = worldScreenHeight * screenAspect;
+        float worldScreenHeight = mainCamera.orthographicSize * 2.0f + 1f;
+        float worldScreenWidth = worldScreenHeight * screenAspect + 1f;
 
         float scale = Mathf.Max(worldScreenWidth / spriteWidth, worldScreenHeight / spriteHeight);
         background.transform.localScale = new Vector3(scale, scale, 1f);
