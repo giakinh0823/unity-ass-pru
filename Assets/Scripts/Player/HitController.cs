@@ -315,14 +315,22 @@ public class HitController : MonoBehaviour
                     Vector2   rotation  = enemyBird.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
-                        if (transform.position.x > enemyBird.transform.position.x)
+                        if (transform.position.x < enemyBird.transform.position.x)
+                        {
+                            enemyBird.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
+                        }
+                        else
                         {
                             enemyBird.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
                         }
                     }
                     else
                     {
-                        if (transform.position.x < enemyBird.transform.position.x)
+                        if (transform.position.x > enemyBird.transform.position.x)
+                        {
+                            enemyBird.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
+                        }
+                        else
                         {
                             enemyBird.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
                         }
