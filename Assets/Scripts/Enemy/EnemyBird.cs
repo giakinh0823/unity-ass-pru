@@ -157,7 +157,7 @@ public class EnemyBird : BaseEnemy
             {
                 gameObject.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
             }
-
+            PlaySound();
             currentHealth -= GetDameGun();
         }
     }
