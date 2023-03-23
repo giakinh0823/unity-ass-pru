@@ -278,7 +278,7 @@ public class HitController : MonoBehaviour
                             enemyBird.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
                         }
                     }
-
+                    enemyBird.PlaySound();
                     enemyBird.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
             }
