@@ -33,6 +33,10 @@
 
         public void OnClickResumeBtn()
         {
+            if (PlayerLocalData.Instance.CurrentPlayerReviveTime <= 0)
+            {
+                PlayerLocalData.Instance.Init();
+            }
             SceneManager.LoadScene("Game");
         }
     }

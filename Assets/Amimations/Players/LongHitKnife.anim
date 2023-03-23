@@ -5938,6 +5938,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.083333336
+    functionName: AttackEnemyByKnife
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.18333334
     functionName: SoundHitSlashing
     data: 
@@ -5954,6 +5961,20 @@ AnimationClip:
     messageOptions: 0
   - time: 0.26666668
     functionName: SoundHitSlashing
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.28333333
+    functionName: AttackEnemyByKnife
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.33333334
+    functionName: AttackEnemyByKnife
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
