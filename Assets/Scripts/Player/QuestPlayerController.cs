@@ -131,7 +131,7 @@ public class QuestPlayerController : MonoBehaviour
 
         // quest amount config
         const int minKilledEnemy   = 3;
-        var       killedEnemyCount = Math.Clamp(minKilledEnemy + currentLevel - 1, minKilledEnemy, totalEnemy);
+        var       killedEnemyCount = totalEnemy >= minKilledEnemy ? Math.Clamp(minKilledEnemy + currentLevel - 1, minKilledEnemy, totalEnemy) : totalEnemy;
 
         var questEnemy = layerToCount.ToDictionary(x => x.Key, x => 0);
 
