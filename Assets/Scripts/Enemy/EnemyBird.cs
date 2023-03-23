@@ -110,23 +110,24 @@ public class EnemyBird : BaseEnemy
                 distanceMoved = 0f;
                 direction     = -direction;
             }
+            if (timers2.isFinish)
+            {
+                if (currentHealth < maxHealth)
+                {
+                    healbar.gameObject.SetActive(true);
+                    currentHealth += currentHealth * 5 / 100;
+                    timers2.alarmTime = 1;
+                    timers2.StartTime();
+                }
+                else
+                {
+                    healbar.gameObject.SetActive(false);
+                }
+            }
         }
 
         animator.SetFloat("Health", currentHealth);
-        if (timers2.isFinish)
-        {
-            if (currentHealth < maxHealth)
-            {
-                healbar.gameObject.SetActive(true);
-                currentHealth     += currentHealth * 5 / 100;
-                timers2.alarmTime =  1;
-                timers2.StartTime();
-            }
-            else
-            {
-                healbar.gameObject.SetActive(false);
-            }
-        }
+        
 
         if (currentHealth <= 0)
         {
