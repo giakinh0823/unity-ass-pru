@@ -82,15 +82,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2784127548332750969, guid: ffec988f9ae038f419bd6d458f448daa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ffec988f9ae038f419bd6d458f448daa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.33, y: 1.44}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &7174549218620909031
@@ -152,7 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04dbab7553562d4a9b50e04b13099d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 1.5
   healbar: {fileID: 7803743622460434448}
+  damageSnake: 30
 --- !u!61 &7985206079722690806
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -189,8 +191,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.26, y: 1.29}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.33, y: 1.44}
+    newSize: {x: 1.33, y: 1.44}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -234,8 +236,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.26, y: 1.29}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.33, y: 1.44}
+    newSize: {x: 1.33, y: 1.44}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -391,7 +393,7 @@ MonoBehaviour:
   - {x: 0.055537056, y: -0.6815163, z: 0}
   m_ShapePathHash: -911249211
   m_Mesh: {fileID: 0}
-  m_InstanceId: -671422
+  m_InstanceId: 63980
 --- !u!114 &2335234169579412672
 MonoBehaviour:
   m_ObjectHideFlags: 0
