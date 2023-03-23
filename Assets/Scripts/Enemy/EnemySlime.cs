@@ -152,7 +152,7 @@ public class EnemySlime : BaseEnemy
         }
     }
 
-    void PlaySound()
+    public void PlaySound()
     {
         gameObject.GetComponent<AudioSource>().Play();
     }

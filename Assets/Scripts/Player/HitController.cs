@@ -257,7 +257,7 @@ public class HitController : MonoBehaviour
                             enemySlime.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
                         }
                     }
-
+                    enemySlime.PlaySound();
                     enemySlime.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
                 else if (go.layer == 17)
