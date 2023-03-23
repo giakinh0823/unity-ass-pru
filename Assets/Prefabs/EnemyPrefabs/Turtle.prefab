@@ -383,7 +383,7 @@ MonoBehaviour:
   - {x: 1.215, y: -0.7950001, z: 0}
   m_ShapePathHash: 1058873463
   m_Mesh: {fileID: 0}
-  m_InstanceId: 73250
+  m_InstanceId: 71836
 --- !u!114 &4923644455428471093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,19 +430,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6088793995693563719, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.27235422
+      value: 0.3863661
       objectReference: {fileID: 0}
     - target: {fileID: 6088793995693563719, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.26410437
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6088793995693563719, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.178
+      value: -0.003
       objectReference: {fileID: 0}
     - target: {fileID: 6088793995693563719, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.005
+      value: 0.328
       objectReference: {fileID: 0}
     - target: {fileID: 6088793995693563719, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
       propertyPath: m_LocalPosition.z
