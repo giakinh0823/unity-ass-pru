@@ -166,7 +166,7 @@ public class EnemyBird : BaseEnemy
         }
     }
 
-    void PlaySound()
+    public void PlaySound()
     {
         gameObject.GetComponent<AudioSource>().Play();
     }
