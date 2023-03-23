@@ -117,7 +117,7 @@ public class HitController : MonoBehaviour
                             enemySnake.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
-
+                    enemySnake.PlaySound();
                     enemySnake.currentHealth -= dameArmPlayerAttackEnemy;
                 }
                 else if (go.layer == 20)
