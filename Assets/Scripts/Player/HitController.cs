@@ -273,14 +273,22 @@ public class HitController : MonoBehaviour
                     Vector2    rotation   = enemySnake.transform.localScale;
                     if (rotation.x * transform.localScale.x > 0)
                     {
-                        if (transform.position.x > enemySnake.transform.position.x)
+                        if (transform.position.x < enemySnake.transform.position.x)
+                        {
+                            enemySnake.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
+                        }
+                        else
                         {
                             enemySnake.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
                         }
                     }
                     else
                     {
-                        if (transform.position.x < enemySnake.transform.position.x)
+                        if (transform.position.x > enemySnake.transform.position.x)
+                        {
+                            enemySnake.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
+                        }
+                        else
                         {
                             enemySnake.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
