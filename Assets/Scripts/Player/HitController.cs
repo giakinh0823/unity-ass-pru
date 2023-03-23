@@ -75,7 +75,7 @@ public class HitController : MonoBehaviour
                             enemyTurtle.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
-
+                    enemyTurtle.PlaySound();
                     enemyTurtle.currentHealth -= dameArmPlayerAttackEnemy;
                 }
                 else if (go.layer == 18)
@@ -194,7 +194,7 @@ public class HitController : MonoBehaviour
                             enemyTurtle.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
-
+                    enemyTurtle.PlaySound();
                     enemyTurtle.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
                 else if (go.layer == 18)
