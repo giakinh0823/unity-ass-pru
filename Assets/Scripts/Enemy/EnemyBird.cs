@@ -1,32 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class EnemyBird : MonoBehaviour
+public class EnemyBird : BaseEnemy
 {
+    private                  Animator animator;
+    private                  float    damage        = 0.05f;
+    private                  float    maxHealth     = 1.5f;
+    public                   float    currentHealth = 1.5f;
+    [SerializeField] private Healbar  healbar;
 
-    private Animator animator;
-    private float damage = 0.05f;
-    private float currentHealth = 1.5f;
-    [SerializeField]
-    private Healbar healbar;
-
-    public float speed = 2.0f;
+    public float   speed = 2.0f;
     public Vector3 direction;
 
-    bool isWallTouch = false;
-    public LayerMask wallerLayerMask;
-    [SerializeField]
-    private Transform wallCheckPoint;
+    bool                               isWallTouch = false;
+    public                   LayerMask wallerLayerMask;
+    [SerializeField] private Transform wallCheckPoint;
 
     public Transform playerTransfrom;
-    public bool isChasing;
-    public float chaseDistance;
+    public bool      isChasing;
+    public float     chaseDistance;
 
-    public GameObject bulletPrefab;
-    private float bulletSpeed = 15f;
-    Vector3 closestWalkerDirection = Vector3.zero;
-    timer timers;
+    public  GameObject bulletPrefab;
+    private float      bulletSpeed            = 3f;
+    Vector3            closestWalkerDirection = Vector3.zero;
+    TimerEnemy         timers;
+    TimerEnemy         timers2;
+    public  float      distanceLimit = 3f;
+    private float      distanceMoved = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -35,16 +35,27 @@ public class EnemyBird : MonoBehaviour
         animator.SetFloat("Health", currentHealth);
         direction = Vector3.right;
 
-        timers = GetComponent<timer>();
-        timers.alarmTime = 1;
+        timers           = GetComponent<TimerEnemy>();
+        timers.alarmTime = 2;
         timers.StartTime();
+
+        timers2           = GetComponent<TimerEnemy>();
+        timers2.alarmTime = 1;
+        timers2.StartTime();
     }
 
     void Update()
     {
-        healbar.localScale.x = currentHealth;
-        if (isChasing)
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
         {
+            playerTransfrom = player.transform;
+        }
+
+        if (playerTransfrom != null && Vector3.Distance(transform.position, playerTransfrom.position) <= chaseDistance)
+        {
+            healbar.gameObject.SetActive(true);
+
             if (timers.isFinish)
             {
                 closestWalkerDirection = (playerTransfrom.position - transform.position).normalized;
@@ -52,52 +63,80 @@ public class EnemyBird : MonoBehaviour
                 bullet.GetComponent<Rigidbody2D>().velocity = closestWalkerDirection * bulletSpeed;
                 bullet.GetComponent<AudioSource>().Play();
                 Destroy(bullet, 4f);
-                timers.alarmTime = 5;
+                timers.alarmTime = 2;
                 timers.StartTime();
             }
-            if (transform.position.x > playerTransfrom.position.x)
+
+            if (gameObject.transform.position.x > playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x > 0)
             {
-                transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
-                transform.position += Vector3.left * speed * Time.deltaTime;
+                transform.localScale =  new Vector3(-1.0369f, 0.9648f, 1);
+                transform.position   += Vector3.left * speed * Time.deltaTime;
             }
-            if (transform.position.x < playerTransfrom.position.x)
+
+            if (gameObject.transform.position.x < playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x > 0)
             {
-                transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
-                transform.position += Vector3.right * speed * Time.deltaTime;
+                transform.localScale =  new Vector3(1.0369f, 0.9648f, 1);
+                transform.position   += Vector3.right * speed * Time.deltaTime;
+            }
+
+            if (gameObject.transform.position.x < playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x < 0)
+            {
+                transform.localScale =  new Vector3(1.0369f, 0.9648f, 1);
+                transform.position   += Vector3.right * speed * Time.deltaTime;
+            }
+
+            if (gameObject.transform.position.x > playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x < 0)
+            {
+                transform.localScale =  new Vector3(-1.0369f, 0.9648f, 1);
+                transform.position   += Vector3.left * speed * Time.deltaTime;
             }
         }
         else
         {
-            if (Vector3.Distance(transform.position, playerTransfrom.position) < chaseDistance)
+            transform.position += (Vector3)(direction * speed * Time.deltaTime);
+
+            if (direction.x > 0)
             {
-                isChasing = true;
-                
+                transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
             }
             else
             {
-                transform.position += (Vector3)(direction * speed * Time.deltaTime);
-
-                isWallTouch = Physics2D.OverlapBox(wallCheckPoint.position, new Vector3(0.03f, 0.5f), 0, wallerLayerMask);
-                if (isWallTouch)
-                {
-                    if (direction == Vector3.right)
-                    {
-                        transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
-                        direction = Vector3.left;
-                    }
-                    else
-                    {
-                        transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
-                        direction = Vector3.right;
-                    }
-                    isWallTouch = false;
-                }
+                transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
             }
-            
+
+            distanceMoved += speed * Time.deltaTime;
+            if (distanceMoved >= distanceLimit)
+            {
+                distanceMoved = 0f;
+                direction     = -direction;
+            }
         }
 
+        animator.SetFloat("Health", currentHealth);
+        if (timers2.isFinish)
+        {
+            if (currentHealth < maxHealth)
+            {
+                healbar.gameObject.SetActive(true);
+                currentHealth     += currentHealth * 5 / 100;
+                timers2.alarmTime =  1;
+                timers2.StartTime();
+            }
+            else
+            {
+                healbar.gameObject.SetActive(false);
+            }
+        }
 
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Destroy(gameObject, 2f);
+        }
+
+        healbar.localScale.x = currentHealth;
     }
+
     public void Flip()
     {
         transform.Rotate(0, 180, 0);
@@ -108,22 +147,23 @@ public class EnemyBird : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlaySound();
-            healbar.gameObject.SetActive(true);
-
-            Quaternion rotation = collision.gameObject.transform.rotation;
-            //gameObject.transform.rotation = rotation;
-            currentHealth -= damage;
-            Debug.Log(currentHealth);
-            animator.SetFloat("Health", currentHealth);
-            if (currentHealth <= 0)
-            {
-                currentHealth = 0;
-                Destroy(gameObject, 3f);
-            }
+            currentHealth -= 0.000001f;
         }
+        else if (collision.gameObject.CompareTag("Bullet"))
+        {
+            healbar.gameObject.SetActive(true);
+            Quaternion rotation = collision.gameObject.transform.rotation;
+            if (rotation.x * Vector3.right.x > 0)
+            {
+                gameObject.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
+            }
+            else
+            {
+                gameObject.transform.localScale = new Vector3(-1.0369f, 0.9648f, 1);
+            }
 
-
+            currentHealth -= GetDameGun();
+        }
     }
 
     void PlaySound()
@@ -131,4 +171,8 @@ public class EnemyBird : MonoBehaviour
         gameObject.GetComponent<AudioSource>().Play();
     }
 
+    private void OnDestroy()
+    {
+        if (this.QuestPlayerController  is { IsReadyToUse: true })  this.QuestPlayerController.QuestBird--;
+    }
 }

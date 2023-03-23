@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class GunRotation : MonoBehaviour
 {
@@ -31,7 +30,7 @@ public class GunRotation : MonoBehaviour
     void FixedUpdate()
     {
         horizontal = joystickController.GetHorizontalValue();
-        Vector2 joystickValue = joystickController.joystickValue;
+        Vector2 joystickValue = joystickController.JoystickValue;
         float angle = Mathf.Atan2(joystickValue.y, joystickValue.x) * Mathf.Rad2Deg;
         Quaternion targetRotation = Quaternion.Euler(0f, 0f, angle);
         Quaternion lookRotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);

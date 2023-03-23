@@ -4,39 +4,36 @@ using UnityEngine.SceneManagement;
 
 public class LevelGeneration : MonoBehaviour
 {
-    [SerializeField]
-    public Transform[] startingPositions;
-    [SerializeField]
-    public GameObject[] rooms; // index 0 --> closed, index 1 --> LR, index 2 --> LRB, index 3 --> LRT, index 4 --> LRBT
+    [SerializeField] public Transform[]  startingPositions;
+    [SerializeField] public GameObject[] rooms; // index 0 --> closed, index 1 --> LR, index 2 --> LRB, index 3 --> LRT, index 4 --> LRBT
 
-    private int direction;
-    private bool stopGeneration;
-    private int downCounter;
+    private int  direction;
+    public bool stopGeneration;
+    private int  downCounter;
 
-    [SerializeField]
-    public float moveIncrement;
-    private float timeBtwSpawn;
-    [SerializeField]
-    public float startTimeBtwSpawn;
+    [SerializeField] public float moveIncrement;
+    private                 float timeBtwSpawn;
+    [SerializeField] public float startTimeBtwSpawn;
 
-    [SerializeField]
-    public LayerMask whatIsRoom;
+    [SerializeField] public LayerMask whatIsRoom;
 
-    [SerializeField]
-    private PlayerController playerController;
+    [SerializeField] private PlayerController playerController;
+
+    [SerializeField] private GameObject endPortalPrefab;
 
     List<GameObject> roomTrues;
 
     private Transform startPoint;
+
     private Transform endPoint;
 
     private void Start()
     {
         playerController = GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<PlayerController>();
-        roomTrues = new List<GameObject>();
+        roomTrues        = new List<GameObject>();
         int randStartingPos = Random.Range(0, startingPositions.Length);
         transform.position = startingPositions[randStartingPos].position;
-        startPoint = startingPositions[randStartingPos];
+        startPoint         = startingPositions[randStartingPos];
         Instantiate(rooms[1], transform.position, Quaternion.identity);
         playerController.transform.position = new Vector3(startPoint.position.x, startPoint.position.y - 2f, 0f);
         playerController.gameObject.SetActive(false);
@@ -45,7 +42,6 @@ public class LevelGeneration : MonoBehaviour
 
     private void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.F))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -64,9 +60,9 @@ public class LevelGeneration : MonoBehaviour
 
     private void Move()
     {
-
         if (direction == 1 || direction == 2)
-        { // Đi sang phải !
+        {
+            // Đi sang phải !
 
             if (transform.position.x < 25)
             {
@@ -94,7 +90,8 @@ public class LevelGeneration : MonoBehaviour
             }
         }
         else if (direction == 3 || direction == 4)
-        { // Sang trái !
+        {
+            // Sang trái !
 
             if (transform.position.x > 0)
             {
@@ -111,10 +108,10 @@ public class LevelGeneration : MonoBehaviour
             {
                 direction = 5;
             }
-
         }
         else if (direction == 5)
-        { // Đi xuống
+        {
+            // Đi xuống
             downCounter++;
             if (transform.position.y > -25)
             {
@@ -123,7 +120,6 @@ public class LevelGeneration : MonoBehaviour
                 Debug.Log(previousRoom);
                 if (previousRoom.GetComponent<Room>().roomType != 4 && previousRoom.GetComponent<Room>().roomType != 2)
                 {
-
                     // Vấn đề của tôi: nếu việc tạo cấp độ giảm TWICE liên tiếp, có khả năng phòng trước đó chỉ
                     // một LRB, nghĩa là không có TOP nào mở cho phòng khác !
 
@@ -140,11 +136,10 @@ public class LevelGeneration : MonoBehaviour
                         {
                             randRoomDownOpening = 2;
                         }
+
                         roomTrues.Add(Instantiate(rooms[randRoomDownOpening], transform.position, Quaternion.identity));
                     }
-
                 }
-
 
 
                 Vector2 pos = new Vector2(transform.position.x, transform.position.y - moveIncrement);
@@ -161,6 +156,9 @@ public class LevelGeneration : MonoBehaviour
                 stopGeneration = true;
                 playerController.gameObject.SetActive(true);
                 endPoint = roomTrues[roomTrues.Count - 1].transform;
+
+                // spawn end portal
+                Instantiate(this.endPortalPrefab, this.endPoint).transform.position -= Vector3.forward;
             }
         }
     }

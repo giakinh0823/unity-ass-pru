@@ -148,6 +148,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -708,32 +720,32 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dungyen_6: -1893995001
-      dungyen_17: 616906126
       dungyen_19: -570667477
-      dungyen_21: -1597956498
-      dungyen_23: -1941000865
-      dungyen_18: 1034639073
-      dungyen_1: -1661333181
-      dungyen_5: 642550526
       dungyen_2: -2119519616
-      dungyen_8: 732051388
       dungyen_25: -850290
       dungyen_0: -131669518
-      dungyen_11: -592298036
-      dungyen_15: -509039757
-      dungyen_9: 1454201343
-      dungyen_10: 2112931064
+      dungyen_4: 1908827224
       dungyen_20: -1189556979
+      dungyen_24: -880900783
+      dungyen_21: -1597956498
+      dungyen_18: 1034639073
+      dungyen_1: -1661333181
+      dungyen_11: -592298036
+      dungyen_6: -1893995001
+      dungyen_15: -509039757
       dungyen_12: 595265627
       dungyen_14: -108615658
-      dungyen_24: -880900783
       dungyen_7: -1721058329
-      dungyen_4: 1908827224
       dungyen_13: -1694363295
+      dungyen_17: 616906126
+      dungyen_3: -339251092
+      dungyen_5: 642550526
+      dungyen_8: 732051388
       dungyen_16: 938742491
       dungyen_22: -698914567
-      dungyen_3: -339251092
+      dungyen_23: -1941000865
+      dungyen_9: 1454201343
+      dungyen_10: 2112931064
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -118,6 +118,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -573,27 +585,27 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tancong_6: -258538046
-      tancong_19: 607169942
       tancong_13: 1550834967
-      tancong_16: -200893449
-      tancong_2: 1131786769
-      tancong_1: 1356673444
       tancong_14: 978009139
-      tancong_18: 1791731616
+      tancong_5: -1107439375
+      tancong_8: -1714693789
+      tancong_6: -258538046
       tancong_0: -1809832112
-      tancong_9: -1849471123
-      tancong_15: 1108470037
-      tancong_4: 1926909511
-      tancong_20: -1435132884
       tancong_10: 761129527
       tancong_3: 2008883630
-      tancong_11: 1592217128
-      tancong_5: -1107439375
-      tancong_12: 273713086
       tancong_7: -632321977
+      tancong_11: 1592217128
       tancong_17: 2049813934
-      tancong_8: -1714693789
+      tancong_2: 1131786769
+      tancong_1: 1356673444
+      tancong_4: 1926909511
+      tancong_12: 273713086
+      tancong_18: 1791731616
+      tancong_9: -1849471123
+      tancong_20: -1435132884
+      tancong_19: 607169942
+      tancong_16: -200893449
+      tancong_15: 1108470037
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

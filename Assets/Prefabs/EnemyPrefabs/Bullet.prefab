@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: -6894067958325359551}
   - component: {fileID: -8960892207175322738}
   - component: {fileID: -3511051240160174404}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: BulletBird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,7 +192,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ae3c4c6adb897fd45b2d1e21bda76665, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0

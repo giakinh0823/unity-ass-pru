@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1628185766962159142}
   - component: {fileID: 4798704344196096512}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3576778982580622571}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.534, y: 0.013, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64,7 +64,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00941211, y: 0.09387524}
+  m_Offset: {x: -0.15129153, y: -0.004511744}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -75,7 +75,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.044668257, y: 0.5211164}
+  m_Size: {x: 0.019198209, y: 0.08072406}
   m_EdgeRadius: 0
 --- !u!1 &4018931307076601648
 GameObject:
@@ -93,7 +93,8 @@ GameObject:
   - component: {fileID: 4964011167582498505}
   - component: {fileID: 1553888329075043200}
   - component: {fileID: 7172511948767910272}
-  m_Layer: 0
+  - component: {fileID: -2995973090111271240}
+  m_Layer: 20
   m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -158,12 +159,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a089fdf07bff29b49a35103214aa302d, type: 3}
+  m_Sprite: {fileID: -1217494957, guid: c3b46f5115dbf7b438f96cc5e6bf3f44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.96, y: 1.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -201,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0814bcc276662814ba3452a700551671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 1
   healbar: {fileID: 4438561689950605709}
   speed: 2
   direction: {x: 0, y: 0, z: 0}
@@ -208,9 +210,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3072
   wallCheckPoint: {fileID: 1628185766962159142}
+  spriteRenderer: {fileID: 8578414642306897728}
   playerTransfrom: {fileID: 0}
   isChasing: 0
   chaseDistance: 2
+  distanceLimit: 3
+  damageSlime: 20
 --- !u!61 &7647728333955357680
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -243,18 +248,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.116327405, y: 0.090060025}
+  m_Offset: {x: 0, y: 0.03}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.995, y: 2.08}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.96, y: 1.12}
+    newSize: {x: 0.96, y: 1.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8965437, y: 0.6902458}
+  m_Size: {x: 0.5, y: 0.25}
   m_EdgeRadius: 0
 --- !u!61 &4964011167582498505
 BoxCollider2D:
@@ -275,31 +280,31 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 130807
+    m_Bits: 1024
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 130807
+    m_Bits: 1024
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 130807
+    m_Bits: 1024
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 130807
+    m_Bits: 1024
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.110747695, y: 0.020638704}
+  m_Offset: {x: 0, y: 0.03}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.995, y: 2.08}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.96, y: 1.12}
+    newSize: {x: 0.96, y: 1.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.84040236, y: 0.8065733}
+  m_Size: {x: 0.3, y: 0.25}
   m_EdgeRadius: 0
 --- !u!50 &1553888329075043200
 Rigidbody2D:
@@ -340,7 +345,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 252db9ed9d9bc9e4f95a272b167560c6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -348,7 +353,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.49644506
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -424,6 +429,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2995973090111271240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4018931307076601648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0748318194eda48a4627b1b13f2c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRunning: 0
+  isFinish: 1
+  elapseTime: 0
+  alarmTime: 1
 --- !u!1001 &7324366146565461342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -437,6 +458,10 @@ PrefabInstance:
       value: Healthbar
       objectReference: {fileID: 0}
     - target: {fileID: 6088793995693563712, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6088793995693563712, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -446,19 +471,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6088793995693563719, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.69686097
+      value: 0.07647356
       objectReference: {fileID: 0}
     - target: {fileID: 6088793995693563719, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5191368
+      value: 0.06999995
       objectReference: {fileID: 0}
     - target: {fileID: 6088793995693563719, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.24
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 6088793995693563719, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.19
+      value: 0.209
       objectReference: {fileID: 0}
     - target: {fileID: 6088793995693563719, guid: bd4f4016eea83ba42a3b47316f97d146, type: 3}
       propertyPath: m_LocalPosition.z

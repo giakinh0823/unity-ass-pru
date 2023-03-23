@@ -68,7 +68,7 @@ public partial class @MyPlayerActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2a85bd30-443b-4626-a0b5-e014c1fce7e7"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<AndroidGamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
