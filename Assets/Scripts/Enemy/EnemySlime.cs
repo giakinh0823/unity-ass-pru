@@ -132,7 +132,7 @@ public class EnemySlime : BaseEnemy
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
             this.spriteRenderer.flipX = rotation.x * Vector3.right.x > 0;
-
+            PlaySound();
             currentHealth -= GetDameGun();
         }
     }
