@@ -1,3 +1,4 @@
+using System;
 using Model;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,27 +7,25 @@ using UnityEngine;
 public class EnemySnake : BaseEnemy
 {
     // Start is called before the first frame update
-    private Animator animator;
-    private float maxHealth = 1.5f;
-    public float currentHealth = 1.5f;
-    [SerializeField]
-    private Healbar healbar;
+    private                  Animator animator;
+    private                  float    maxHealth     = 1.5f;
+    public                   float    currentHealth = 1.5f;
+    [SerializeField] private Healbar  healbar;
 
     TimerEnemy timers;
     public int damageSnake = 30;
-    bool check;
+    bool       check;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         animator.SetFloat("Health", currentHealth);
-        timers = GetComponent<TimerEnemy>();
+        timers           = GetComponent<TimerEnemy>();
         timers.alarmTime = 1;
         timers.StartTime();
     }
 
-    
 
     private void Update()
     {
@@ -47,8 +46,8 @@ public class EnemySnake : BaseEnemy
                 {
                     if (currentHealth < maxHealth)
                     {
-                        currentHealth += currentHealth * 5 / 100;
-                        timers.alarmTime = 1;
+                        currentHealth    += currentHealth * 5 / 100;
+                        timers.alarmTime =  1;
                         timers.StartTime();
                     }
                     else
@@ -63,6 +62,7 @@ public class EnemySnake : BaseEnemy
                 currentHealth = 0;
                 Destroy(gameObject, 2f);
             }
+
             healbar.localScale.x = currentHealth;
 
 
@@ -70,8 +70,6 @@ public class EnemySnake : BaseEnemy
 
         }
     }
-
-    
 
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -88,10 +86,9 @@ public class EnemySnake : BaseEnemy
             {
                 gameObject.transform.localScale = new Vector3(-0.7990404f, 0.824f, 1);
             }
+
             currentHealth -= GetDameGun();
-
         }
-
     }
 
     public void AttackPlayer()
@@ -99,7 +96,7 @@ public class EnemySnake : BaseEnemy
         int level = PlayerLocalData.Instance.CurrentPlayerLevel;
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if(player != null)
+        if (player != null)
         {
             PlayerController playerController = player.GetComponent<PlayerController>();
             if (Vector3.Distance(transform.position, player.transform.position) <= 2f)
@@ -107,11 +104,15 @@ public class EnemySnake : BaseEnemy
                 playerController.TakeDamage(damageSnake + level + 2);
             }
         }
-        
     }
 
     void PlaySound()
     {
         gameObject.GetComponent<AudioSource>().Play();
+    }
+
+    private void OnDestroy()
+    {
+        if (this.QuestPlayerController  is { IsReadyToUse: true })  this.QuestPlayerController.QuestSnake--;
     }
 }

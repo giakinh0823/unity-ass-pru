@@ -6,30 +6,28 @@ using UnityEngine;
 
 public class EnemySlime : BaseEnemy
 {
-    private Animator animator;
-    private float damage = 0.05f;
-    public float currentHealth = 1f;
-    private float maxHealth = 1f;
-    [SerializeField]
-    private Healbar healbar;
+    private                  Animator animator;
+    private                  float    damage        = 0.05f;
+    public                   float    currentHealth = 1f;
+    private                  float    maxHealth     = 1f;
+    [SerializeField] private Healbar  healbar;
 
-    public float speed = 2.0f;
+    public float   speed = 2.0f;
     public Vector3 direction;
 
-    bool isWallTouch = false;
-    public LayerMask wallerLayerMask;
-    [SerializeField]
-    private Transform wallCheckPoint;
+    bool                                    isWallTouch = false;
+    public                   LayerMask      wallerLayerMask;
+    [SerializeField] private Transform      wallCheckPoint;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
-    public Transform playerTransfrom;
-    public bool isChasing;
-    public float chaseDistance;
-    public float distanceLimit = 3f; 
-    private float distanceMoved = 0f;
-    
+    public  Transform playerTransfrom;
+    public  bool      isChasing;
+    public  float     chaseDistance;
+    public  float     distanceLimit = 3f;
+    private float     distanceMoved = 0f;
+
     TimerEnemy timers;
     public int damageSlime = 20;
-
 
 
     // Start is called before the first frame update
@@ -37,21 +35,22 @@ public class EnemySlime : BaseEnemy
     {
         animator = GetComponent<Animator>();
         animator.SetFloat("Health", currentHealth);
-        direction = Vector3.right;
-        timers = GetComponent<TimerEnemy>();
+        direction        = Vector3.right;
+        timers           = GetComponent<TimerEnemy>();
         timers.alarmTime = 1;
         timers.StartTime();
 
+        this.transform.localScale = Vector3.one * 3f;
     }
 
     void Update()
     {
-
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             playerTransfrom = player.transform;
         }
+
         healbar.localScale.x = currentHealth;
         if (playerTransfrom != null && Vector3.Distance(transform.position, playerTransfrom.position) <= chaseDistance)
         {
@@ -59,55 +58,50 @@ public class EnemySlime : BaseEnemy
 
             if (gameObject.transform.position.x > playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x > 0)
             {
-                transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
-                transform.position += Vector3.left * speed * Time.deltaTime;
+                this.spriteRenderer.flipX =  true;
+                transform.position        += Vector3.left * speed * Time.deltaTime;
             }
+
             if (gameObject.transform.position.x < playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x > 0)
             {
-                transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
-                transform.position += Vector3.right * speed * Time.deltaTime;
+                this.spriteRenderer.flipX =  false;
+                transform.position        += Vector3.right * speed * Time.deltaTime;
             }
+
             if (gameObject.transform.position.x < playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x < 0)
             {
-                transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
-                transform.position += Vector3.right * speed * Time.deltaTime;
+                this.spriteRenderer.flipX =  false;
+                transform.position        += Vector3.right * speed * Time.deltaTime;
             }
+
             if (gameObject.transform.position.x > playerTransfrom.position.x && gameObject.transform.localScale.x * Vector3.right.x < 0)
             {
-                transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
-                transform.position += Vector3.left * speed * Time.deltaTime;
+                this.spriteRenderer.flipX =  true;
+                transform.position        += Vector3.left * speed * Time.deltaTime;
             }
         }
         else
         {
             transform.position += (Vector3)(direction * speed * Time.deltaTime);
 
-            if (direction.x > 0)
-            {
-                transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
+            this.spriteRenderer.flipX = this.direction.x > 0;
 
-            }
-            else
-            {
-                transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
-            }
             distanceMoved += speed * Time.deltaTime;
             if (distanceMoved >= distanceLimit)
             {
-                distanceMoved = 0f; 
-                direction = -direction; 
+                distanceMoved = 0f;
+                direction     = -direction;
             }
-
-
         }
+
         animator.SetFloat("Health", currentHealth);
         if (timers.isFinish)
         {
             if (currentHealth < maxHealth)
             {
                 healbar.gameObject.SetActive(true);
-                currentHealth += currentHealth * 5 / 100;
-                timers.alarmTime = 1;
+                currentHealth    += currentHealth * 5 / 100;
+                timers.alarmTime =  1;
                 timers.StartTime();
             }
             else
@@ -122,12 +116,10 @@ public class EnemySlime : BaseEnemy
             currentHealth = 0;
             Destroy(gameObject, 2f);
         }
+
         healbar.localScale.x = currentHealth;
-
-
     }
 
-    
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -139,19 +131,10 @@ public class EnemySlime : BaseEnemy
         {
             healbar.gameObject.SetActive(true);
             Quaternion rotation = collision.gameObject.transform.rotation;
-            if (rotation.x * Vector3.right.x > 0)
-            {
-                gameObject.transform.localScale = new Vector3(0.2511116f, 0.3103755f, 1);
-            }
-            else
-            {
-                gameObject.transform.localScale = new Vector3(-0.2511116f, 0.3103755f, 1);
-            }
+            this.spriteRenderer.flipX = rotation.x * Vector3.right.x > 0;
+
             currentHealth -= GetDameGun();
-
         }
-
-
     }
 
     public void AttackPlayer()
@@ -175,7 +158,8 @@ public class EnemySlime : BaseEnemy
     }
 
 
-
-
-
+    private void OnDestroy()
+    {
+        if (this.QuestPlayerController is { IsReadyToUse: true }) this.QuestPlayerController.QuestSlime--;
+    }
 }

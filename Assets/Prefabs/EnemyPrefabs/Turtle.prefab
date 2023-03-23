@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 1793527874712998217}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7990404, y: 0.824, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4862156797749469218}
@@ -82,15 +82,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1989244662455261080, guid: 0325de472d66866428e040b95b66354e, type: 3}
+  m_Sprite: {fileID: -610335490, guid: 8e763be88ce70b74986f82700ce3a2d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.96, y: 1.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &8489912573336925641
@@ -138,7 +138,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &-676674867887519240
 MonoBehaviour:
@@ -152,7 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eee8359ca3bd3e41a2383653f3217d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 0.5
   healbar: {fileID: 5709425623127342006}
+  spriteRenderer: {fileID: 2531157440975681344}
+  damageTurtle: 10
 --- !u!61 &-1443024240825277154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -185,18 +188,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03721422, y: 0.112770915}
+  m_Offset: {x: 0, y: 0.03}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.43, y: 1.59}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.95, y: 0.95}
+    newSize: {x: 0.96, y: 1.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1335325, y: 1.0781548}
+  m_Size: {x: 0.6, y: 0.4}
   m_EdgeRadius: 0
 --- !u!61 &5031918685380420393
 BoxCollider2D:
@@ -230,18 +233,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00856638, y: 0.0290744}
+  m_Offset: {x: -0.03, y: 0.03}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.43, y: 1.59}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.95, y: 0.95}
+    newSize: {x: 0.96, y: 1.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1803448, y: 1.2057109}
+  m_Size: {x: 0.25, y: 0.4}
   m_EdgeRadius: 0
 --- !u!82 &-5126591842229256628
 AudioSource:
@@ -380,7 +383,7 @@ MonoBehaviour:
   - {x: 1.215, y: -0.7950001, z: 0}
   m_ShapePathHash: 1058873463
   m_Mesh: {fileID: 0}
-  m_InstanceId: -635780
+  m_InstanceId: 73250
 --- !u!114 &4923644455428471093
 MonoBehaviour:
   m_ObjectHideFlags: 0

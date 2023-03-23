@@ -25,13 +25,16 @@ public class CollectionItemController : MonoBehaviour
             this.audioTimer.Play();
             Destroy(collision.gameObject);
         }
-        
+
         if (collision.gameObject.CompareTag("Coin"))
         {
             PlayerLocalData.Instance.CurrentCoin += 1;
             PlayerLocalData.Instance.Save();
             this.audioTimer.Play();
             Destroy(collision.gameObject);
+
+            var questPlayerController = FindObjectOfType<QuestPlayerController>();
+            if (questPlayerController is { IsReadyToUse: true }) questPlayerController.QuestCoin--;
         }
     }
 }

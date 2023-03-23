@@ -8,7 +8,7 @@ public class LevelGeneration : MonoBehaviour
     [SerializeField] public GameObject[] rooms; // index 0 --> closed, index 1 --> LR, index 2 --> LRB, index 3 --> LRT, index 4 --> LRBT
 
     private int  direction;
-    private bool stopGeneration;
+    public bool stopGeneration;
     private int  downCounter;
 
     [SerializeField] public float moveIncrement;
@@ -24,6 +24,7 @@ public class LevelGeneration : MonoBehaviour
     List<GameObject> roomTrues;
 
     private Transform startPoint;
+
     private Transform endPoint;
 
     private void Start()
