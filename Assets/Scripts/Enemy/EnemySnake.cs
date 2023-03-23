@@ -106,7 +106,7 @@ public class EnemySnake : BaseEnemy
         }
     }
 
-    void PlaySound()
+    public void PlaySound()
     {
         gameObject.GetComponent<AudioSource>().Play();
     }
