@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Healbar : MonoBehaviour
 {
-    public Vector3 localScale;
+    public Slider slider;
 
-    void Start()
+    public float Percent
     {
-        localScale = transform.localScale;
-    }
-
-    void Update()
-    {
-        transform.localScale = localScale;
+        get => this.slider.value;
+        set => this.slider.value = value;
     }
 }

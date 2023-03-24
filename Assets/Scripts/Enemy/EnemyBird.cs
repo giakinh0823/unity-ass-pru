@@ -135,7 +135,7 @@ public class EnemyBird : BaseEnemy
             Destroy(gameObject, 2f);
         }
 
-        healbar.localScale.x = currentHealth;
+        healbar.Percent = currentHealth;
     }
 
     public void Flip()
