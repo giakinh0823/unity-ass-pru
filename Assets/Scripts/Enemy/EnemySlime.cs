@@ -50,7 +50,7 @@ public class EnemySlime : BaseEnemy
             playerTransfrom = player.transform;
         }
 
-        healbar.localScale.x = currentHealth;
+        healbar.Percent = currentHealth;
         if (playerTransfrom != null && Vector3.Distance(transform.position, playerTransfrom.position) <= chaseDistance)
         {
             healbar.gameObject.SetActive(true);
@@ -118,7 +118,7 @@ public class EnemySlime : BaseEnemy
             Destroy(gameObject, 2f);
         }
 
-        healbar.localScale.x = currentHealth;
+        healbar.Percent = currentHealth;
     }
 
 
