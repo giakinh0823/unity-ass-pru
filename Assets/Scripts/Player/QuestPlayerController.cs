@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Model;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = System.Random;
 
@@ -26,9 +27,9 @@ public class QuestPlayerController : MonoBehaviour
         get => this.questEnemy[Layers.Mushroom];
         set
         {
+            this.mushRoom.transform.parent.gameObject.SetActive(value > 0);
             if (value < 0) return;
             this.mushRoom.text               = value.ToString();
-            this.mushRoom.color              = value <= 0 ? Color.green : Color.red;
             this.questEnemy[Layers.Mushroom] = value;
         }
     }
@@ -38,9 +39,9 @@ public class QuestPlayerController : MonoBehaviour
         get => this.questEnemy[Layers.Snake];
         set
         {
+            this.snake.transform.parent.gameObject.SetActive(value > 0);
             if (value < 0) return;
             this.snake.text               = value.ToString();
-            this.snake.color              = value <= 0 ? Color.green : Color.red;
             this.questEnemy[Layers.Snake] = value;
         }
     }
@@ -50,9 +51,9 @@ public class QuestPlayerController : MonoBehaviour
         get => this.questEnemy[Layers.Slime];
         set
         {
+            this.slime.transform.parent.gameObject.SetActive(value > 0);
             if (value < 0) return;
             this.slime.text               = value.ToString();
-            this.slime.color              = value <= 0 ? Color.green : Color.red;
             this.questEnemy[Layers.Slime] = value;
         }
     }
@@ -62,9 +63,9 @@ public class QuestPlayerController : MonoBehaviour
         get => this.questEnemy[Layers.Turtle];
         set
         {
+            this.turtle.transform.parent.gameObject.SetActive(value > 0);
             if (value < 0) return;
             this.turtle.text               = value.ToString();
-            this.turtle.color              = value <= 0 ? Color.green : Color.red;
             this.questEnemy[Layers.Turtle] = value;
         }
     }
@@ -74,9 +75,9 @@ public class QuestPlayerController : MonoBehaviour
         get => this.questEnemy[Layers.Bird];
         set
         {
+            this.bird.transform.parent.gameObject.SetActive(value > 0);
             if (value < 0) return;
             this.bird.text               = value.ToString();
-            this.bird.color              = value <= 0 ? Color.green : Color.red;
             this.questEnemy[Layers.Bird] = value;
         }
     }
@@ -86,9 +87,9 @@ public class QuestPlayerController : MonoBehaviour
         get => this.questCoin;
         set
         {
+            this.coin.transform.parent.gameObject.SetActive(value > 0);
             if (value < 0) return;
             this.coin.text  = value.ToString();
-            this.coin.color = value <= 0 ? Color.green : Color.red;
             this.questCoin  = value;
         }
     }
