@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Model;
 using UnityEngine;
 
 public class BaseEnemy : MonoBehaviour
@@ -11,7 +12,7 @@ public class BaseEnemy : MonoBehaviour
 
     public float GetDameGun()
     {
-        return dameGun;
+        return Mathf.Clamp(dameGun - PlayerLocalData.Instance.CurrentPlayerLevel * 0.01f, 0.1f, 0.25f) + PlayerLocalData.Instance.BuffGunDamage;
     }
 
 

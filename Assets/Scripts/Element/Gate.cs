@@ -2,6 +2,8 @@ namespace Element
 {
     using System;
     using Model;
+    using ScreenManager;
+    using ScreenManager.Popups;
     using UnityEngine;
     using UnityEngine.SceneManagement;
 
@@ -34,7 +36,8 @@ namespace Element
             PlayerLocalData.Instance.CurrentPlayerLevel++;
             PlayerLocalData.Instance.Save();
             Debug.Log($"Open Gate: {PlayerLocalData.Instance.CurrentPlayerLevel}");
-            SceneManager.LoadScene("Game");
+
+            ScreenManager.Instance.OpenScreen<ShopPopup>();
         }
     }
 }
