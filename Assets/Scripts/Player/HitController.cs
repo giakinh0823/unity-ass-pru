@@ -51,6 +51,7 @@ public class HitController : MonoBehaviour
     {
         // Giảm sát thương mỗi level đi 0.01 tối đa còn 0.1
         float dameArmPlayerAttackEnemy = Mathf.Clamp(0.2f - PlayerLocalData.Instance.CurrentPlayerLevel * 0.01f, 0.1f, 0.2f);
+        dameArmPlayerAttackEnemy += PlayerLocalData.Instance.BuffHandDamage;
 
         GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject go in enemy)
@@ -67,7 +68,8 @@ public class HitController : MonoBehaviour
                         {
                             enemyTurtle.transform.localScale = new Vector3(-3, 3, 3);
                         }
-                        else{
+                        else
+                        {
                             enemyTurtle.transform.localScale = new Vector3(3, 3, 3);
                         }
                     }
@@ -80,9 +82,9 @@ public class HitController : MonoBehaviour
                         else
                         {
                             enemyTurtle.transform.localScale = new Vector3(-3, 3, 3);
-
                         }
                     }
+
                     enemyTurtle.PlaySound();
                     enemyTurtle.currentHealth -= dameArmPlayerAttackEnemy;
                 }
@@ -112,6 +114,7 @@ public class HitController : MonoBehaviour
                             enemyMushroom.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
+
                     enemyMushroom.PlaySound();
                     enemyMushroom.currentHealth -= dameArmPlayerAttackEnemy;
                 }
@@ -141,13 +144,14 @@ public class HitController : MonoBehaviour
                             enemySnake.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
+
                     enemySnake.PlaySound();
                     enemySnake.currentHealth -= dameArmPlayerAttackEnemy;
                 }
                 else if (go.layer == 20)
                 {
                     EnemySlime enemySlime = go.GetComponent<EnemySlime>();
-                    
+
                     enemySlime.PlaySound();
                     enemySlime.currentHealth -= dameArmPlayerAttackEnemy;
                 }
@@ -177,6 +181,7 @@ public class HitController : MonoBehaviour
                             enemyBird.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
                         }
                     }
+
                     enemyBird.PlaySound();
                     enemyBird.currentHealth -= dameArmPlayerAttackEnemy;
                 }
@@ -188,6 +193,7 @@ public class HitController : MonoBehaviour
     {
         // Giảm sát thương của player mỗi level đi 0.05, giảm tối đa 0.4 tức còn 0.1
         float dameKnifePlayerAttackEnemy = Mathf.Clamp(0.5f - PlayerLocalData.Instance.CurrentPlayerLevel * 0.05f, 0.1f, 1f);
+        dameKnifePlayerAttackEnemy += PlayerLocalData.Instance.BuffSwordDamage;
 
         GameObject[] enemy = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject go in enemy)
@@ -218,9 +224,9 @@ public class HitController : MonoBehaviour
                         else
                         {
                             enemyTurtle.transform.localScale = new Vector3(-3, 3, 3);
-
                         }
                     }
+
                     enemyTurtle.PlaySound();
                     enemyTurtle.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
@@ -250,6 +256,7 @@ public class HitController : MonoBehaviour
                             enemyMushroom.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
+
                     enemyMushroom.PlaySound();
                     enemyMushroom.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
@@ -279,13 +286,14 @@ public class HitController : MonoBehaviour
                             enemySnake.transform.localScale = new Vector3(0.7990404f, 0.824f, 1);
                         }
                     }
+
                     enemySnake.PlaySound();
                     enemySnake.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
                 else if (go.layer == 20)
                 {
                     EnemySlime enemySlime = go.GetComponent<EnemySlime>();
-                    
+
                     enemySlime.PlaySound();
                     enemySlime.currentHealth -= dameKnifePlayerAttackEnemy;
                 }
@@ -315,6 +323,7 @@ public class HitController : MonoBehaviour
                             enemyBird.transform.localScale = new Vector3(1.0369f, 0.9648f, 1);
                         }
                     }
+
                     enemyBird.PlaySound();
                     enemyBird.currentHealth -= dameKnifePlayerAttackEnemy;
                 }

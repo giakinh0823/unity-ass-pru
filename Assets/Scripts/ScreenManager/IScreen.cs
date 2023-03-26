@@ -4,6 +4,8 @@
 
     public interface IScreen
     {
+        public bool IsInitialized { get; set; }
+
         public ScreenManager ScreenManager { get; set; }
 
         public object Data         { get; set; }

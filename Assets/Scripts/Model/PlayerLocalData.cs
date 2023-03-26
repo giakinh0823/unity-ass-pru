@@ -6,7 +6,10 @@ namespace Model
 
     public class PlayerLocalData : BaseLocalData<PlayerLocalData>
     {
-        public int HighestLevel { get; set; }
+        public int   HighestLevel    { get; set; }
+        public float BuffHandDamage  { get; set; }
+        public float BuffSwordDamage { get; set; }
+        public float BuffGunDamage   { get; set; }
 
         private int currentPlayerLevel;
 
@@ -42,6 +45,11 @@ namespace Model
             this.CurrentPlayerLevel      = 1;
             this.CurrentCoin             = 0;
             this.CurrentPlayerReviveTime = 5;
+
+            this.BuffHandDamage  = 0;
+            this.BuffGunDamage   = 0;
+            this.BuffSwordDamage = 0;
+
             base.Init();
         }
     }

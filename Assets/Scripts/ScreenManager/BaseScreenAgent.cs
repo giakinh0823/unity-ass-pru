@@ -17,6 +17,7 @@
             this.Init();
         }
 
+        public bool          IsInitialized { get; set; }
         public ScreenManager ScreenManager { get; set; }
         public object        Data          { get; set; }
 
@@ -39,7 +40,7 @@
             if (this.IsVisible && this.Interactable) return;
             this.IsVisible    = true;
             this.Interactable = true;
-            this.OnShow();
+            if (this.IsInitialized) this.OnShow();
             // _canvasGroup.alpha = 1.0f;
             // _canvasGroup.blocksRaycasts = true;
         }
@@ -49,7 +50,7 @@
             if (!this.IsVisible) return;
             this.IsVisible    = false;
             this.Interactable = false;
-            this.OnHide();
+            if (this.IsInitialized) this.OnHide();
             // _canvasGroup.alpha = 0.0f;
             // _canvasGroup.blocksRaycasts = false;
         }

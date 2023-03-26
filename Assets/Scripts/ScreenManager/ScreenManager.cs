@@ -7,11 +7,19 @@
 
     public class ScreenManager : MonoBehaviour
     {
-        [SerializeField] private List<GameObject> _screens;
-        [SerializeField] private Transform        _screenTransform;
-        [SerializeField] private Transform        _popupTransform;
-        [SerializeField] private GameObject       _unInteractableBG;
-        public static            ScreenManager    Instance { get; private set; }
+        [SerializeField]
+        private List<GameObject> _screens;
+
+        [SerializeField]
+        private Transform _screenTransform;
+
+        [SerializeField]
+        private Transform _popupTransform;
+
+        [SerializeField]
+        private GameObject _unInteractableBG;
+
+        public static ScreenManager Instance { get; private set; }
 
         private Dictionary<Type, IScreen> TypeToScreen { get; } = new();
 
@@ -61,6 +69,7 @@
                 rectTransform.localScale = Vector3.one;
 
                 this.TypeToScreen.Add(screen.GetType(), screen);
+                screen.IsInitialized = true;
             }
 
             this.CurrentScreen.Show();
